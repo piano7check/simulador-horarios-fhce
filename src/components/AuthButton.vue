@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { mdiAccountCircle, mdiLogout } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from './AuthDialog.vue'
 
 const { user, signOut } = useAuth()
 const authDialog = ref(false)
+
+const nombreMostrado = computed(() => {
+  if (!user.value) return ''
+  const meta = (user.value.user_metadata ?? {}) as Record<string, unknown>
+  const nombre =
+    meta.full_name ?? meta.name ?? meta.nombre_completo ?? meta.given_name ?? user.value.email
+  return typeof nombre === 'string' ? nombre.split(' ')[0] : ''
+})
 </script>
 
 <template>
@@ -15,11 +23,11 @@ const authDialog = ref(false)
     <template #activator="{ props }">
       <v-btn
         v-bind="props"
-        :icon="mdiAccountCircle"
+        :prepend-icon="mdiAccountCircle"
         variant="flat"
         size="default"
         class="user-cta-btn"
-      />
+      >{{ nombreMostrado }}</v-btn>
     </template>
     <v-list density="compact" min-width="180">
       <v-list-item>
