@@ -17,7 +17,6 @@ import {
   mdiContentSave,
 } from '@mdi/js'
 import SemanaView from '@/components/SemanaView.vue'
-import AuthButton from '@/components/AuthButton.vue'
 import { useAuth } from '@/composables/useAuth'
 import { cargarHorario, guardarHorario } from '@/services/horarioGuardado'
 
@@ -287,7 +286,7 @@ async function toggleMateria(materia: Materia) {
 
 <template>
   <!-- ════════ DESKTOP ════════ -->
-  <v-layout class="h-screen d-none d-md-flex">
+  <v-layout class="d-none d-md-flex" style="height: 100%">
     <!-- Sidebar izquierdo -->
     <v-navigation-drawer permanent width="320">
       <v-list-item>
@@ -298,9 +297,6 @@ async function toggleMateria(materia: Materia) {
           {{ carrera.replace(/-/g, ' ') }}
         </v-list-item-title>
         <v-list-item-subtitle>{{ GESTION }}</v-list-item-subtitle>
-        <template #append>
-          <auth-button />
-        </template>
       </v-list-item>
 
       <v-divider />
@@ -470,7 +466,7 @@ async function toggleMateria(materia: Materia) {
   </v-layout>
 
   <!-- ════════ MOBILE ════════ -->
-  <div class="d-flex d-md-none flex-column h-screen">
+  <div class="d-flex d-md-none flex-column" style="height: 100%">
     <!-- Parte superior: cursos seleccionados -->
     <div class="flex-grow-1 overflow-y-auto" style="min-height: 0">
       <!-- Header mobile -->
@@ -479,7 +475,6 @@ async function toggleMateria(materia: Materia) {
         <v-toolbar-title class="text-subtitle-2">
           {{ carrera.replace(/-/g, ' ') }}
         </v-toolbar-title>
-        <auth-button />
       </v-toolbar>
 
       <v-container>

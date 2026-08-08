@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { obtenerCarreras, type Carrera } from '@/services/horarios'
-import AuthButton from '@/components/AuthButton.vue'
 import { mdiMagnify, mdiSchool, mdiChevronRight } from '@mdi/js'
 
 const router = useRouter()
@@ -47,7 +46,7 @@ async function seleccionar(carrera: Carrera) {
 
 <template>
   <v-container class="d-flex flex-column align-center justify-center" style="min-height: 100dvh">
-    <div class="w-100 d-flex justify-space-between align-center mb-4">
+    <div class="w-100 d-flex justify-center mb-4">
       <router-link
         to="/acerca-de"
         class="text-caption text-medium-emphasis"
@@ -55,7 +54,6 @@ async function seleccionar(carrera: Carrera) {
       >
         Acerca de esta aplicación
       </router-link>
-      <auth-button />
     </div>
     <v-card max-width="500" width="100%" elevation="2" rounded="lg">
       <v-card-title class="text-center pt-6">
