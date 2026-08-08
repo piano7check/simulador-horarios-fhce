@@ -55,37 +55,24 @@ function detectEnvLocal(): EnvCredentials | null {
   let envPath = ''
   if (existsSync(rootEnv)) envPath = rootEnv
   else if (existsSync(scriptsEnv)) envPath = scriptsEnv
-  else {
-    console.log('DEBUG ENV: No se encontró .env.local en', rootEnv, 'ni en', scriptsEnv)
-    return null
-  }
+  else return null
 
-  console.log('DEBUG ENV: Leyendo .env.local desde', envPath)
   const content = readFileSync(envPath, 'utf-8')
   const vars: Record<string, string> = {}
   for (const line of content.split('\n')) {
     const trimmed = line.trim()
-    console.log('DEBUG ENV: línea leída:', JSON.stringify(trimmed))
     if (!trimmed || trimmed.startsWith('#')) continue
     // Permite espacios antes/después del = y valores vacíos
     const match = trimmed.match(/^([A-Z0-9_]+)\s*=\s*(.*)$/i)
     if (match) {
       vars[match[1]] = match[2]
-      console.log('DEBUG ENV: variable detectada:', match[1], '→', match[2])
     }
   }
-
-  // Logging for env detection
-  console.log('DEBUG ENV: detectEnvLocal loaded vars:', vars)
 
   const url = vars.PUBLIC_SUPABASE_URL || vars.VITE_SUPABASE_URL
   const anonKey = vars.PUBLIC_SUPABASE_KEY || vars.VITE_SUPABASE_KEY
   // Accept both PUBLIC_SERVICE_ROLE_KEY and VITE_SERVICE_ROLE_KEY
   const serviceRoleKey = vars.PUBLIC_SERVICE_ROLE_KEY || vars.VITE_SERVICE_ROLE_KEY
-
-  console.log('DEBUG ENV: url:', url)
-  console.log('DEBUG ENV: anonKey:', anonKey)
-  console.log('DEBUG ENV: serviceRoleKey:', serviceRoleKey)
 
   if (!url || !anonKey || !serviceRoleKey) return null
 
@@ -233,10 +220,6 @@ async function downloadPdf(carreraCodigo: string, nivel: string): Promise<Buffer
   const contentType = resp.headers.get('content-type') ?? ''
   const arrayBuf = await resp.arrayBuffer()
   const buf = Buffer.from(arrayBuf)
-  // Logging for debug
-  console.log('DEBUG PDF content-type:', contentType)
-  console.log('DEBUG PDF buf.slice(0, 16):', buf.slice(0, 16).toString())
-  console.log('DEBUG PDF buf raw bytes:', buf.slice(0, 16))
   // Accept application/pdf or application/x-download if '%PDF' appears in first 512 bytes
   const isPdf = contentType.includes('pdf') ||
     (contentType.includes('x-download') && buf.slice(0, 512).toString().includes('%PDF'))
