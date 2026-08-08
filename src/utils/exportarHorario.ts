@@ -269,7 +269,8 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<Ex
       /* Ensure cells don't wrap and overflow is hidden */
       th, td, .clase-item, .clase-title, .clase-detail, .clase-aula { box-sizing: border-box; }
       @page { size: letter landscape; margin: 8mm; }
-      body { margin: 0; padding: 8mm; background: #fff; }
+      body { margin: 0; padding: 8mm; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     </style>
     `
 
