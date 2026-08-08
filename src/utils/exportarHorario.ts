@@ -351,7 +351,7 @@ async function openPrintWindowPreserveText(opts: ExportOpts): Promise<boolean> {
       }
       doc.write('<style>@page{size:letter landscape;margin:12mm}body{background:#fff;margin:0;padding:12mm;font-family:sans-serif}img{max-width:100%}</style>')
       doc.write('</head><body>')
-      const clone = elemento.cloneNode(true) as HTMLElement
+      const clone = opts.elemento.cloneNode(true) as HTMLElement
       clone.style.background = '#ffffff'
       const imported = doc.importNode(clone, true)
       doc.body.appendChild(imported)
