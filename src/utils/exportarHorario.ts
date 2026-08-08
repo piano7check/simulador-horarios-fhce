@@ -379,7 +379,7 @@ export async function descargarHorario(opts: ExportOpts): Promise<void> {
   // al flujo PDF existente.
   try {
     const nombreArchivo = opts.titulo.replace(/\s+/g, '_').toLowerCase() + (opts.subtitulo ? `_${opts.subtitulo.replace(/\s+/g, '_').toLowerCase()}` : '') + '.png'
-    await downloadHtmlAsImage(opts.elemento, nombreArchivo)
+    await downloadHtmlAsImage(opts, nombreArchivo)
     return
   } catch (e) {
     // continue to PDF fallback
@@ -414,91 +414,52 @@ export async function descargarHorario(opts: ExportOpts): Promise<void> {
   }
 }
 
-async function downloadHtmlAsImage(elemento: HTMLElement, filename = 'horario.png') {
-  const tableHtml = generatePrintableHTMLFromCalendar(elemento)
-  if (!tableHtml) throw new Error('No printable HTML')
+async function downloadHtmlAsImage(opts: ExportOpts, filename = 'horario.png') {
+  const { elemento } = opts
+  const isMobile = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent)
+  const deviceScale = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
+  const scale = isMobile ? 1 : Math.min(3, Math.max(1, deviceScale))
 
-  // Enforce letter-size landscape export. Use DPI to compute target px.
-  // Letter: 8.5 x 11 in. Landscape => width=11in, height=8.5in.
-  const DPI = 150 // chosen quality for export (can be changed later)
-  const LETTER_W_IN = 11
-  const LETTER_H_IN = 8.5
-  const targetWidth = Math.round(LETTER_W_IN * DPI)
-  const targetHeight = Math.round(LETTER_H_IN * DPI)
-  // Divide width into 7 equal columns for uniform layout
-  const colW = Math.floor(targetWidth / 7)
-
-  const iframe = document.createElement('iframe')
-  iframe.style.position = 'fixed'
-  iframe.style.left = '-9999px'
-  iframe.style.width = targetWidth + 'px'
-  iframe.style.height = targetHeight + 'px'
-  document.body.appendChild(iframe)
-  const doc = iframe.contentDocument!
-  doc.open()
-  doc.write(tableHtml)
-  doc.close()
-
-  // Force the printed HTML to layout at the desired width so html2canvas
-  // captures a landscape composition.
-  try { doc.documentElement.style.width = targetWidth + 'px'; doc.body.style.width = targetWidth + 'px'; doc.body.style.margin = '0' } catch {}
-
-  try { const f: any = doc.fonts || document.fonts; if (f && 'ready' in f) await f.ready } catch {}
-  await new Promise((r) => setTimeout(r, 300))
-
-  const body = doc.body as HTMLElement
-  // Force table and column widths inside the iframe so html2canvas captures a
-  // landscape layout without horizontal overflow.
+  let targetElement: HTMLElement = elemento
+  let removedClone = false
   try {
-    const table = doc.querySelector('table') as HTMLTableElement | null
-    if (table) {
-      table.style.tableLayout = 'fixed'
-      table.style.width = targetWidth + 'px'
-      // ensure container has exact width
-      const container = doc.querySelector('.calendario-container') as HTMLElement | null
-      if (container) container.style.width = targetWidth + 'px'
-
-      const firstColW = colW
-      const otherW = colW
-      let colgroup = table.querySelector('colgroup')
-      if (!colgroup) {
-        colgroup = doc.createElement('colgroup')
-        table.insertBefore(colgroup, table.firstChild)
-      }
-      // clear existing cols
-      colgroup.innerHTML = ''
-      const c0 = doc.createElement('col')
-      c0.style.width = firstColW + 'px'
-      colgroup.appendChild(c0)
-      for (let i = 0; i < 6; i++) {
-        const c = doc.createElement('col')
-        c.style.width = otherW + 'px'
-        colgroup.appendChild(c)
-      }
+    const rect = elemento.getBoundingClientRect()
+    if (rect.width === 0 || rect.height === 0) {
+      const clone = elemento.cloneNode(true) as HTMLElement
+      clone.style.position = 'absolute'
+      clone.style.left = '-9999px'
+      clone.style.top = '0'
+      clone.style.zIndex = '99999'
+      clone.style.display = 'block'
+      clone.style.background = '#ffffff'
+      document.body.appendChild(clone)
+      targetElement = clone
+      removedClone = true
     }
-  } catch (e) {
-    // non-fatal
-    console.warn('Could not set table widths in iframe', e)
+
+    try { const f: any = (document as any).fonts; if (f && 'ready' in f) await f.ready } catch {}
+
+    const canvas = await html2canvas(targetElement, {
+      scale,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      logging: false,
+    })
+
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png', 0.95))
+    if (!blob) throw new Error('No blob produced')
+
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = filename
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    setTimeout(() => URL.revokeObjectURL(url), 60_000)
+  } finally {
+    if (removedClone && targetElement !== elemento) targetElement.remove()
   }
-  const canvas = await html2canvas(body, {
-    useCORS: true,
-    scale: Math.min(2, window.devicePixelRatio || 1),
-    width: targetWidth,
-    height: targetHeight,
-  })
-
-  const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png', 0.92))
-  if (!blob) { iframe.remove(); throw new Error('No blob produced') }
-
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  document.body.appendChild(a)
-  a.click()
-  a.remove()
-  setTimeout(() => URL.revokeObjectURL(url), 60_000)
-  iframe.remove()
 }
 
 export async function imprimirHorario(opts: ExportOpts): Promise<void> {
