@@ -19,6 +19,8 @@ const props = defineProps<{
   cursos: CursoSeleccionado[]
   nombreCarrera?: string
   nombreNivel?: string
+  gestion?: string
+  estudianteNombre?: string
 }>()
 
 /* -- Responsive -- */
@@ -283,9 +285,8 @@ function buildTitulo() {
   return `Horario ${props.nombreCarrera ?? ''}`
 }
 
-function buildSubtitulo() {
-  return props.nombreNivel ? `Semestre: ${props.nombreNivel}` : undefined
-}
+const gestionTexto = computed(() => props.gestion?.trim() || '')
+const estudianteTexto = computed(() => props.estudianteNombre?.trim() || '')
 
 async function descargar() {
   if (!capturaRef.value) return
@@ -294,7 +295,8 @@ async function descargar() {
     await descargarHorario({
       elemento: capturaRef.value,
       titulo: buildTitulo(),
-      subtitulo: buildSubtitulo(),
+      gestion: props.gestion,
+      estudiante: props.estudianteNombre,
     })
   } finally {
     exportando.value = false
@@ -308,7 +310,8 @@ async function imprimir() {
     await imprimirHorario({
       elemento: capturaRef.value,
       titulo: buildTitulo(),
-      subtitulo: buildSubtitulo(),
+      gestion: props.gestion,
+      estudiante: props.estudianteNombre,
     })
   } finally {
     exportando.value = false
@@ -330,6 +333,14 @@ defineExpose({ descargar, imprimir })
 
     <!-- Zona capturable para PDF/impresión -->
     <div ref="capturaRef" style="background: #fff">
+      <div class="horario-header mb-3">
+        <p class="horario-header__title">{{ buildTitulo() }}</p>
+        <p v-if="gestionTexto" class="horario-header__meta"><strong>Gestión:</strong> {{ gestionTexto }}</p>
+        <p v-if="estudianteTexto" class="horario-header__meta">
+          <strong>Nombre:</strong> {{ estudianteTexto }}
+        </p>
+      </div>
+
       <!-- Alerta de choques -->
       <v-alert
         v-if="conflictos.lista.length"
@@ -414,6 +425,27 @@ defineExpose({ descargar, imprimir })
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
+
+.horario-header {
+  border: 1px solid #d6e4ff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+}
+
+.horario-header__title {
+  margin: 0;
+  color: #0d47a1;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.horario-header__meta {
+  margin: 3px 0 0;
+  color: #2b3f63;
+  font-size: 0.86rem;
+}
+
 .semana-dot {
   display: inline-block;
   width: 12px;

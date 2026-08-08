@@ -16,10 +16,12 @@ interface ExportOpts {
   elemento: HTMLElement
   titulo: string
   subtitulo?: string
+  gestion?: string
+  estudiante?: string
 }
 
 async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
-  const { elemento, titulo, subtitulo } = opts
+  const { elemento, titulo, subtitulo, gestion, estudiante } = opts
 
   const isMobile = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent)
   const deviceScale = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
@@ -30,7 +32,7 @@ async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
   try {
     const rect = elemento.getBoundingClientRect()
     if (rect.width === 0 || rect.height === 0) {
-      const clone = elemento.cloneNode(true) as HTMLElement
+      const clone = opts.elemento.cloneNode(true) as HTMLElement
       clone.style.position = 'absolute'
       clone.style.left = '-9999px'
       clone.style.top = '0'
@@ -73,6 +75,18 @@ async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
       pdf.setFontSize(11)
       pdf.text(subtitulo, ANCHO_PDF / 2, cursorY, { align: 'center' })
       cursorY += 6
+    }
+    if (gestion) {
+      pdf.setFont('helvetica', 'normal')
+      pdf.setFontSize(10)
+      pdf.text(`Gestion: ${gestion}`, ANCHO_PDF / 2, cursorY, { align: 'center' })
+      cursorY += 5
+    }
+    if (estudiante) {
+      pdf.setFont('helvetica', 'normal')
+      pdf.setFontSize(10)
+      pdf.text(`Nombre: ${estudiante}`, ANCHO_PDF / 2, cursorY, { align: 'center' })
+      cursorY += 5
     }
     cursorY += 2
 
@@ -170,7 +184,7 @@ function readableTextColor(hex: string): string {
   }
 }
 
-function generatePrintableHTMLFromCalendar(elemento: HTMLElement): string {
+function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>): string {
   try {
     const dayContainers = Array.from(elemento.querySelectorAll('.v-calendar-daily__day')) as HTMLElement[]
     if (!dayContainers.length) return ''
@@ -238,6 +252,10 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement): string {
     const style = `
     <style>
       .calendario-container { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 12px; }
+      .print-header { margin-bottom: 10px; text-align: center; color: #1f1f1f; }
+      .print-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 3px; }
+      .print-subtitle { font-size: 0.86rem; margin-bottom: 2px; color: #333; }
+      .print-meta { font-size: 0.82rem; color: #444; margin-bottom: 2px; }
       table { width: 100%; border-collapse: collapse; background-color: #fcfcfc; table-layout: fixed; }
       th { background-color: #4a90e2; color: white; padding: 8px; border: 1px solid #ddd; font-size: 0.85em; }
       td { border: 1px solid #ddd; padding: 2px 4px; text-align: left; font-size: 0.75em; height: 24px; vertical-align: middle; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; min-width: 0; }
@@ -259,6 +277,15 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement): string {
     html += `<title>Horario - impresión</title>`
     html += style
     html += '</head><body><div class="calendario-container">'
+
+    if (meta?.titulo || meta?.subtitulo || meta?.gestion || meta?.estudiante) {
+      html += '<div class="print-header">'
+      if (meta?.titulo) html += `<div class="print-title">${escapeHtml(meta.titulo)}</div>`
+      if (meta?.subtitulo) html += `<div class="print-subtitle">${escapeHtml(meta.subtitulo)}</div>`
+      if (meta?.gestion) html += `<div class="print-meta"><strong>Gestion:</strong> ${escapeHtml(meta.gestion)}</div>`
+      if (meta?.estudiante) html += `<div class="print-meta"><strong>Nombre:</strong> ${escapeHtml(meta.estudiante)}</div>`
+      html += '</div>'
+    }
 
     html += '<table>'
     html += '<colgroup><col style="width:48px" /><col /><col /><col /><col /><col /><col /></colgroup>'
@@ -298,16 +325,21 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement): string {
   }
 }
 
-async function openPrintWindowPreserveText(elemento: HTMLElement, titulo: string): Promise<boolean> {
+async function openPrintWindowPreserveText(opts: ExportOpts): Promise<boolean> {
   try {
-    const tableHtml = generatePrintableHTMLFromCalendar(elemento)
+    const tableHtml = generatePrintableHTMLFromCalendar(opts.elemento, {
+      titulo: opts.titulo,
+      subtitulo: opts.subtitulo,
+      gestion: opts.gestion,
+      estudiante: opts.estudiante,
+    })
     const w = window.open('', '_blank') as Window | null
     if (!w) return false
 
     const doc = w.document
     doc.open()
     doc.write('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
-    doc.write(`<title>${titulo}</title>`)
+    doc.write(`<title>${opts.titulo}</title>`)
 
     if (tableHtml) {
       doc.write(tableHtml)
@@ -470,7 +502,7 @@ async function downloadHtmlAsImage(elemento: HTMLElement, filename = 'horario.pn
 }
 
 export async function imprimirHorario(opts: ExportOpts): Promise<void> {
-  const tried = await openPrintWindowPreserveText(opts.elemento, opts.titulo)
+  const tried = await openPrintWindowPreserveText(opts)
   if (tried) return
 
   const pdf = await generarPDF(opts)

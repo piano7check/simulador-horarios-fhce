@@ -46,22 +46,13 @@ async function seleccionar(carrera: Carrera) {
 
 <template>
   <v-container class="d-flex flex-column align-center justify-center" style="min-height: 100dvh">
-    <div class="w-100 d-flex justify-center mb-4">
-      <router-link
-        to="/acerca-de"
-        class="text-caption text-medium-emphasis"
-        style="text-decoration: underline"
-      >
-        Acerca de esta aplicación
-      </router-link>
-    </div>
     <v-card max-width="500" width="100%" elevation="2" rounded="lg">
       <v-card-title class="text-center pt-6">
         <h1 class="text-h5 inicio-title" style="margin: 0">
           Simulador de Horarios FHCE
         </h1>
         <div class="text-body-2 text-center mt-2">
-          Planifica tus materias, combina grupos y exporta tu horario en PDF.
+          Planifica tus materias, combina grupos, guarda y exporta tu horario en PDF.
         </div>
       </v-card-title>
 
@@ -122,6 +113,15 @@ async function seleccionar(carrera: Carrera) {
         </div>
       </v-card-text>
     </v-card>
+    <div class="w-100 d-flex justify-center mt-4">
+      <router-link
+        to="/acerca-de"
+        class="text-caption text-medium-emphasis"
+        style="text-decoration: underline"
+      >
+        Acerca de esta aplicación
+      </router-link>
+    </div>
     <div
       v-if="navegando"
       style="

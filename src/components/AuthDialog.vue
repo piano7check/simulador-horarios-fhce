@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { mdiGoogle } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 
 const props = defineProps<{ modelValue: boolean }>()
 const emit = defineEmits<{ 'update:modelValue': [value: boolean] }>()
 
-const { signIn, signUp } = useAuth()
+const { signIn, signUp, signInWithGoogle } = useAuth()
 
 const modo = ref<'login' | 'register'>('login')
 const email = ref('')
@@ -39,6 +40,18 @@ async function submit() {
   } catch (e: any) {
     error.value = e.message ?? 'Error al autenticar'
   } finally {
+    cargando.value = false
+  }
+}
+
+async function loginConGoogle() {
+  error.value = ''
+  mensajeConfirmacion.value = ''
+  cargando.value = true
+  try {
+    await signInWithGoogle()
+  } catch (e: any) {
+    error.value = e.message ?? 'Error al autenticar con Google'
     cargando.value = false
   }
 }
@@ -96,6 +109,21 @@ async function submit() {
             {{ modo === 'login' ? 'Entrar' : 'Registrarse' }}
           </v-btn>
         </div>
+
+        <div v-if="!mensajeConfirmacion" class="w-100">
+          <v-divider class="my-1" />
+          <v-btn
+            block
+            variant="outlined"
+            :prepend-icon="mdiGoogle"
+            :loading="cargando"
+            class="mt-2"
+            @click="loginConGoogle"
+          >
+            Continuar con Google
+          </v-btn>
+        </div>
+
         <v-btn
           v-if="!mensajeConfirmacion"
           variant="text"

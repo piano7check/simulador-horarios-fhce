@@ -17,6 +17,7 @@ import {
   mdiContentSave,
 } from '@mdi/js'
 import SemanaView from '@/components/SemanaView.vue'
+import AuthDialog from '@/components/AuthDialog.vue'
 import { useAuth } from '@/composables/useAuth'
 import { cargarHorario, guardarHorario } from '@/services/horarioGuardado'
 
@@ -56,6 +57,34 @@ const { user } = useAuth()
 const guardando = ref(false)
 const snackbarGuardado = ref(false)
 const snackbarGuardadoMsg = ref('')
+const authDialog = ref(false)
+const dialogHorarioGuardado = ref(false)
+const gruposGuardadosPendientes = ref<string[]>([])
+
+function obtenerNombreRegistrado(meta: Record<string, unknown>): string | undefined {
+  const posiblesNombres = [
+    meta.nombre_completo,
+    meta.full_name,
+    meta.display_name,
+    meta.name,
+    meta.nombre,
+  ]
+  for (const valor of posiblesNombres) {
+    if (typeof valor === 'string' && valor.trim().length > 0) return valor.trim()
+  }
+
+  const givenName = typeof meta.given_name === 'string' ? meta.given_name.trim() : ''
+  const familyName = typeof meta.family_name === 'string' ? meta.family_name.trim() : ''
+  const combinado = `${givenName} ${familyName}`.trim()
+  return combinado || undefined
+}
+
+const estudianteRegistrado = computed(() => {
+  const u = user.value
+  if (!u) return undefined
+  const meta = (u.user_metadata ?? {}) as Record<string, unknown>
+  return obtenerNombreRegistrado(meta) ?? 'No registrado'
+})
 
 // Acción: quitar todos los grupos seleccionados
 function quitarTodo() {
@@ -86,8 +115,70 @@ async function cargarHorarioGuardado() {
   }
 }
 
-async function guardar() {
+function sonMismosGrupos(actuales: Set<string>, guardados: string[]) {
+  if (actuales.size !== guardados.length) return false
+  for (const g of guardados) if (!actuales.has(g)) return false
+  return true
+}
+
+async function precargarClasesParaGrupos(grupos: string[]) {
+  const materiaIds = [...new Set(grupos.map((k) => Number(k.split('-')[0])))]
+  await Promise.all(
+    materiaIds.map(async (mid) => {
+      if (!clasesCache.value[mid]) {
+        try {
+          clasesCache.value[mid] = await obtenerClases(mid, GESTION)
+        } catch {
+          clasesCache.value[mid] = []
+        }
+      }
+    }),
+  )
+}
+
+async function evaluarHorarioGuardadoEnLogin() {
   if (!user.value) return
+  try {
+    const gruposGuardados = await cargarHorario(user.value.id, carreraId)
+    if (gruposGuardados.length === 0) return
+
+    await precargarClasesParaGrupos(gruposGuardados)
+
+    if (gruposSeleccionados.value.size === 0) {
+      gruposSeleccionados.value = new Set(gruposGuardados)
+      return
+    }
+
+    if (sonMismosGrupos(gruposSeleccionados.value, gruposGuardados)) return
+
+    gruposGuardadosPendientes.value = gruposGuardados
+    dialogHorarioGuardado.value = true
+  } catch {
+    // el horario guardado es opcional
+  }
+}
+
+function usarHorarioGuardado() {
+  gruposSeleccionados.value = new Set(gruposGuardadosPendientes.value)
+  gruposGuardadosPendientes.value = []
+  dialogHorarioGuardado.value = false
+  snackbarGuardadoMsg.value = 'Se cargó tu horario guardado'
+  snackbarGuardado.value = true
+}
+
+function mantenerHorarioActual() {
+  gruposGuardadosPendientes.value = []
+  dialogHorarioGuardado.value = false
+  snackbarGuardadoMsg.value = 'Se mantuvo tu horario actual'
+  snackbarGuardado.value = true
+}
+
+async function guardar() {
+  if (!user.value) {
+    helpDialog.value = false
+    authDialog.value = true
+    return
+  }
   guardando.value = true
   try {
     await guardarHorario(user.value.id, carreraId, [...gruposSeleccionados.value])
@@ -102,9 +193,7 @@ async function guardar() {
 }
 
 watch(user, async (newUser) => {
-  if (newUser && materias.value.length > 0 && gruposSeleccionados.value.size === 0) {
-    await cargarHorarioGuardado()
-  }
+  if (newUser && materias.value.length > 0) await evaluarHorarioGuardadoEnLogin()
 })
 
 // Ref al componente SemanaView para llamar sus métodos expuestos
@@ -285,6 +374,22 @@ async function toggleMateria(materia: Materia) {
 </script>
 
 <template>
+  <auth-dialog v-model="authDialog" />
+
+  <v-dialog v-model="dialogHorarioGuardado" max-width="520" persistent>
+    <v-card>
+      <v-card-title class="text-h6">Encontramos un horario guardado</v-card-title>
+      <v-card-text>
+        Ya tienes un horario guardado para esta carrera. ¿Qué deseas hacer?
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer />
+        <v-btn variant="text" @click="mantenerHorarioActual">Mantener horario actual</v-btn>
+        <v-btn color="primary" variant="flat" @click="usarHorarioGuardado">Mostrar horario guardado</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+
   <!-- ════════ DESKTOP ════════ -->
   <v-layout class="d-none d-md-flex" style="height: 100%">
     <!-- Sidebar izquierdo -->
@@ -412,7 +517,6 @@ async function toggleMateria(materia: Materia) {
             <v-icon :icon="mdiHelpCircle" />
           </v-btn>
           <v-btn
-            v-if="user"
             icon
             variant="outlined"
             size="small"
@@ -460,6 +564,8 @@ async function toggleMateria(materia: Materia) {
           :cursos="cursosSeleccionados"
           :nombre-carrera="nombreCarrera"
           :nombre-nivel="nombreNivel"
+          :gestion="GESTION"
+          :estudiante-nombre="estudianteRegistrado"
         />
       </v-container>
     </v-main>
@@ -470,8 +576,8 @@ async function toggleMateria(materia: Materia) {
     <!-- Parte superior: cursos seleccionados -->
     <div class="flex-grow-1 overflow-y-auto" style="min-height: 0">
       <!-- Header mobile -->
-      <v-toolbar density="compact" flat>
-        <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" />
+      <v-toolbar density="compact" flat class="topbar-unificada" color="#4285f4" theme="dark">
+        <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" class="topbar-unificada__icon" />
         <v-toolbar-title class="text-subtitle-2">
           {{ carrera.replace(/-/g, ' ') }}
         </v-toolbar-title>
@@ -513,6 +619,8 @@ async function toggleMateria(materia: Materia) {
           :cursos="cursosSeleccionados"
           :nombre-carrera="nombreCarrera"
           :nombre-nivel="nombreNivel"
+          :gestion="GESTION"
+          :estudiante-nombre="estudianteRegistrado"
         />
       </v-container>
     </div>
@@ -559,7 +667,7 @@ async function toggleMateria(materia: Materia) {
                 </v-avatar>
               </template>
             </v-list-item>
-            <v-list-item v-if="user" @click="guardar">
+            <v-list-item @click="guardar">
               <v-list-item-title class="text-body-2">Guardar horario</v-list-item-title>
               <template #append>
                 <v-avatar size="32" color="success" variant="tonal">
@@ -715,11 +823,11 @@ async function toggleMateria(materia: Materia) {
           <span class="text-body-2">Descarga el horario como imagen.</span>
         </div>
         <div class="d-flex align-center ga-3">
-          <v-btn icon variant="outlined" size="small" color="success" :disabled="!user" @click="guardar">
+          <v-btn icon variant="outlined" size="small" color="success" @click="guardar">
             <v-icon :icon="mdiContentSave" />
           </v-btn>
           <span class="text-body-2">
-            {{ user ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.' : 'Inicia sesión para guardar tu horario en la nube.' }}
+            {{ user ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.' : 'Si no has iniciado sesión, al guardar se abrirá el registro.' }}
           </span>
         </div>
       </v-card-text>
@@ -740,6 +848,20 @@ async function toggleMateria(materia: Materia) {
 </template>
 
 <style scoped>
+.topbar-unificada {
+  background: #4285f4;
+  color: #ffffff;
+}
+
+.topbar-unificada :deep(.v-toolbar-title__placeholder) {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.topbar-unificada__icon {
+  color: #ffffff !important;
+}
+
 .fab-acciones {
   position: absolute;
   top: -44px;
