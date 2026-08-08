@@ -17,6 +17,7 @@ import {
   mdiContentSave,
 } from '@mdi/js'
 import SemanaView from '@/components/SemanaView.vue'
+import AuthButton from '@/components/AuthButton.vue'
 import { useAuth } from '@/composables/useAuth'
 import { cargarHorario, guardarHorario } from '@/services/horarioGuardado'
 
@@ -297,6 +298,9 @@ async function toggleMateria(materia: Materia) {
           {{ carrera.replace(/-/g, ' ') }}
         </v-list-item-title>
         <v-list-item-subtitle>{{ GESTION }}</v-list-item-subtitle>
+        <template #append>
+          <auth-button />
+        </template>
       </v-list-item>
 
       <v-divider />
@@ -475,6 +479,7 @@ async function toggleMateria(materia: Materia) {
         <v-toolbar-title class="text-subtitle-2">
           {{ carrera.replace(/-/g, ' ') }}
         </v-toolbar-title>
+        <auth-button />
       </v-toolbar>
 
       <v-container>
