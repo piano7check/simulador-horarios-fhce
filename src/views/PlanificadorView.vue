@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useDisplay } from 'vuetify'
 import { useRoute } from 'vue-router'
 import { obtenerMaterias, obtenerClases, type Materia, type Clase } from '@/services/horarios'
@@ -14,8 +14,11 @@ import {
   mdiDotsVertical,
   mdiClose,
   mdiHelpCircle,
+  mdiContentSave,
 } from '@mdi/js'
 import SemanaView from '@/components/SemanaView.vue'
+import { useAuth } from '@/composables/useAuth'
+import { cargarHorario, guardarHorario } from '@/services/horarioGuardado'
 
 const route = useRoute()
 const carrera = route.params.carrera as string
@@ -49,11 +52,60 @@ const mostrarMensajeExportacion = ref(false)
 // display helpers
 const { mobile } = useDisplay()
 
+const { user } = useAuth()
+const guardando = ref(false)
+const snackbarGuardado = ref(false)
+const snackbarGuardadoMsg = ref('')
+
 // Acción: quitar todos los grupos seleccionados
 function quitarTodo() {
   gruposSeleccionados.value = new Set()
   fabAbierto.value = false
 }
+
+async function cargarHorarioGuardado() {
+  if (!user.value) return
+  try {
+    const grupos = await cargarHorario(user.value.id, carreraId)
+    if (grupos.length === 0) return
+    const materiaIds = [...new Set(grupos.map((k) => Number(k.split('-')[0])))]
+    await Promise.all(
+      materiaIds.map(async (mid) => {
+        if (!clasesCache.value[mid]) {
+          try {
+            clasesCache.value[mid] = await obtenerClases(mid, GESTION)
+          } catch {
+            clasesCache.value[mid] = []
+          }
+        }
+      }),
+    )
+    gruposSeleccionados.value = new Set(grupos)
+  } catch {
+    // el horario guardado es opcional
+  }
+}
+
+async function guardar() {
+  if (!user.value) return
+  guardando.value = true
+  try {
+    await guardarHorario(user.value.id, carreraId, [...gruposSeleccionados.value])
+    snackbarGuardadoMsg.value = 'Horario guardado'
+    snackbarGuardado.value = true
+  } catch {
+    snackbarGuardadoMsg.value = 'Error al guardar'
+    snackbarGuardado.value = true
+  } finally {
+    guardando.value = false
+  }
+}
+
+watch(user, async (newUser) => {
+  if (newUser && materias.value.length > 0 && gruposSeleccionados.value.size === 0) {
+    await cargarHorarioGuardado()
+  }
+})
 
 // Ref al componente SemanaView para llamar sus métodos expuestos
 const semanaRef = ref<InstanceType<typeof SemanaView> | null>(null)
@@ -183,6 +235,7 @@ onMounted(async () => {
     const q = route.query
     const val = (q.last_scraped ?? q.lastScraped) as string | undefined
     lastScraped.value = val ?? null
+    await cargarHorarioGuardado()
   } catch {
     errorMsg.value = 'No se pudieron cargar las materias'
   } finally {
@@ -358,6 +411,18 @@ async function toggleMateria(materia: Materia) {
           <v-btn icon variant="outlined" size="small" @click="helpDialog = true" title="Ayuda">
             <v-icon :icon="mdiHelpCircle" />
           </v-btn>
+          <v-btn
+            v-if="user"
+            icon
+            variant="outlined"
+            size="small"
+            color="success"
+            :loading="guardando"
+            title="Guardar horario"
+            @click="guardar"
+          >
+            <v-icon :icon="mdiContentSave" />
+          </v-btn>
         </div>
 
         <!-- Sin grupos seleccionados -->
@@ -491,6 +556,14 @@ async function toggleMateria(materia: Materia) {
               <template #append>
                 <v-avatar size="32" color="primary" variant="tonal">
                   <v-icon :icon="mdiDownload" size="18" />
+                </v-avatar>
+              </template>
+            </v-list-item>
+            <v-list-item v-if="user" @click="guardar">
+              <v-list-item-title class="text-body-2">Guardar horario</v-list-item-title>
+              <template #append>
+                <v-avatar size="32" color="success" variant="tonal">
+                  <v-icon :icon="mdiContentSave" size="18" />
                 </v-avatar>
               </template>
             </v-list-item>
@@ -642,6 +715,10 @@ async function toggleMateria(materia: Materia) {
       </v-card-actions>
     </v-card>
   </v-dialog>
+
+  <v-snackbar v-model="snackbarGuardado" timeout="2000" location="bottom">
+    {{ snackbarGuardadoMsg }}
+  </v-snackbar>
 
   <v-snackbar v-model="mostrarMensajeExportacion" timeout="2200" location="bottom">
     estoy trabajando en ello
