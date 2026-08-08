@@ -696,22 +696,36 @@ async function toggleMateria(materia: Materia) {
     <v-card>
       <v-card-title class="text-h6">Ayuda rápida</v-card-title>
       <v-card-text>
-        <ol>
+        <p class="text-subtitle-2 mb-1">Armar tu horario</p>
+        <ol class="mb-4">
           <li>Escoge el semestre con las materias que quieres cursar.</li>
-          <li>Escoge el grupo de la materia al que quieres participar.</li>
-          <li>¿Tienes un choque? verifica con otro grupo de alguna materia que tenga el choque.</li>
-          <li>
-            Si el choque persiste y no importa tanto intentarlo acomodarlo: lo siento, a veces pasa;
-            quizás debas escoger a qué materia participar este semestre.
-          </li>
+          <li>Selecciona el grupo de cada materia para verlo en el horario.</li>
+          <li>¿Tienes un choque? Prueba con otro grupo de alguna materia involucrada.</li>
+          <li>Si el choque persiste, quizás debas elegir a qué materia asistir este semestre.</li>
         </ol>
-        <div class="d-flex align-center ga-3 mt-4">
-          <v-btn icon variant="outlined" @click="imprimir" title="Imprimir horario">
+
+        <v-divider class="mb-3" />
+
+        <p class="text-subtitle-2 mb-2">Guardar y exportar</p>
+        <div class="d-flex align-center ga-3 mb-2">
+          <v-btn icon variant="outlined" size="small" @click="imprimir">
             <v-icon :icon="mdiPrinter" />
           </v-btn>
-          <div class="text-body-2 ml-3">
-            Puedes imprimir o descargar este horario usando los botones.
-          </div>
+          <span class="text-body-2">Imprime el horario directamente.</span>
+        </div>
+        <div class="d-flex align-center ga-3 mb-2">
+          <v-btn icon variant="outlined" size="small" @click="descargar">
+            <v-icon :icon="mdiDownload" />
+          </v-btn>
+          <span class="text-body-2">Descarga el horario como imagen.</span>
+        </div>
+        <div class="d-flex align-center ga-3">
+          <v-btn icon variant="outlined" size="small" color="success" :disabled="!user" @click="guardar">
+            <v-icon :icon="mdiContentSave" />
+          </v-btn>
+          <span class="text-body-2">
+            {{ user ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.' : 'Inicia sesión para guardar tu horario en la nube.' }}
+          </span>
         </div>
       </v-card-text>
       <v-card-actions>
