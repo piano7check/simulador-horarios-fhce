@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "author": "Pedro Carpio (Kusillo)",
+  "contributors": [
+    "Gustavo Rojas Valdivia <grv.trainer@gmail.com>"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

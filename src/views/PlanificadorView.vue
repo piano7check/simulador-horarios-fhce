@@ -24,6 +24,7 @@ import { cargarHorario, guardarHorario } from '@/services/horarioGuardado'
 const route = useRoute()
 const carrera = route.params.carrera as string
 const carreraId = Number(route.query.id)
+const STORAGE_KEY_BORRADOR = `horario_pendiente_${carreraId}`
 
 // TODO: hacerlo dinámico
 const GESTION = '2/2026'
@@ -60,6 +61,8 @@ const snackbarGuardadoMsg = ref('')
 const authDialog = ref(false)
 const dialogHorarioGuardado = ref(false)
 const gruposGuardadosPendientes = ref<string[]>([])
+const guardarPendiente = ref(false)
+const dialogReemplazarHorario = ref(false)
 
 function obtenerNombreRegistrado(meta: Record<string, unknown>): string | undefined {
   const posiblesNombres = [
@@ -173,8 +176,42 @@ function mantenerHorarioActual() {
   snackbarGuardado.value = true
 }
 
+async function evaluarConflictoAntesDeGuardar() {
+  if (!user.value) return
+  try {
+    const gruposGuardados = await cargarHorario(user.value.id, carreraId)
+    if (gruposGuardados.length === 0 || sonMismosGrupos(gruposSeleccionados.value, gruposGuardados)) {
+      await guardar()
+      return
+    }
+    gruposGuardadosPendientes.value = gruposGuardados
+    dialogReemplazarHorario.value = true
+  } catch {
+    await guardar()
+  }
+}
+
+function reemplazarHorarioGuardado() {
+  gruposGuardadosPendientes.value = []
+  dialogReemplazarHorario.value = false
+  guardar()
+}
+
+function usarHorarioGuardadoExistente() {
+  gruposSeleccionados.value = new Set(gruposGuardadosPendientes.value)
+  gruposGuardadosPendientes.value = []
+  dialogReemplazarHorario.value = false
+  sessionStorage.removeItem(STORAGE_KEY_BORRADOR)
+  snackbarGuardadoMsg.value = 'Se cargó tu horario guardado'
+  snackbarGuardado.value = true
+}
+
 async function guardar() {
   if (!user.value) {
+    guardarPendiente.value = true
+    // El login con Google recarga la página completa (redirección estándar),
+    // así que el estado en memoria se pierde — se restaura en onMounted.
+    sessionStorage.setItem(STORAGE_KEY_BORRADOR, JSON.stringify([...gruposSeleccionados.value]))
     helpDialog.value = false
     authDialog.value = true
     return
@@ -182,6 +219,7 @@ async function guardar() {
   guardando.value = true
   try {
     await guardarHorario(user.value.id, carreraId, [...gruposSeleccionados.value])
+    sessionStorage.removeItem(STORAGE_KEY_BORRADOR)
     snackbarGuardadoMsg.value = 'Horario guardado'
     snackbarGuardado.value = true
   } catch {
@@ -193,7 +231,13 @@ async function guardar() {
 }
 
 watch(user, async (newUser) => {
-  if (newUser && materias.value.length > 0) await evaluarHorarioGuardadoEnLogin()
+  if (!newUser) return
+  if (guardarPendiente.value) {
+    guardarPendiente.value = false
+    await evaluarConflictoAntesDeGuardar()
+    return
+  }
+  if (materias.value.length > 0) await evaluarHorarioGuardadoEnLogin()
 })
 
 // Ref al componente SemanaView para llamar sus métodos expuestos
@@ -324,7 +368,37 @@ onMounted(async () => {
     const q = route.query
     const val = (q.last_scraped ?? q.lastScraped) as string | undefined
     lastScraped.value = val ?? null
-    await cargarHorarioGuardado()
+
+    // Restaurar un borrador pendiente de guardar (ej. tras volver de un login
+    // con Google, que recarga la página completa y borra el estado en memoria).
+    const borrador = sessionStorage.getItem(STORAGE_KEY_BORRADOR)
+    let seRestauroBorrador = false
+    if (borrador) {
+      sessionStorage.removeItem(STORAGE_KEY_BORRADOR)
+      try {
+        const grupos: string[] = JSON.parse(borrador)
+        if (grupos.length > 0) {
+          await precargarClasesParaGrupos(grupos)
+          gruposSeleccionados.value = new Set(grupos)
+          seRestauroBorrador = true
+        }
+      } catch {
+        // borrador corrupto, se ignora
+      }
+    }
+
+    if (seRestauroBorrador) {
+      if (user.value) {
+        // Ya hay sesión (volvimos de la redirección de Google): completar el guardado.
+        await evaluarConflictoAntesDeGuardar()
+      } else {
+        // Login por email/password en curso (no recarga la página): el watch(user, …)
+        // ya se encarga de completar el guardado apenas se abra la sesión.
+        guardarPendiente.value = true
+      }
+    } else {
+      await cargarHorarioGuardado()
+    }
   } catch {
     errorMsg.value = 'No se pudieron cargar las materias'
   } finally {
@@ -386,6 +460,21 @@ async function toggleMateria(materia: Materia) {
         <v-spacer />
         <v-btn variant="text" @click="mantenerHorarioActual">Mantener horario actual</v-btn>
         <v-btn color="primary" variant="flat" @click="usarHorarioGuardado">Mostrar horario guardado</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+
+  <v-dialog v-model="dialogReemplazarHorario" max-width="520" persistent>
+    <v-card>
+      <v-card-title class="text-h6">Ya tienes un horario guardado</v-card-title>
+      <v-card-text>
+        Tenías otro horario guardado para esta carrera, distinto al que armaste ahora.
+        ¿Querés reemplazarlo con este, o mantener el que ya estaba guardado?
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer />
+        <v-btn variant="text" @click="usarHorarioGuardadoExistente">Mantener el guardado</v-btn>
+        <v-btn color="primary" variant="flat" @click="reemplazarHorarioGuardado">Reemplazar con este</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -479,7 +568,7 @@ async function toggleMateria(materia: Materia) {
           </div>
           <div class="text-caption mt-2">
             <a
-              :href="`https://wa.me/59177914381?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
+              :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
               target="_blank"
               rel="noopener"
               style="text-decoration: underline; color: inherit"
@@ -541,7 +630,7 @@ async function toggleMateria(materia: Materia) {
               Parece que no encontramos los horarios de esta carrera
             </p>
             <a
-              :href="`https://wa.me/59177914381?text=${encodeURIComponent('Tengo un problema con la carrera ' + carrera + ' Y YA CONSULTE SI HAY HORARIOS PUBLICOS PARA MI CARRERA')}`"
+              :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con la carrera ' + carrera + ' Y YA CONSULTE SI HAY HORARIOS PUBLICOS PARA MI CARRERA')}`"
               target="_blank"
               rel="noopener"
               style="text-decoration: none; margin-top: 16px"
@@ -596,7 +685,7 @@ async function toggleMateria(materia: Materia) {
               Parece que no encontramos los horarios de esta carrera
             </p>
             <a
-              :href="`https://wa.me/59177914381?text=${encodeURIComponent('Tengo un problema con la carrera ' + carrera + ' Y YA CONSULTE SI HAY HORARIOS PUBLICOS PARA MI CARRERA')}`"
+              :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con la carrera ' + carrera + ' Y YA CONSULTE SI HAY HORARIOS PUBLICOS PARA MI CARRERA')}`"
               target="_blank"
               rel="noopener"
               style="text-decoration: none; margin-top: 12px"
@@ -694,7 +783,7 @@ async function toggleMateria(materia: Materia) {
         </div>
         <div class="text-caption mt-1">
           <a
-            :href="`https://wa.me/59177914381?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
+            :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
             target="_blank"
             rel="noopener"
             style="text-decoration: underline; color: inherit"

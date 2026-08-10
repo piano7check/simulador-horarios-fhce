@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { mdiInformationOutline, mdiWhatsapp, mdiEmailOutline, mdiAccountOutline } from '@mdi/js'
 import AuthButton from '@/components/AuthButton.vue'
 </script>
 
@@ -6,13 +7,44 @@ import AuthButton from '@/components/AuthButton.vue'
   <v-app>
     <v-app-bar density="compact" flat class="google-topbar" color="#4285f4" theme="dark">
       <v-app-bar-title>
-        <router-link
-          to="/"
-          class="brand-link text-decoration-none d-inline-flex align-center ga-2"
-        >
-          <img src="/favicon.svg" alt="Icono de la app" class="app-logo" />
-          <span>Simulador de Horarios FHCE</span>
-        </router-link>
+        <div class="d-flex align-center">
+          <router-link
+            to="/"
+            class="brand-link text-decoration-none d-inline-flex align-center ga-2"
+          >
+            <img src="/favicon.svg" alt="Icono de la app" class="app-logo" />
+            <span>Simulador de Horarios FHCE</span>
+          </router-link>
+          <v-menu location="bottom start">
+            <template #activator="{ props }">
+              <v-btn
+                v-bind="props"
+                :prepend-icon="mdiInformationOutline"
+                variant="text"
+                size="small"
+                class="ml-1 author-btn text-none"
+              >
+                Ing. Gustavo Rojas Valdivia
+              </v-btn>
+            </template>
+            <v-list density="compact" min-width="240">
+              <v-list-item :prepend-icon="mdiAccountOutline" title="Autor: Ing. Gustavo Rojas Valdivia" />
+              <v-divider />
+              <v-list-item
+                :prepend-icon="mdiWhatsapp"
+                title="77435817"
+                href="https://wa.me/59177435817"
+                target="_blank"
+                rel="noopener"
+              />
+              <v-list-item
+                :prepend-icon="mdiEmailOutline"
+                title="grv.trainer@gmail.com"
+                href="mailto:grv.trainer@gmail.com"
+              />
+            </v-list>
+          </v-menu>
+        </div>
       </v-app-bar-title>
       <template #append>
         <auth-button class="mr-1" />
@@ -41,5 +73,17 @@ import AuthButton from '@/components/AuthButton.vue'
   height: 30px;
   object-fit: contain;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.author-btn {
+  color: #fff;
+  font-size: 0.8rem;
+  opacity: 0.92;
+}
+
+@media (max-width: 600px) {
+  .author-btn {
+    display: none;
+  }
 }
 </style>

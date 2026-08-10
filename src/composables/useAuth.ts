@@ -34,10 +34,16 @@ export function useAuth() {
   }
 
   async function signInWithGoogle() {
+    // Redirección estándar de página completa (sin popup): es el flujo nativo
+    // de Supabase/Google, sin depender de que el navegador permita cerrar
+    // ventanas, ni de trucos con window.name/opener/sessionStorage clonada.
+    // redirectTo apunta a la URL actual (misma ruta y query) para volver
+    // exactamente a donde estaba el usuario; PlanificadorView.vue ya restaura
+    // el borrador pendiente desde sessionStorage en su onMounted.
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: window.location.origin,
+        redirectTo: window.location.href,
       },
     })
     if (error) throw error

@@ -15,10 +15,10 @@ const router = useRouter()
             SECI (FCyT - UMSS). Al igual que ese proyecto, este simulador es Open Source. El código
             fuente está disponible en:
             <a
-              href="https://deepwiki.com/pedro-carpio/simulador-horarios"
+              href="https://github.com/piano7check/simulador-horarios-fhce"
               target="_blank"
               rel="noopener"
-              >deepwiki.com/pedro-carpio/simulador-horarios</a
+              >github.com/piano7check/simulador-horarios-fhce</a
             >.
           </p>
         </div>
@@ -63,9 +63,16 @@ const router = useRouter()
         <div class="mb-6">
           <div class="text-subtitle-1 font-weight-medium mb-2">Créditos y contacto</div>
           <p>
-            Yo, Kusillo (Pedro Carpio), soy el contribuyente principal del proyecto. Si encuentras
-            un bug o tienes una sugerencia, por favor abre un issue o envía un pull request en el
-            repositorio. También puedes contactarme directamente.
+            Este proyecto está basado en el trabajo original de Kusillo (Pedro Carpio), autor del
+            proyecto Capuchino. Esta versión, Simulador de Horarios FHCE, es mantenida y ampliada
+            por el Ing. Gustavo Rojas Valdivia, quien incorporó, entre otras mejoras, el guardado
+            de horarios de cada estudiante en base de datos para poder recuperarlos más adelante.
+          </p>
+          <p class="mt-2">
+            Si encuentras un bug o tienes una sugerencia, por favor abre un issue o envía un pull
+            request en el repositorio, o contacta directamente:<br />
+            WhatsApp: <a href="https://wa.me/59177435817" target="_blank" rel="noopener">77435817</a><br />
+            Email: <a href="mailto:grv.trainer@gmail.com">grv.trainer@gmail.com</a>
           </p>
         </div>
 

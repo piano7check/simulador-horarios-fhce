@@ -66,9 +66,7 @@ BEGIN
 	VALUES (payload->>'gestion')
 	ON CONFLICT (periodo) DO NOTHING;
 
-	SELECT id INTO v_gestion_id
-	FROM gestiones
-	WHERE periodo = payload->>'gestion';
+	v_gestion_id := (SELECT id FROM gestiones WHERE periodo = payload->>'gestion');
 
 	-- ── 3. Iterar niveles ──────────────────────────────────
 	FOR v_nivel IN SELECT * FROM jsonb_array_elements(payload->'niveles')
@@ -81,9 +79,7 @@ BEGIN
 		)
 		ON CONFLICT (codigo) DO NOTHING;
 
-		SELECT id INTO v_nivel_id
-		FROM niveles
-		WHERE codigo = v_nivel->>'codigo';
+		v_nivel_id := (SELECT id FROM niveles WHERE codigo = v_nivel->>'codigo');
 
 		-- ── 4. Iterar materias del nivel ───────────────────
 		FOR v_materia IN SELECT * FROM jsonb_array_elements(v_nivel->'materias')
@@ -114,11 +110,12 @@ BEGIN
 								)
 								ON CONFLICT (materia_id, gestion_id, numero) DO NOTHING;
 
-								SELECT id INTO v_grupo_id
-								FROM grupos
-								WHERE materia_id = v_materia_id
-									AND gestion_id = v_gestion_id
-									AND numero = v_grupo->>'numero';
+								v_grupo_id := (
+									SELECT id FROM grupos
+									WHERE materia_id = v_materia_id
+										AND gestion_id = v_gestion_id
+										AND numero = v_grupo->>'numero'
+								);
 
 				v_grupos_cnt := v_grupos_cnt + 1;
 
@@ -130,9 +127,7 @@ BEGIN
 					VALUES (v_clase->>'docente')
 					ON CONFLICT (nombre_completo) DO NOTHING;
 
-					SELECT id INTO v_docente_id
-					FROM docentes
-					WHERE nombre_completo = v_clase->>'docente';
+					v_docente_id := (SELECT id FROM docentes WHERE nombre_completo = v_clase->>'docente');
 
 					INSERT INTO clases (grupo_id, dia, docente_id, aula, hora_inicio, hora_fin)
 					VALUES (
