@@ -20,100 +20,6 @@ interface ExportOpts {
   estudiante?: string
 }
 
-async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
-  const { elemento, titulo, subtitulo, gestion, estudiante } = opts
-
-  const isMobile = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent)
-  const deviceScale = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
-  const scale = isMobile ? 1 : Math.min(2, Math.max(1, deviceScale))
-
-  let targetElement: HTMLElement = elemento
-  let removedClone = false
-  try {
-    const rect = elemento.getBoundingClientRect()
-    if (rect.width === 0 || rect.height === 0) {
-      const clone = opts.elemento.cloneNode(true) as HTMLElement
-      clone.style.position = 'absolute'
-      clone.style.left = '-9999px'
-      clone.style.top = '0'
-      clone.style.zIndex = '99999'
-      clone.style.display = 'block'
-      const pxPerMm = 96 / 25.4
-      const desiredCssPx = Math.max(200, Math.round((AREA_W * pxPerMm) / scale))
-      const maxAllowed = window.innerWidth || desiredCssPx
-      const width = Math.min(desiredCssPx, maxAllowed)
-      clone.style.width = width + 'px'
-      clone.style.background = '#ffffff'
-      document.body.appendChild(clone)
-      targetElement = clone
-      removedClone = true
-      try {
-        const fonts: any = (document as any).fonts
-        if (fonts && 'ready' in fonts && fonts.ready instanceof Promise) await fonts.ready
-      } catch (e) {
-        // ignore
-      }
-    }
-
-    const canvas = await html2canvas(targetElement, {
-      scale,
-      useCORS: true,
-      backgroundColor: '#ffffff',
-    })
-
-    if (canvas.width === 0 || canvas.height === 0) throw new Error('Elemento capturado 0x0')
-
-    const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'letter' })
-
-    let cursorY = MARGEN
-    pdf.setFont('helvetica', 'bold')
-    pdf.setFontSize(16)
-    pdf.text(titulo, ANCHO_PDF / 2, cursorY, { align: 'center' })
-    cursorY += 7
-    if (subtitulo) {
-      pdf.setFont('helvetica', 'normal')
-      pdf.setFontSize(11)
-      pdf.text(subtitulo, ANCHO_PDF / 2, cursorY, { align: 'center' })
-      cursorY += 6
-    }
-    if (gestion) {
-      pdf.setFont('helvetica', 'normal')
-      pdf.setFontSize(10)
-      pdf.text(`Gestion: ${gestion}`, ANCHO_PDF / 2, cursorY, { align: 'center' })
-      cursorY += 5
-    }
-    if (estudiante) {
-      pdf.setFont('helvetica', 'normal')
-      pdf.setFontSize(10)
-      pdf.text(`Nombre: ${estudiante}`, ANCHO_PDF / 2, cursorY, { align: 'center' })
-      cursorY += 5
-    }
-    cursorY += 2
-
-    const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 0.9))
-    if (!blob) throw new Error('No blob')
-    const imgData = await new Promise<string>((resolve, reject) => {
-      const fr = new FileReader()
-      fr.onload = () => resolve(String(fr.result))
-      fr.onerror = () => reject(new Error('Error reading blob'))
-      fr.readAsDataURL(blob)
-    })
-
-    const pxPerMm = 96 / 25.4
-    const imageWidthMm = canvas.width / pxPerMm
-    const imageHeightMm = canvas.height / pxPerMm
-    const maxImgH = ALTO_PDF - cursorY - MARGEN
-    const scaleFactor = Math.min(AREA_W / imageWidthMm, maxImgH / imageHeightMm, 1)
-    const finalW = imageWidthMm * scaleFactor
-    const finalH = imageHeightMm * scaleFactor
-
-    pdf.addImage(imgData, 'PNG', MARGEN, cursorY, finalW, finalH)
-    return pdf
-  } finally {
-    if (removedClone && targetElement && targetElement.parentElement) targetElement.parentElement.removeChild(targetElement)
-  }
-}
-
 function escapeHtml(s: string) {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' } as any)[c])
 }
@@ -170,21 +76,42 @@ function lightenHex(hex: string, amount = 0.85): string {
   }
 }
 
-function readableTextColor(hex: string): string {
-  try {
-    const h = hex.replace('#', '')
-    const r = parseInt(h.substring(0, 2), 16)
-    const g = parseInt(h.substring(2, 4), 16)
-    const b = parseInt(h.substring(4, 6), 16)
-    // luminance
-    const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
-    return lum > 160 ? '#000000' : '#ffffff'
-  } catch (e) {
-    return '#000'
-  }
-}
+/** CSS compartido por la tabla del horario, tanto para imprimir como para
+ * generar el PDF/descarga — así ambas salidas se ven siempre igual, sin
+ * depender de qué tan angosta esté la vista (celular o escritorio). */
+const TABLA_STYLE_CSS = `
+  .calendario-container { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 12px; background: #fff; }
+  .print-header { margin-bottom: 10px; text-align: center; color: #1f1f1f; }
+  .print-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 3px; }
+  .print-subtitle { font-size: 0.86rem; margin-bottom: 2px; color: #333; }
+  .print-meta { font-size: 0.82rem; color: #444; margin-bottom: 2px; }
+  table { width: 100%; border-collapse: collapse; background-color: #fcfcfc; table-layout: fixed; }
+  th { background-color: #4a90e2; color: white; padding: 8px; border: 1px solid #ddd; font-size: 0.85em; }
+  td { border: 1px solid #ddd; padding: 2px 4px; text-align: left; font-size: 0.75em; min-height: 24px; vertical-align: middle; min-width: 0; }
+  .hora-col { background-color: #f2f2f2; font-weight: bold; font-size: 0.68rem; width: 112px; max-width: 112px; text-align: center; white-space: nowrap; padding: 2px 4px; }
+  .clase-item { background-color: #e3f2fd; border-radius: 4px; padding: 4px 6px; border-left: 4px solid #2196f3; display: block; max-width: 100%; min-width: 0; white-space: normal; word-break: break-word; }
+  .lista-clases { margin-top: 18px; padding: 10px; background: #f9f9f9; border-radius: 6px; font-size: 0.8em; }
+  .legend-list { column-count: 2; column-gap: 16px; list-style: none; padding-left: 0; margin: 0 }
+  .legend-list li { break-inside: avoid; }
+  /* Sin límite de líneas: el texto siempre se ve completo, la fila crece
+     lo que haga falta (la imagen/PDF se reescala para seguir entrando en
+     una página, nunca se recorta el contenido). */
+  .clase-title { font-weight: 600; font-size: 0.8em; }
+  .clase-detail, .clase-aula { font-size: 0.72em; color: #444; }
+  th, td, .clase-item, .clase-title, .clase-detail, .clase-aula { box-sizing: border-box; }
+`
 
-function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>): string {
+/**
+ * Reconstruye la grilla semanal completa (6 días) a partir del DOM del
+ * calendario, leyendo posición/hora de cada evento con independencia de
+ * cómo se vea la vista actual (celular con agenda de un día, o escritorio
+ * con la grilla completa). Así impresión y descarga siempre muestran la
+ * semana entera, nunca un recorte de lo que estaba visible en pantalla.
+ */
+function buildCalendarioBodyHtml(
+  elemento: HTMLElement,
+  meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>,
+): string {
   try {
     const dayContainers = Array.from(elemento.querySelectorAll('.v-calendar-daily__day')) as HTMLElement[]
     if (!dayContainers.length) return ''
@@ -226,10 +153,11 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<Ex
       const row = Math.max(0, Math.min(rows - 1, Math.floor(topPx / intervalPx)))
       if (row < 0 || row >= rows) return
       const nameEl = ev.querySelector('.semana-ev__name')
-      const details = Array.from(ev.querySelectorAll('.semana-ev__detail')).map((d) => (d.textContent || '').trim())
       const name = nameEl ? (nameEl.textContent || '').trim() : (ev.textContent || '').trim() || ''
-      const aula = details.length ? details[details.length - 1] : ''
-      const teacher = details.length > 1 ? details[0] : ''
+      // El aula va primero en la celda (semana-ev__detail--aula), el docente después
+      const details = Array.from(ev.querySelectorAll('.semana-ev__detail')).map((d) => (d.textContent || '').trim())
+      const aula = details[0] ?? ''
+      const teacher = details[1] ?? ''
       // Extraer color del elemento (inline style o computed style)
       const cs = window.getComputedStyle(ev)
       let bg = ''
@@ -249,35 +177,7 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<Ex
       grid[row]![dayIndex] = prev ? prev + '<hr/>' + content : content
     })
 
-    const style = `
-    <style>
-      .calendario-container { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 12px; }
-      .print-header { margin-bottom: 10px; text-align: center; color: #1f1f1f; }
-      .print-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 3px; }
-      .print-subtitle { font-size: 0.86rem; margin-bottom: 2px; color: #333; }
-      .print-meta { font-size: 0.82rem; color: #444; margin-bottom: 2px; }
-      table { width: 100%; border-collapse: collapse; background-color: #fcfcfc; table-layout: fixed; }
-      th { background-color: #4a90e2; color: white; padding: 8px; border: 1px solid #ddd; font-size: 0.85em; }
-      td { border: 1px solid #ddd; padding: 2px 4px; text-align: left; font-size: 0.75em; height: 24px; vertical-align: middle; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; min-width: 0; }
-      .hora-col { background-color: #f2f2f2; font-weight: bold; font-size: 0.7rem; width: 96px; max-width: 96px; text-align: center; white-space: nowrap; padding: 2px 4px; }
-      .clase-item { background-color: #e3f2fd; border-radius: 4px; padding: 4px 6px; border-left: 4px solid #2196f3; display: block; max-width: 100%; min-width: 0; overflow: hidden; white-space: normal; word-break: break-word; }
-      .lista-clases { margin-top: 18px; padding: 10px; background: #f9f9f9; border-radius: 6px; font-size: 0.8em; }
-      .legend-list { column-count: 2; column-gap: 16px; list-style: none; padding-left: 0; margin: 0 }
-      .legend-list li { break-inside: avoid; }
-      .clase-title { font-weight: 600; font-size: 0.8em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-      .clase-detail, .clase-aula { font-size: 0.72em; color: #444; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-      /* Ensure cells don't wrap and overflow is hidden */
-      th, td, .clase-item, .clase-title, .clase-detail, .clase-aula { box-sizing: border-box; }
-      @page { size: letter landscape; margin: 8mm; }
-      body { margin: 0; padding: 8mm; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    </style>
-    `
-
-    let html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-    html += `<title>Horario - impresión</title>`
-    html += style
-    html += '</head><body><div class="calendario-container">'
+    let html = '<div class="calendario-container">'
 
     if (meta?.titulo || meta?.subtitulo || meta?.gestion || meta?.estudiante) {
       html += '<div class="print-header">'
@@ -289,7 +189,7 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<Ex
     }
 
     html += '<table>'
-    html += '<colgroup><col style="width:48px" /><col /><col /><col /><col /><col /><col /></colgroup>'
+    html += '<colgroup><col style="width:112px" /><col /><col /><col /><col /><col /><col /></colgroup>'
     html += '<thead><tr><th>Horario</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th></tr></thead><tbody>'
     for (let r = 0; r < rows; r++) {
       html += '<tr>'
@@ -311,19 +211,122 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<Ex
     html += '<div class="lista-clases"><h3>Resumen de Clases</h3><ul class="legend-list">'
     for (const key of Object.keys(legendItems).slice(0, 200)) {
       const col = legendItems[key]!.color
-      const bgLight = lightenHex(col, 0.88)
-      const borderHex = darkenHex(col, 0.25)
       // Show a solid swatch matching the original cell color so legend and table match
       html += `<li style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="display:inline-block;width:18px;height:12px;background:${col};border-radius:2px"></span><strong style="color:#000">${escapeHtml(key)}</strong></li>`
     }
     html += '</ul></div>'
 
-    html += '</div></body></html>'
+    html += '</div>'
     return html
   } catch (e) {
-    console.error('generatePrintableHTMLFromCalendar error', e)
+    console.error('buildCalendarioBodyHtml error', e)
     return ''
   }
+}
+
+function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>): string {
+  const bodyHtml = buildCalendarioBodyHtml(elemento, meta)
+  if (!bodyHtml) return ''
+
+  const printOnlyCss = `
+    @page { size: letter landscape; margin: 8mm; }
+    body { margin: 0; padding: 8mm; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  `
+
+  let html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+  html += `<title>Horario - impresión</title>`
+  html += `<style>${TABLA_STYLE_CSS}${printOnlyCss}</style>`
+  html += '</head><body>' + bodyHtml + '</body></html>'
+  return html
+}
+
+/**
+ * Renderiza la tabla del horario (misma reconstrucción que usa impresión)
+ * en un contenedor oculto fuera de pantalla, y la captura con html2canvas.
+ * Al no depender de lo que esté visible en el viewport actual, la imagen
+ * resultante es siempre la semana completa, sea que se exporte desde
+ * celular o desde escritorio.
+ */
+async function renderTablaACanvas(
+  elemento: HTMLElement,
+  meta: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>,
+  anchoPx: number,
+): Promise<HTMLCanvasElement | null> {
+  const bodyHtml = buildCalendarioBodyHtml(elemento, meta)
+  if (!bodyHtml) return null
+
+  const container = document.createElement('div')
+  container.style.position = 'absolute'
+  container.style.left = '-9999px'
+  container.style.top = '0'
+  container.style.width = `${anchoPx}px`
+  container.style.background = '#ffffff'
+  container.innerHTML = `<style>${TABLA_STYLE_CSS}</style>${bodyHtml}`
+  document.body.appendChild(container)
+
+  try {
+    try {
+      const fonts: any = (document as any).fonts
+      if (fonts && 'ready' in fonts && fonts.ready instanceof Promise) await fonts.ready
+    } catch (e) {
+      // ignore
+    }
+    return await html2canvas(container, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      logging: false,
+    })
+  } finally {
+    container.remove()
+  }
+}
+
+function buildNombreArchivo(opts: ExportOpts, ext: string): string {
+  let nombre = opts.titulo.replace(/\s+/g, '_').toLowerCase()
+  if (opts.subtitulo) nombre += `_${opts.subtitulo.replace(/\s+/g, '_').toLowerCase()}`
+  return `${nombre}.${ext}`
+}
+
+/** Genera el canvas de la semana completa reconstruida desde el calendario,
+ * a la resolución usada tanto para el PDF como para la imagen. */
+async function renderCanvasParaExport(opts: ExportOpts): Promise<HTMLCanvasElement> {
+  const { elemento, titulo, subtitulo, gestion, estudiante } = opts
+  const pxPerMm = 96 / 25.4
+  const anchoPx = Math.round(AREA_W * pxPerMm)
+
+  const canvas = await renderTablaACanvas(elemento, { titulo, subtitulo, gestion, estudiante }, anchoPx)
+  if (!canvas || canvas.width === 0 || canvas.height === 0) {
+    throw new Error('No se pudo generar el horario para exportar')
+  }
+  return canvas
+}
+
+async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
+  const canvas = await renderCanvasParaExport(opts)
+  const pxPerMm = 96 / 25.4
+  const scale = 2
+  const imageWidthMm = canvas.width / scale / pxPerMm
+  const imageHeightMm = canvas.height / scale / pxPerMm
+  const scaleFactor = Math.min(AREA_W / imageWidthMm, AREA_H / imageHeightMm, 1)
+  const finalW = imageWidthMm * scaleFactor
+  const finalH = imageHeightMm * scaleFactor
+
+  const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 0.95))
+  if (!blob) throw new Error('No blob')
+  const imgData = await new Promise<string>((resolve, reject) => {
+    const fr = new FileReader()
+    fr.onload = () => resolve(String(fr.result))
+    fr.onerror = () => reject(new Error('Error reading blob'))
+    fr.readAsDataURL(blob)
+  })
+
+  const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'letter' })
+  const offsetX = MARGEN + Math.max(0, (AREA_W - finalW) / 2)
+  const offsetY = MARGEN
+  pdf.addImage(imgData, 'PNG', offsetX, offsetY, finalW, finalH)
+  return pdf
 }
 
 async function openPrintWindowPreserveText(opts: ExportOpts): Promise<boolean> {
@@ -334,29 +337,14 @@ async function openPrintWindowPreserveText(opts: ExportOpts): Promise<boolean> {
       gestion: opts.gestion,
       estudiante: opts.estudiante,
     })
+    if (!tableHtml) return false
+
     const w = window.open('', '_blank') as Window | null
     if (!w) return false
 
     const doc = w.document
     doc.open()
-    doc.write('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">')
-    doc.write(`<title>${opts.titulo}</title>`)
-
-    if (tableHtml) {
-      doc.write(tableHtml)
-    } else {
-      const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]')) as HTMLLinkElement[]
-      for (const l of links) {
-        const href = l.href
-        if (href) doc.write(`<link rel="stylesheet" href="${href}">`)
-      }
-      doc.write('<style>@page{size:letter landscape;margin:12mm}body{background:#fff;margin:0;padding:12mm;font-family:sans-serif}img{max-width:100%}</style>')
-      doc.write('</head><body>')
-      const clone = opts.elemento.cloneNode(true) as HTMLElement
-      clone.style.background = '#ffffff'
-      const imported = doc.importNode(clone, true)
-      doc.body.appendChild(imported)
-    }
+    doc.write(tableHtml)
 
     try {
       const fonts: any = (w.document as any).fonts || (document as any).fonts
@@ -375,92 +363,38 @@ async function openPrintWindowPreserveText(opts: ExportOpts): Promise<boolean> {
   }
 }
 
+function descargarBlob(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  document.body.appendChild(a)
+  a.click()
+  a.remove()
+  setTimeout(() => URL.revokeObjectURL(url), 60_000)
+}
+
+/** Siempre genera un PDF carta horizontal con la semana completa, sin
+ * importar si se llamó desde la vista de celular o de escritorio. */
 export async function descargarHorario(opts: ExportOpts): Promise<void> {
-  // Preferir descarga como imagen (preserva apariencia). Si falla, caer
-  // al flujo PDF existente.
-  try {
-    const nombreArchivo = opts.titulo.replace(/\s+/g, '_').toLowerCase() + (opts.subtitulo ? `_${opts.subtitulo.replace(/\s+/g, '_').toLowerCase()}` : '') + '.png'
-    await downloadHtmlAsImage(opts, nombreArchivo)
-    return
-  } catch (e) {
-    // continue to PDF fallback
-    console.warn('downloadHtmlAsImage failed, falling back to PDF', e)
-  }
-
   const pdf = await generarPDF(opts)
-  let nombreArchivo = opts.titulo.replace(/\s+/g, '_').toLowerCase()
-  if (opts.subtitulo) nombreArchivo += `_${opts.subtitulo.replace(/\s+/g, '_').toLowerCase()}`
-  const filename = `${nombreArchivo}.pdf`
+  const filename = buildNombreArchivo(opts, 'pdf')
 
   try {
-    const blob = pdf.output('blob') as Blob
-    const file = new File([blob], filename, { type: 'application/pdf' })
-    const nav: any = navigator
-    if (nav && nav.canShare && nav.canShare({ files: [file] }) && nav.share) {
-      await nav.share({ files: [file], title: opts.titulo })
-      return
-    }
-
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = filename
-    document.body.appendChild(a)
-    a.click()
-    a.remove()
-    setTimeout(() => URL.revokeObjectURL(url), 60_000)
+    descargarBlob(pdf.output('blob') as Blob, filename)
     return
   } catch (err) {
     try { pdf.save(filename); return } catch (e) { console.error('Error al descargar PDF:', e); throw e }
   }
 }
 
-async function downloadHtmlAsImage(opts: ExportOpts, filename = 'horario.png') {
-  const { elemento } = opts
-  const isMobile = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent)
-  const deviceScale = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1
-  const scale = isMobile ? 1 : Math.min(3, Math.max(1, deviceScale))
-
-  let targetElement: HTMLElement = elemento
-  let removedClone = false
-  try {
-    const rect = elemento.getBoundingClientRect()
-    if (rect.width === 0 || rect.height === 0) {
-      const clone = elemento.cloneNode(true) as HTMLElement
-      clone.style.position = 'absolute'
-      clone.style.left = '-9999px'
-      clone.style.top = '0'
-      clone.style.zIndex = '99999'
-      clone.style.display = 'block'
-      clone.style.background = '#ffffff'
-      document.body.appendChild(clone)
-      targetElement = clone
-      removedClone = true
-    }
-
-    try { const f: any = (document as any).fonts; if (f && 'ready' in f) await f.ready } catch {}
-
-    const canvas = await html2canvas(targetElement, {
-      scale,
-      useCORS: true,
-      backgroundColor: '#ffffff',
-      logging: false,
-    })
-
-    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png', 0.95))
-    if (!blob) throw new Error('No blob produced')
-
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = filename
-    document.body.appendChild(a)
-    a.click()
-    a.remove()
-    setTimeout(() => URL.revokeObjectURL(url), 60_000)
-  } finally {
-    if (removedClone && targetElement !== elemento) targetElement.remove()
-  }
+/** Igual que descargarHorario, pero como imagen PNG en vez de PDF — misma
+ * reconstrucción de la semana completa, sin depender de la vista actual. */
+export async function descargarHorarioImagen(opts: ExportOpts): Promise<void> {
+  const canvas = await renderCanvasParaExport(opts)
+  const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png', 0.95))
+  if (!blob) throw new Error('No se pudo generar la imagen')
+  descargarBlob(blob, buildNombreArchivo(opts, 'png'))
 }
 
 export async function imprimirHorario(opts: ExportOpts): Promise<void> {

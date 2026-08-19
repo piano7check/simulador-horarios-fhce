@@ -34,7 +34,7 @@ async function seleccionar(carrera: Carrera) {
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/\s+/g, '-')
   try {
-    const query: Record<string, string | number> = { id: carrera.id }
+    const query: Record<string, string | number> = { id: carrera.id, nombre: carrera.nombre }
     if (carrera.last_scraped_at) query.last_scraped = String(carrera.last_scraped_at)
     await router.push({ name: 'planificador', params: { carrera: slug }, query })
   } catch (e: any) {

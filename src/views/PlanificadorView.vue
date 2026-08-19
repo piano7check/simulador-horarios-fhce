@@ -10,9 +10,8 @@ import {
   mdiPlus,
   mdiDeleteSweep,
   mdiPrinter,
-  mdiDownload,
-  mdiDotsVertical,
-  mdiClose,
+  mdiFilePdfBox,
+  mdiFileImageOutline,
   mdiHelpCircle,
   mdiContentSave,
 } from '@mdi/js'
@@ -24,6 +23,22 @@ import { cargarHorario, guardarHorario } from '@/services/horarioGuardado'
 const route = useRoute()
 const carrera = route.params.carrera as string
 const carreraId = Number(route.query.id)
+
+// Nombre legible de la carrera: preferir el que viene en la query (con
+// acentos y mayúsculas correctas) y usar el slug de la URL solo como
+// respaldo si alguien entra con un link viejo sin ese parámetro.
+function capitalizarSlug(slug: string) {
+  return slug
+    .replace(/-/g, ' ')
+    .split(' ')
+    .map((p) => (p ? p[0]!.toUpperCase() + p.slice(1) : p))
+    .join(' ')
+}
+const nombreCarreraQuery = route.query.nombre
+const nombreCarreraLegible =
+  typeof nombreCarreraQuery === 'string' && nombreCarreraQuery.trim()
+    ? nombreCarreraQuery
+    : capitalizarSlug(carrera)
 const STORAGE_KEY_BORRADOR = `horario_pendiente_${carreraId}`
 
 // TODO: hacerlo dinámico
@@ -47,8 +62,6 @@ const gruposSeleccionados = ref(new Set<string>())
 // Mobile: panel inferior visible
 const panelMobileAbierto = ref(true)
 
-// Mobile: FAB menú acciones
-const fabAbierto = ref(false)
 const mostrarMensajeExportacion = ref(false)
 
 // display helpers
@@ -92,7 +105,6 @@ const estudianteRegistrado = computed(() => {
 // Acción: quitar todos los grupos seleccionados
 function quitarTodo() {
   gruposSeleccionados.value = new Set()
-  fabAbierto.value = false
 }
 
 async function cargarHorarioGuardado() {
@@ -246,7 +258,7 @@ const semanaRefMobile = ref<InstanceType<typeof SemanaView> | null>(null)
 const semanaExportar = computed(() => (mobile.value ? semanaRefMobile.value : semanaRef.value))
 
 // Nombre legible de la carrera
-const nombreCarrera = computed(() => carrera.replace(/-/g, ' '))
+const nombreCarrera = computed(() => nombreCarreraLegible)
 
 // Subtítulo de nivel: solo si TODOS los cursos seleccionados pertenecen del mismo nivel
 const nombreNivel = computed(() => {
@@ -259,18 +271,25 @@ const nombreNivel = computed(() => {
   return nivelesSet.size === 1 ? [...nivelesSet][0] : undefined
 })
 
-function descargar() {
-  fabAbierto.value = false
+function descargarPDF() {
   const target = semanaExportar.value
-  if (!target?.descargar) {
+  if (!target?.descargarPDF) {
     mostrarMensajeExportacion.value = true
     return
   }
-  target.descargar()
+  target.descargarPDF()
+}
+
+function descargarImagen() {
+  const target = semanaExportar.value
+  if (!target?.descargarImagen) {
+    mostrarMensajeExportacion.value = true
+    return
+  }
+  target.descargarImagen()
 }
 
 function imprimir() {
-  fabAbierto.value = false
   const target = semanaExportar.value
   if (!target?.imprimir) {
     mostrarMensajeExportacion.value = true
@@ -488,7 +507,7 @@ async function toggleMateria(materia: Materia) {
           <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" />
         </template>
         <v-list-item-title class="text-subtitle-1 font-weight-bold">
-          {{ carrera.replace(/-/g, ' ') }}
+          {{ nombreCarreraLegible }}
         </v-list-item-title>
         <v-list-item-subtitle>{{ GESTION }}</v-list-item-subtitle>
       </v-list-item>
@@ -599,8 +618,11 @@ async function toggleMateria(materia: Materia) {
           <v-btn icon variant="outlined" size="small" @click="imprimir" title="Imprimir">
             <v-icon :icon="mdiPrinter" />
           </v-btn>
-          <v-btn icon variant="outlined" size="small" @click="descargar" title="Descargar">
-            <v-icon :icon="mdiDownload" />
+          <v-btn icon variant="outlined" size="small" @click="descargarPDF" title="Descargar PDF">
+            <v-icon :icon="mdiFilePdfBox" />
+          </v-btn>
+          <v-btn icon variant="outlined" size="small" @click="descargarImagen" title="Descargar imagen">
+            <v-icon :icon="mdiFileImageOutline" />
           </v-btn>
           <v-btn icon variant="outlined" size="small" @click="helpDialog = true" title="Ayuda">
             <v-icon :icon="mdiHelpCircle" />
@@ -664,15 +686,42 @@ async function toggleMateria(materia: Materia) {
   <div class="d-flex d-md-none flex-column" style="height: 100%">
     <!-- Parte superior: cursos seleccionados -->
     <div class="flex-grow-1 overflow-y-auto" style="min-height: 0">
-      <!-- Header mobile -->
+      <!-- Header mobile: título + iconos en una sola fila para ahorrar espacio vertical -->
       <v-toolbar density="compact" flat class="topbar-unificada" color="#4285f4" theme="dark">
         <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" class="topbar-unificada__icon" />
-        <v-toolbar-title class="text-subtitle-2">
-          {{ carrera.replace(/-/g, ' ') }}
+        <v-toolbar-title class="text-subtitle-2 text-truncate">
+          {{ nombreCarreraLegible }}
         </v-toolbar-title>
+        <div v-if="cursosSeleccionados.length > 0" class="d-flex align-center flex-shrink-0">
+          <v-btn icon variant="text" density="compact" @click="quitarTodo" title="Quitar todo">
+            <v-icon :icon="mdiDeleteSweep" size="18" />
+          </v-btn>
+          <v-btn icon variant="text" density="compact" @click="imprimir" title="Imprimir">
+            <v-icon :icon="mdiPrinter" size="18" />
+          </v-btn>
+          <v-btn icon variant="text" density="compact" @click="descargarPDF" title="Descargar PDF">
+            <v-icon :icon="mdiFilePdfBox" size="18" />
+          </v-btn>
+          <v-btn icon variant="text" density="compact" @click="descargarImagen" title="Descargar imagen">
+            <v-icon :icon="mdiFileImageOutline" size="18" />
+          </v-btn>
+          <v-btn
+            icon
+            variant="text"
+            density="compact"
+            :loading="guardando"
+            title="Guardar horario"
+            @click="guardar"
+          >
+            <v-icon :icon="mdiContentSave" size="18" />
+          </v-btn>
+          <v-btn icon variant="text" density="compact" @click="helpDialog = true" title="Ayuda">
+            <v-icon :icon="mdiHelpCircle" size="18" />
+          </v-btn>
+        </div>
       </v-toolbar>
 
-      <v-container>
+      <v-container class="px-3 py-2">
         <!-- Sin grupos seleccionados -->
         <div
           v-if="cursosSeleccionados.length === 0"
@@ -714,69 +763,8 @@ async function toggleMateria(materia: Materia) {
       </v-container>
     </div>
 
-    <!-- FAB flotante + opciones móvil -->
-    <div class="flex-shrink-0 position-relative">
-      <!-- FAB flotante (encima del panel de opciones) -->
-      <v-btn
-        v-if="cursosSeleccionados.length > 0"
-        icon
-        size="small"
-        :color="fabAbierto ? 'error' : 'primary'"
-        class="fab-acciones"
-        elevation="4"
-        @click="fabAbierto = !fabAbierto"
-      >
-        <v-icon :icon="fabAbierto ? mdiClose : mdiDotsVertical" />
-      </v-btn>
-
-      <v-expand-transition>
-        <div v-show="fabAbierto && cursosSeleccionados.length > 0" class="border-t bg-surface">
-          <v-list density="compact" nav class="py-1">
-            <v-list-item @click="quitarTodo">
-              <v-list-item-title class="text-body-2">Quitar todo</v-list-item-title>
-              <template #append>
-                <v-avatar size="32" color="error" variant="tonal">
-                  <v-icon :icon="mdiDeleteSweep" size="18" />
-                </v-avatar>
-              </template>
-            </v-list-item>
-            <v-list-item @click="imprimir">
-              <v-list-item-title class="text-body-2">Imprimir</v-list-item-title>
-              <template #append>
-                <v-avatar size="32" color="primary" variant="tonal">
-                  <v-icon :icon="mdiPrinter" size="18" />
-                </v-avatar>
-              </template>
-            </v-list-item>
-            <v-list-item @click="descargar">
-              <v-list-item-title class="text-body-2">Descargar</v-list-item-title>
-              <template #append>
-                <v-avatar size="32" color="primary" variant="tonal">
-                  <v-icon :icon="mdiDownload" size="18" />
-                </v-avatar>
-              </template>
-            </v-list-item>
-            <v-list-item @click="guardar">
-              <v-list-item-title class="text-body-2">Guardar horario</v-list-item-title>
-              <template #append>
-                <v-avatar size="32" color="success" variant="tonal">
-                  <v-icon :icon="mdiContentSave" size="18" />
-                </v-avatar>
-              </template>
-            </v-list-item>
-            <v-list-item @click="helpDialog = true">
-              <v-list-item-title class="text-body-2">Ayuda</v-list-item-title>
-              <template #append>
-                <v-avatar size="32" color="primary" variant="tonal">
-                  <v-icon :icon="mdiHelpCircle" size="18" />
-                </v-avatar>
-              </template>
-            </v-list-item>
-          </v-list>
-        </div>
-      </v-expand-transition>
-
-      <!-- Última actualización y link para reportar (mobile) -->
+    <!-- Última actualización y link para reportar (mobile) -->
+    <div class="flex-shrink-0">
       <div class="px-4 pb-2">
         <div class="text-caption text-medium-emphasis">
           Actualizado por última vez el: {{ formatScraped(lastScraped) }}
@@ -804,8 +792,16 @@ async function toggleMateria(materia: Materia) {
 
     <!-- Toggle panel inferior -->
     <div class="flex-shrink-0">
-      <v-btn block variant="tonal" rounded="0" @click="panelMobileAbierto = !panelMobileAbierto">
-        <v-icon :icon="panelMobileAbierto ? mdiChevronDown : mdiPlus" class="mr-2" />
+      <v-btn
+        block
+        variant="tonal"
+        rounded="0"
+        size="small"
+        density="comfortable"
+        class="toggle-materias text-none"
+        @click="panelMobileAbierto = !panelMobileAbierto"
+      >
+        <v-icon :icon="panelMobileAbierto ? mdiChevronDown : mdiPlus" size="16" class="mr-1" />
         {{ panelMobileAbierto ? 'Ocultar materias' : 'Añadir materias' }}
       </v-btn>
     </div>
@@ -814,7 +810,7 @@ async function toggleMateria(materia: Materia) {
     <v-expand-transition>
       <div
         v-show="panelMobileAbierto"
-        class="flex-shrink-0 overflow-y-auto border-t"
+        class="flex-shrink-0 overflow-y-auto border-t materias-mobile-panel"
         style="max-height: 45vh"
       >
         <div v-if="cargando" class="d-flex justify-center py-4">
@@ -832,10 +828,10 @@ async function toggleMateria(materia: Materia) {
               color="primary"
               @click="seleccionarNivel(nivel.codigo)"
             >
-              <v-list-item-title class="font-weight-medium text-body-2">
+              <v-list-item-title class="font-weight-medium">
                 {{ nivel.nombre }}
               </v-list-item-title>
-              <v-list-item-subtitle class="text-caption">{{ nivel.codigo }}</v-list-item-subtitle>
+              <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
             </v-list-item>
 
             <v-expand-transition>
@@ -850,7 +846,7 @@ async function toggleMateria(materia: Materia) {
                     <template #prepend>
                       <v-icon :icon="mdiBookOpenVariant" size="x-small" />
                     </template>
-                    <v-list-item-title class="text-caption">
+                    <v-list-item-title>
                       {{ materia.nombre }}
                     </v-list-item-title>
                   </v-list-item>
@@ -906,8 +902,14 @@ async function toggleMateria(materia: Materia) {
           <span class="text-body-2">Imprime el horario directamente.</span>
         </div>
         <div class="d-flex align-center ga-3 mb-2">
-          <v-btn icon variant="outlined" size="small" @click="descargar">
-            <v-icon :icon="mdiDownload" />
+          <v-btn icon variant="outlined" size="small" @click="descargarPDF">
+            <v-icon :icon="mdiFilePdfBox" />
+          </v-btn>
+          <span class="text-body-2">Descarga el horario como PDF.</span>
+        </div>
+        <div class="d-flex align-center ga-3 mb-2">
+          <v-btn icon variant="outlined" size="small" @click="descargarImagen">
+            <v-icon :icon="mdiFileImageOutline" />
           </v-btn>
           <span class="text-body-2">Descarga el horario como imagen.</span>
         </div>
@@ -951,10 +953,31 @@ async function toggleMateria(materia: Materia) {
   color: #ffffff !important;
 }
 
-.fab-acciones {
-  position: absolute;
-  top: -44px;
-  right: 12px;
-  z-index: 5;
+/* Panel "Añadir materias" (mobile): un solo tamaño de letra por nivel
+   jerárquico y filas más bajas para que entren más ítems sin scroll. */
+.materias-mobile-panel :deep(.v-list-item) {
+  min-height: 34px;
+}
+.materias-mobile-panel :deep(.v-list-item-title) {
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+.materias-mobile-panel :deep(.v-list-item-subtitle) {
+  font-size: 0.68rem;
+}
+.materias-mobile-panel :deep(.v-selection-control) {
+  min-height: 32px;
+}
+.materias-mobile-panel :deep(.v-selection-control__wrapper) {
+  transform: scale(0.85);
+}
+.materias-mobile-panel :deep(.v-label) {
+  font-size: 0.8rem;
+  opacity: 1;
+}
+
+.toggle-materias {
+  font-size: 0.78rem;
+  letter-spacing: normal;
 }
 </style>
