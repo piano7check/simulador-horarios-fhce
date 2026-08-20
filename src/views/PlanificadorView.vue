@@ -665,7 +665,7 @@ async function toggleMateria(materia: Materia) {
           <template v-else>
             <v-icon :icon="mdiBookOpenVariant" size="64" color="grey-lighten-1" />
             <p class="text-h6 text-medium-emphasis mt-4">
-              Selecciona grupos desde el panel izquierdo
+              Selecciona materias desde el panel izquierdo
             </p>
           </template>
         </div>
@@ -751,7 +751,7 @@ async function toggleMateria(materia: Materia) {
           <template v-else>
             <v-icon :icon="mdiBookOpenVariant" size="36" color="grey-lighten-1" />
             <p class="text-body-2 text-medium-emphasis mt-2 text-center">
-              Selecciona grupos para comenzar
+              Selecciona materias para comenzar
             </p>
           </template>
         </div>
@@ -800,14 +800,14 @@ async function toggleMateria(materia: Materia) {
     <div class="flex-shrink-0">
       <v-btn
         block
-        variant="tonal"
+        color="primary"
+        variant="flat"
         rounded="0"
-        size="small"
         density="comfortable"
         class="toggle-materias text-none"
         @click="panelMobileAbierto = !panelMobileAbierto"
       >
-        <v-icon :icon="panelMobileAbierto ? mdiChevronDown : mdiPlus" size="16" class="mr-1" />
+        <v-icon :icon="panelMobileAbierto ? mdiChevronDown : mdiPlus" size="18" class="mr-1" />
         {{ panelMobileAbierto ? 'Ocultar materias' : 'Añadir materias' }}
       </v-btn>
     </div>
@@ -1043,7 +1043,8 @@ async function toggleMateria(materia: Materia) {
 }
 
 .toggle-materias {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: normal;
 }
 </style>
