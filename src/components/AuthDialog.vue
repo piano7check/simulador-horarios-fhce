@@ -59,7 +59,7 @@ async function loginConGoogle() {
 
 <template>
   <v-dialog :model-value="modelValue" max-width="400" @update:model-value="cerrar">
-    <v-card rounded="lg">
+    <v-card theme="light" rounded="lg">
       <v-card-item class="dialog-header">
         <v-card-title class="text-white">
           {{ modo === 'login' ? 'Iniciar sesión' : 'Crear cuenta' }}

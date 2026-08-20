@@ -27,7 +27,7 @@ import AuthButton from '@/components/AuthButton.vue'
                 Ing. Gustavo Rojas Valdivia
               </v-btn>
             </template>
-            <v-card rounded="lg" min-width="240">
+            <v-card theme="light" rounded="lg" min-width="240">
               <v-card-item class="dialog-header">
                 <template #prepend>
                   <v-icon :icon="mdiAccountOutline" color="white" />

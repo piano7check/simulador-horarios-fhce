@@ -31,7 +31,7 @@ const nombreMostrado = computed(() => {
         class="user-cta-btn"
       >{{ nombreMostrado }}</v-btn>
     </template>
-    <v-card rounded="lg" min-width="220">
+    <v-card theme="light" rounded="lg" min-width="220">
       <v-card-item class="dialog-header">
         <template #prepend>
           <v-icon :icon="mdiAccountCircle" color="white" />
