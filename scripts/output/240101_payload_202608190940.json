@@ -1,0 +1,3181 @@
+{
+  "carrera_id": 13,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Fundamentos de la Psicologia",
+          "codigo": "1802006",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-10",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-9",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicofisiologia I",
+          "codigo": "1802011",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Formacion Social Boliviana",
+          "codigo": "1802094",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Baya Claros Francisco Javier",
+                  "aula": "004",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Baya Claros Francisco Javier",
+                  "aula": "004",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Perez Seru Andres Eduardo",
+                  "aula": "MA-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Perez Seru Andres Eduardo",
+                  "aula": "MA-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-6",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Perez Seru Andres Eduardo",
+                  "aula": "MA-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos Filosoficos de la Psicologia",
+          "codigo": "1802095",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "AUD.P",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "15:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Tapia Lopez Daisy",
+                  "aula": "MA-8",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Tapia Lopez Daisy",
+                  "aula": "MA-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "AUD.P",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicoestadistica",
+          "codigo": "1802096",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "SP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "SP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "004",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "SP-8",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "TP-7",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-2",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "PB-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "AUD.2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Analisis del Comportamiento I",
+          "codigo": "1802009",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Vasquez Torrez Daniel",
+                  "aula": "PB-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Vasquez Torrez Daniel",
+                  "aula": "MA-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aguilar Apaza Grisel",
+                  "aula": "SP-9",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aguilar Apaza Grisel",
+                  "aula": "PB-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aguilar Apaza Grisel",
+                  "aula": "SP-9",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicofisiologia Ii",
+          "codigo": "1802016",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "PP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "TP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cardona Marquez Arturo",
+                  "aula": "SP-3",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Fenomenologica I",
+          "codigo": "1802019",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Suarez Montaño Javier Adolfo",
+                  "aula": "SP-1",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "21:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Suarez Montaño Javier Adolfo",
+                  "aula": "MA-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Suarez Montaño Javier Adolfo",
+                  "aula": "MA-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Antropologia Social Boliviana",
+          "codigo": "1802097",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Pereira Herrera David Mauricio",
+                  "aula": "PP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Pereira Herrera David Mauricio",
+                  "aula": "MA-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Pereira Herrera David Mauricio",
+                  "aula": "MA-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Pereira Herrera David Mauricio",
+                  "aula": "MA-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodos y Tec. de Investigacion Cuantitativa",
+          "codigo": "1802098",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Suarez Montaño Javier Adolfo",
+                  "aula": "MA-5",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Suarez Montaño Javier Adolfo",
+                  "aula": "MA-5",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Psicoanalisis I",
+          "codigo": "1802012",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "TP-1",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "004",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "MA-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zabalaga Ricaldez Silvia Marcela",
+                  "aula": "SP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Zabalaga Ricaldez Silvia Marcela",
+                  "aula": "SP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zabalaga Ricaldez Silvia Marcela",
+                  "aula": "PB-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Analisis del Comportamiento Ii",
+          "codigo": "1802014",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "AUD.P",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "004",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "MA-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-1",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "PP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Fenomenologica Ii",
+          "codigo": "1802023",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-3",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia de la Gestalt",
+          "codigo": "1802099",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gamboa Afcha Edith del Pilar",
+                  "aula": "SP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Gamboa Afcha Edith del Pilar",
+                  "aula": "PB-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gamboa Afcha Edith del Pilar",
+                  "aula": "MA-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Gamboa Afcha Edith del Pilar",
+                  "aula": "PP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Cognitiva I",
+          "codigo": "1802100",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "PP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "SP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "SP-6",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "TP-1",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodologias para la Elab de Proyectos Psicol",
+          "codigo": "1802143",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Bustamante Recamo Erika Laura",
+                  "aula": "SP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Bustamante Recamo Erika Laura",
+                  "aula": "004",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Psicoanalisis Ii",
+          "codigo": "1802018",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "MA-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "MA-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "MA-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "AUD.2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Etnopsicologia",
+          "codigo": "1802028",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Muñoz Cardozo Evangelio",
+                  "aula": "PB-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Muñoz Cardozo Evangelio",
+                  "aula": "PP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Bustamante Recamo Erika Laura",
+                  "aula": "PB-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Bustamante Recamo Erika Laura",
+                  "aula": "SP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Cognitiva Ii",
+          "codigo": "1802101",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "MA-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "AUD.1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "AUD.1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "MA-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Genetica",
+          "codigo": "1802102",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "AUD.P",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "MA-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Sistemica",
+          "codigo": "1802103",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "AUD.1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "MA-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "MA-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "PB-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Psicolinguistica",
+          "codigo": "1802013",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "PB-2",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "PB-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "PB-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "PB-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Social",
+          "codigo": "1802017",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia de la Comunicacion",
+          "codigo": "1802029",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "MA-2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "MA-7",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "AUD.2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "MA-7",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicopatologia I",
+          "codigo": "1802030",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-1",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicometria I",
+          "codigo": "1802104",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Revollo Vargas Carlos Fernando",
+                  "aula": "004",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Revollo Vargas Carlos Fernando",
+                  "aula": "004",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Revollo Vargas Carlos Fernando",
+                  "aula": "PB-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Revollo Vargas Carlos Fernando",
+                  "aula": "004",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Tecnicas Proyectivas I",
+          "codigo": "1802033",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Trujillo Tapia Laiddy Laura",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Trujillo Tapia Laiddy Laura",
+                  "aula": "SP-1",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "AUD.2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "AUD.2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicopatologia Ii",
+          "codigo": "1802034",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rivero Adriazola Maria de los Angeles",
+                  "aula": "PP-1",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Rivero Adriazola Maria de los Angeles",
+                  "aula": "MA-7",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicofarmacologia - Electiva",
+          "codigo": "1802049",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-2",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-3",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-3",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia del Aprendizaje",
+          "codigo": "1802051",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "SP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "SP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "SP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "PB-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia de la Sexualidad - Electiva",
+          "codigo": "1802059",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Teran Montano Josefa Elina",
+                  "aula": "PB-4",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Entrevista Psicologica",
+          "codigo": "1802105",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "SP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "MA-5",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "PP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "MA-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicometria Ii",
+          "codigo": "1802106",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "SP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "PB-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "SP-2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Costas Costas Eltha Yael Lourdes",
+                  "aula": "MA-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-1",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "G",
+      "nombre": "Septimo",
+      "materias": [
+        {
+          "nombre": "Psicologia Institucional",
+          "codigo": "1802026",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "MA-7",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "PB-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "SP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "SP-9",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "PB-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Educativa I",
+          "codigo": "1802031",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "PP-1",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "PP-2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "PB-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "004",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "004",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-8",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas Proyectivas Ii",
+          "codigo": "1802037",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "SP-9",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "AUD.2",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "AUD.2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Pessoa Alcocer Maria Patricia Cintia Elizabeth",
+                  "aula": "TP-2",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicoterapia - Electiva",
+          "codigo": "1802045",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gamboa Afcha Edith del Pilar",
+                  "aula": "SP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Gamboa Afcha Edith del Pilar",
+                  "aula": "MA-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Dinamica de Grupo I",
+          "codigo": "1802046",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "TP-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "MA-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "MA-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodos y Tec. de Investigacion Cualitativa",
+          "codigo": "1802107",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "PB-3",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "SP-8",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "MA-5",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "MA-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Social Ii - Electiva",
+          "codigo": "1802108",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-7",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "H",
+      "nombre": "Octavo",
+      "materias": [
+        {
+          "nombre": "Psicologia Educativa Ii",
+          "codigo": "1802035",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Paz Foronda Claudia Andrea",
+                  "aula": "MA-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Paz Foronda Claudia Andrea",
+                  "aula": "SP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicodiagnostico",
+          "codigo": "1802041",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-8",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "C2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-10",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Lopez Herbas Rolando Jesus",
+                  "aula": "AUD.2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Dinamica de Grupo Ii",
+          "codigo": "1802047",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "MA-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Prado Sejas German Ivan",
+                  "aula": "TP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-10",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Especial",
+          "codigo": "1802056",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "PB-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "PB-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Clinica Cognitivo Compt.",
+          "codigo": "1802109",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "PB-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "SP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "C2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "SP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vallejo Beltran Oscar Dagiel",
+                  "aula": "SP-10",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Clinica Psicoanalitica I",
+          "codigo": "1802110",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "SP-9",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "TP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "SP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Clinica Sistemica",
+          "codigo": "1802111",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "MA-2",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "18:00"
+                }
+              ]
+            },
+            {
+              "numero": "C2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Serrano Bascope Martha Veronica",
+                  "aula": "MA-5",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "18:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Interculturalidad y Bilinguismo",
+          "codigo": "1802112",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Delgado Benavidez Adalino",
+                  "aula": "SP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Delgado Benavidez Adalino",
+                  "aula": "PB-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Ambiental",
+          "codigo": "1802113",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "SP-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "SP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Comunitaria I",
+          "codigo": "1802114",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "MA-7",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Saavedra Berbetty Lourdes Irma",
+                  "aula": "SP-6",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Organizacional I",
+          "codigo": "1802115",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "SP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "PP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Preventiva",
+          "codigo": "1802116",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "PP-1",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "PP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas e Instr. de Intervencion Psicosocial",
+          "codigo": "1802117",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-10",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "SP-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "MA-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Seminario Evaluacion Psicologica",
+          "codigo": "1802141",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rivero Adriazola Maria de los Angeles",
+                  "aula": "PB-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rivero Adriazola Maria de los Angeles",
+                  "aula": "SP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "I",
+      "nombre": "Noveno",
+      "materias": [
+        {
+          "nombre": "Tecnicas Proyectivas Iii",
+          "codigo": "1802040",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Jemio Arnez Silvia Magaly",
+                  "aula": "SP-11",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "C2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Jemio Arnez Silvia Magaly",
+                  "aula": "SP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Orientacion Vocacional",
+          "codigo": "1802052",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-4",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Bustamante Recamo Erika Laura",
+                  "aula": "PB-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Bustamante Recamo Erika Laura",
+                  "aula": "SP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Organizacional Ii",
+          "codigo": "1802118",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-9",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-9",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Clinica Psicoanalitica Ii",
+          "codigo": "1802119",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "MA-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "TP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Antezana Ustariz Giancarla",
+                  "aula": "MA-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "C2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Prieto Barrientos Thamer Cristian",
+                  "aula": "PB-5",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Prieto Barrientos Thamer Cristian",
+                  "aula": "MA-6",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Comunitaria Ii",
+          "codigo": "1802121",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Tellez Melgar Javier Fernando",
+                  "aula": "PP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Tellez Melgar Javier Fernando",
+                  "aula": "PB-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicopedagogia",
+          "codigo": "1802122",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Teran Montano Josefa Elina",
+                  "aula": "PB-6",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-10",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Forense - Electiva",
+          "codigo": "1802137",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Barrientos Centurion Nayra Silvia",
+                  "aula": "MA-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Barrientos Centurion Nayra Silvia",
+                  "aula": "SP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intervencion Social Comunitaria",
+          "codigo": "1802142",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Escalera Lopez Beatriz",
+                  "aula": "PB-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Escalera Lopez Beatriz",
+                  "aula": "SP-3",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Graduacion I Area Educativa",
+          "codigo": "1802145",
+          "grupos": [
+            {
+              "numero": "PR",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "BIBLIO2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "SP-10",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                }
+              ]
+            },
+            {
+              "numero": "TE",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "TP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "SP-8",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Quintanilla Gonzales Ruth Miriam",
+                  "aula": "MA-5",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Graduacion I Area Social",
+          "codigo": "1802146",
+          "grupos": [
+            {
+              "numero": "PR",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "SP-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "PB-1",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "MA-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Graduacion I Area Clinica",
+          "codigo": "1802147",
+          "grupos": [
+            {
+              "numero": "PR",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Escalera Lopez Beatriz",
+                  "aula": "PB-5",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Escalera Lopez Beatriz",
+                  "aula": "PB-5",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Grad. Internado I (area Educati)",
+          "codigo": "1802154",
+          "grupos": [
+            {
+              "numero": "IE",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "MA-6",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "MA-6",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Grad. Internado I (area Social)",
+          "codigo": "1802155",
+          "grupos": [
+            {
+              "numero": "IS",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "PB-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "SP-10",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "MA-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Grad. Internado I (area Clinica)",
+          "codigo": "1802156",
+          "grupos": [
+            {
+              "numero": "IC",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "TP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "MA-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "MA-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Salomon Plans Carime Griselda",
+                  "aula": "MA-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "J",
+      "nombre": "Decimo",
+      "materias": [
+        {
+          "nombre": "Practica Institucional Area Educativa",
+          "codigo": "1802131",
+          "grupos": [
+            {
+              "numero": "E",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "MA-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "PB-4",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Institucional Area Social",
+          "codigo": "1802132",
+          "grupos": [
+            {
+              "numero": "S",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "MA-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "MA-6",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Institucional Area Clinica",
+          "codigo": "1802136",
+          "grupos": [
+            {
+              "numero": "C",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Contreras Bustamante Maria Jimena",
+                  "aula": "SP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Graduacion Ii Area Educativa",
+          "codigo": "1802149",
+          "grupos": [
+            {
+              "numero": "PR",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "MA-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "BIBLIO2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            },
+            {
+              "numero": "TE",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "PB-5",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "BIBLIO2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Graduacion Ii Area Social",
+          "codigo": "1802150",
+          "grupos": [
+            {
+              "numero": "PR",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "MA-6",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "MA-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "MA-6",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Graduacion Ii Area Clinica",
+          "codigo": "1802151",
+          "grupos": [
+            {
+              "numero": "PR",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Escalera Lopez Beatriz",
+                  "aula": "SP-6",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Escalera Lopez Beatriz",
+                  "aula": "PB-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Grad. Internado Ii (area Educat)",
+          "codigo": "1802157",
+          "grupos": [
+            {
+              "numero": "IE",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "PB-2",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "MA-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cladera Portugal Maria Kathia",
+                  "aula": "MA-6",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Grad. Internado Ii (area Social)",
+          "codigo": "1802158",
+          "grupos": [
+            {
+              "numero": "IS",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "MA-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "MA-6",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zurita Trigo Marlene Jeannette",
+                  "aula": "MA-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidad de Grad Internado Ii (area Clinica)",
+          "codigo": "1802159",
+          "grupos": [
+            {
+              "numero": "IC",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Barrientos Centurion Nayra Silvia",
+                  "aula": "MA-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Barrientos Centurion Nayra Silvia",
+                  "aula": "PB-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

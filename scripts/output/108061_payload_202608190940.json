@@ -1,0 +1,1818 @@
+{
+  "carrera_id": 14,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Hist. e Introd.al Trabajo Social",
+          "codigo": "1813001",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Luizaga de Torrez Bacilia Rosario",
+                  "aula": "AUD.P",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Luizaga de Torrez Bacilia Rosario",
+                  "aula": "MA-2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "004",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Introduccion al Derecho",
+          "codigo": "1813002",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Dalenz Cueto Armando",
+                  "aula": "MA-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Dalenz Cueto Armando",
+                  "aula": "TP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Introduccion A la Economia",
+          "codigo": "1813037",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Urquidi Bellido Carmen del Rosario",
+                  "aula": "SP-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Urquidi Bellido Carmen del Rosario",
+                  "aula": "AUD.1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Urquidi Bellido Carmen del Rosario",
+                  "aula": "MA-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Urquidi Bellido Carmen del Rosario",
+                  "aula": "AUD.1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia de la Comunicacion",
+          "codigo": "1813038",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "AUD.1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "AUD.1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "PB-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "PB-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Introduccion A la Investigacion Social",
+          "codigo": "1813040",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "MA-8",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Rios Claros Jose Antonio",
+                  "aula": "SP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vasquez Torrez Daniel",
+                  "aula": "SP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vasquez Torrez Daniel",
+                  "aula": "TP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos de la Sociologia para Trabajo Soc",
+          "codigo": "1813043",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Chinche Calizaya Saul Marcelo",
+                  "aula": "MA-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Chinche Calizaya Saul Marcelo",
+                  "aula": "PB-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Chinche Calizaya Saul Marcelo",
+                  "aula": "SP-9",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Chinche Calizaya Saul Marcelo",
+                  "aula": "MA-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos de la Psicologia para Trabajo Soc",
+          "codigo": "1813044",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "SP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "PB-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Vasquez Torrez Daniel",
+                  "aula": "PP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Vasquez Torrez Daniel",
+                  "aula": "SP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Teoria del Trabajo Social I",
+          "codigo": "1813003",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Luizaga de Torrez Bacilia Rosario",
+                  "aula": "MA-1",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Luizaga de Torrez Bacilia Rosario",
+                  "aula": "AUD.P",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intervencion Social Individualizada",
+          "codigo": "1813004",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "PB-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "SP-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cruz Mendez Carolina Gina",
+                  "aula": "SP-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cruz Mendez Carolina Gina",
+                  "aula": "PP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Legislacion Social",
+          "codigo": "1813005",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rodas Zurita Maria Elena Mabel",
+                  "aula": "PB-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rodas Zurita Maria Elena Mabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rodas Zurita Maria Elena Mabel",
+                  "aula": "PB-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rodas Zurita Maria Elena Mabel",
+                  "aula": "PP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Social y Procesos Sociales",
+          "codigo": "1813039",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "PB-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Escobar Quisbert Katerine Sirley",
+                  "aula": "PB-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teorias de la Organizacion Social",
+          "codigo": "1813041",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zapata Arriaran Maria Rossana",
+                  "aula": "PP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zapata Arriaran Maria Rossana",
+                  "aula": "004",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Formacion Historico Social Boliviana",
+          "codigo": "1813045",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Baya Claros Francisco Javier",
+                  "aula": "PB-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Baya Claros Francisco Javier",
+                  "aula": "PP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Investigacion Cuantitativa",
+          "codigo": "1813047",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "SP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "PB-4",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "MA-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Teoria del Trabajo Social Ii",
+          "codigo": "1813006",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "SP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "SP-10",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "PB-8",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intervencion Social Grupal",
+          "codigo": "1813007",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "SP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "PB-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Derecho de Familia I",
+          "codigo": "1813008",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Coronel Sazari Rene",
+                  "aula": "PB-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Coronel Sazari Rene",
+                  "aula": "MA-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Multiculturalidad En Bolivia",
+          "codigo": "1813017",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "TP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "PB-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Antropologia Sociocultural Boliviana",
+          "codigo": "1813046",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "PP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "PP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Investigacion Cualitativa",
+          "codigo": "1813048",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "TP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "PB-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aranibar Brañez David Enrique",
+                  "aula": "MA-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua I",
+          "codigo": "1813049",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "PP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "MA-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Teoria de Trabajo Social Iii",
+          "codigo": "1813009",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "PB-2",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "SP-1",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intervencion Social Comunitaria",
+          "codigo": "1813010",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Carretero Valdez Sandra Veronica",
+                  "aula": "SP-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Carretero Valdez Sandra Veronica",
+                  "aula": "TP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Carretero Valdez Sandra Veronica",
+                  "aula": "PB-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Politicas Sociales I",
+          "codigo": "1813011",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rocha Soria Galvarro Marco Vinicio",
+                  "aula": "MA-7",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Rocha Soria Galvarro Marco Vinicio",
+                  "aula": "SP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Derecho de Familia Ii",
+          "codigo": "1813012",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Coronel Sazari Rene",
+                  "aula": "AUD.2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Coronel Sazari Rene",
+                  "aula": "MA-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Movimientos Sociales En Bolivia",
+          "codigo": "1813022",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "SP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "SP-9",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicopatologia Social (electiva I)",
+          "codigo": "1813030",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "PB-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Guzman Soriano Ruth Rosalba",
+                  "aula": "PB-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua Ii",
+          "codigo": "1813050",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Genero y Desarrollo",
+          "codigo": "1813013",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Salinas Valdivieso Erika Jimena",
+                  "aula": "PB-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Salinas Valdivieso Erika Jimena",
+                  "aula": "SP-9",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teoria del Trabajo Social Iv",
+          "codigo": "1813014",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Adm. de Programas de Intervencion Social",
+          "codigo": "1813015",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "PB-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "PB-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Planif de Proy de Interv. Social Cuantitativa",
+          "codigo": "1813016",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Luizaga de Torrez Bacilia Rosario",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Luizaga de Torrez Bacilia Rosario",
+                  "aula": "PB-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Politicas Sociales Ii",
+          "codigo": "1813018",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Salguero Arenas Maria Elena",
+                  "aula": "PB-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Salguero Arenas Maria Elena",
+                  "aula": "PB-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Epistemologia de Trabajo Social",
+          "codigo": "1813019",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Carretero Valdez Sandra Veronica",
+                  "aula": "SP-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Carretero Valdez Sandra Veronica",
+                  "aula": "SP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Carretero Valdez Sandra Veronica",
+                  "aula": "PP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Social I (electiva Ii)",
+          "codigo": "1813026",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rivera Sivila Silvia Isela",
+                  "aula": "MA-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Rivera Sivila Silvia Isela",
+                  "aula": "SP-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Gestion y Gerencia Social",
+          "codigo": "1813020",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Flores Andrade Edna Monica",
+                  "aula": "SP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Flores Andrade Edna Monica",
+                  "aula": "SP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Planif de Proy. de Interv. Social Cualitativa",
+          "codigo": "1813021",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "SP-10",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "SP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Hinojosa Luizaga Elizabeth Mercedes",
+                  "aula": "TP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Mediacion Social",
+          "codigo": "1813023",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Estudios Avanzados En Interv. Social Individu",
+          "codigo": "1813024",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cruz Mendez Carolina Gina",
+                  "aula": "AUD.1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cruz Mendez Carolina Gina",
+                  "aula": "PB-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intervencion Social (electiva Iv)",
+          "codigo": "1813031",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "TP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "SP-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "PB-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Trabajo Social y Derechos Humano(electiva V)",
+          "codigo": "1813035",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "PB-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Gonzales Torrico Rosario",
+                  "aula": "SP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Social Ii (electiva Iii)",
+          "codigo": "1813036",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "SP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "TP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "PB-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "G",
+      "nombre": "Septimo",
+      "materias": [
+        {
+          "nombre": "Practicum En Interv Social Individualizada",
+          "codigo": "1813025",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Velasco Dorado Ana Alicia",
+                  "aula": "CAMPO",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Velasco Dorado Ana Alicia",
+                  "aula": "SP-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "CAMPO",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "PB-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Estudios Avanzados En Interv Social Grupal",
+          "codigo": "1813027",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "TP-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "PB-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Modalidades de Titulacion",
+          "codigo": "1813042",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Michel Iñiguez Ruth Trinidad",
+                  "aula": "PB-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Michel Iñiguez Ruth Trinidad",
+                  "aula": "MA-1",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "H",
+      "nombre": "Octavo",
+      "materias": [
+        {
+          "nombre": "Trabajo de Grado I",
+          "codigo": "1813028",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Ricaldi Arevalo Maria Tania",
+                  "aula": "PB-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Ricaldi Arevalo Maria Tania",
+                  "aula": "SP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Andrade Marin Ruth Isabel",
+                  "aula": "PB-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "4",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Jimenez Marina",
+                  "aula": "MA-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Arratia Jimenez Marina",
+                  "aula": "MA-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practicum En Interv Social Grupal",
+          "codigo": "1813029",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "SP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "SP-10",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Loredo Olivares John Reynaldo",
+                  "aula": "SP-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "SP-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "CAMPO",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Montoya Herrera Elizabeth Rossio",
+                  "aula": "CAMPO",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Estudios Avanzados En Interv Social Comunitar",
+          "codigo": "1813032",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Salguero Arenas Maria Elena",
+                  "aula": "MA-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Salguero Arenas Maria Elena",
+                  "aula": "AUD.2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "I",
+      "nombre": "Noveno",
+      "materias": [
+        {
+          "nombre": "Trabajo de Grado Ii",
+          "codigo": "1813033",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Jimenez Marina",
+                  "aula": "MA-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Arratia Jimenez Marina",
+                  "aula": "MA-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Salguero Arenas Maria Elena",
+                  "aula": "PB-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Salguero Arenas Maria Elena",
+                  "aula": "SP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Flores Andrade Edna Monica",
+                  "aula": "SP-10",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Flores Andrade Edna Monica",
+                  "aula": "SP-10",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "4",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practicum En Intervencion Social Comunitaria",
+          "codigo": "1813034",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "PB-5",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "CAMPO",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Nogales Taborga Ivonne Luisa",
+                  "aula": "CAMPO",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Delgadillo de Paniagua Maria Esther",
+                  "aula": "CAMPO",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Delgadillo de Paniagua Maria Esther",
+                  "aula": "SP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Delgadillo de Paniagua Maria Esther",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

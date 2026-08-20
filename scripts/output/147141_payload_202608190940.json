@@ -1,0 +1,1564 @@
+{
+  "carrera_id": 8,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Estructura Morfo Funcional del Cuerpo Humano",
+          "codigo": "1800201",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vergara Fernandez Veimar Nino",
+                  "aula": "MA-8",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vergara Fernandez Veimar Nino",
+                  "aula": "AUD.1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Anatomia Funcional del Aparato Locomotor",
+          "codigo": "1800202",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Terrazas Melgares Lucio Renan",
+                  "aula": "PB-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Terrazas Melgares Lucio Renan",
+                  "aula": "AUD.1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Iniciacion Deportiva",
+          "codigo": "1800203",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fuentes Arce Jose Jorge",
+                  "aula": "SP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Actividad Fisica En la Naturaleza",
+          "codigo": "1800204",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Rougcher Mendieta Max Franz",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Desarrollo Aprendizaje y Control Motor",
+          "codigo": "1800205",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "SP-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "PB-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teo. e Historia de la Act. Fisica y del Dep.",
+          "codigo": "1800206",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Enriquez Luis Franklin",
+                  "aula": "MA-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Enriquez Luis Franklin",
+                  "aula": "MA-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Alfabetizacion Digital",
+          "codigo": "1800207",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Peña Rocha Edson",
+                  "aula": "MA-1",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Expresion Oral y Escrita",
+          "codigo": "1800208",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Gomez Barrientos Carmen Silvia",
+                  "aula": "004",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Fisiologia del Ejercicio",
+          "codigo": "1800209",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "AUD.P",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "AUD.P",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos del Entrenamiento Deportivo",
+          "codigo": "1800210",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "TP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "AUD.P",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Expresion Corporal y Danza",
+          "codigo": "1800211",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Kozlova de Vargas Svetlana",
+                  "aula": "MA-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Kozlova de Vargas Svetlana",
+                  "aula": "PB-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Fisica de Base y Juegos Motores",
+          "codigo": "1800212",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zenzano Vasquez Dabne",
+                  "aula": "AUD.P",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zenzano Vasquez Dabne",
+                  "aula": "AUD.P",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Pedagogia de la Activ. Fisica y del Deporte",
+          "codigo": "1800213",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Herbas Veizaga Sonia Tatiana",
+                  "aula": "MA-2",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Herbas Veizaga Sonia Tatiana",
+                  "aula": "MA-2",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Aplicada Activ. Fisica y Deporte",
+          "codigo": "1800214",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Fuentes Arce Jose Jorge",
+                  "aula": "PB-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Fuentes Arce Jose Jorge",
+                  "aula": "PB-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Entornos Virtuales",
+          "codigo": "1800215",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Paz Foronda Claudia Andrea",
+                  "aula": "SP-6",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Redaccion Cientifica",
+          "codigo": "1800216",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "MA-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Biomecanica de la Act. Fisica y Deporte",
+          "codigo": "1800217",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gonzales Delgado Jael Caroline",
+                  "aula": "004",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Gonzales Delgado Jael Caroline",
+                  "aula": "AUD.P",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Kinesiologia y Sistematica del Movimiento",
+          "codigo": "1800218",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Muñoz Aldunate Rita Angelica",
+                  "aula": "PB-6",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Muñoz Aldunate Rita Angelica",
+                  "aula": "PB-2",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gimnasia",
+          "codigo": "1800219",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Kozlova de Vargas Svetlana",
+                  "aula": "MA-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Kozlova de Vargas Svetlana",
+                  "aula": "MA-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Futbol",
+          "codigo": "1800220",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rougcher Mendieta Max Franz",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Atletismo",
+          "codigo": "1800221",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "SP-11",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "PB-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "AUD.2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Didactica",
+          "codigo": "1800222",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "De la Rocha Zurita Gualberto Valentin",
+                  "aula": "AUD.P",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "De la Rocha Zurita Gualberto Valentin",
+                  "aula": "MA-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Produccion de Recurso Basados En Tics",
+          "codigo": "1800223",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Jaldin Amaya Maria Virginia",
+                  "aula": "PP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "13:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Medios de Comunicacion Deporte",
+          "codigo": "1800224",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Yañez Paz Alex Aldo",
+                  "aula": "TP-7",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Actividad Fisica y Salud",
+          "codigo": "1800225",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Terrazas Melgares Lucio Renan",
+                  "aula": "PB-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Terrazas Melgares Lucio Renan",
+                  "aula": "PB-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Natacion",
+          "codigo": "1800226",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "004",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Baloncesto",
+          "codigo": "1800227",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "SP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "TP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tenis y Deportes Afines",
+          "codigo": "1800228",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Paredes Pereira Percy",
+                  "aula": "PB-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Paredes Pereira Percy",
+                  "aula": "CAMPO",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Sociologia y Deontologia de la Act.fis.deport",
+          "codigo": "1800229",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Sarmiento Rojas Eduardo",
+                  "aula": "PP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Sarmiento Rojas Eduardo",
+                  "aula": "MA-2",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Estadistica",
+          "codigo": "1800230",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Suarez Vega Nivia Evelin",
+                  "aula": "PB-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Suarez Vega Nivia Evelin",
+                  "aula": "MA-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tics En la Investigacion",
+          "codigo": "1800231",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fuentes Jaldin Heidi Rocio",
+                  "aula": "SP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua I",
+          "codigo": "1800232",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Saavedra Saravia Maria del Rosario",
+                  "aula": "MA-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Actividad Fisica y Deporte Adaptado",
+          "codigo": "1800233",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aguilar Apaza Grisel",
+                  "aula": "SP-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aguilar Apaza Grisel",
+                  "aula": "SP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Prevencion de Lesiones y Primeros Auxilios",
+          "codigo": "1800234",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Laura Laura Juan Carlos",
+                  "aula": "TP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Deportes No Convencionales",
+          "codigo": "1800235",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Enriquez Luis Franklin",
+                  "aula": "004",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Enriquez Luis Franklin",
+                  "aula": "SP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Voleibol",
+          "codigo": "1800236",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cavero Crespo Denis",
+                  "aula": "004",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cavero Crespo Denis",
+                  "aula": "CAMPO",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Deportes de Combate",
+          "codigo": "1800237",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Rodriguez Estevez Victor Adolfo",
+                  "aula": "PB-2",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Rodriguez Estevez Victor Adolfo",
+                  "aula": "CAMPO",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Legislacion Organizacion y Administracion",
+          "codigo": "1800238",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Prado Rojas Marco Antonio",
+                  "aula": "SP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Prado Rojas Marco Antonio",
+                  "aula": "PB-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tics Aplic. Organizacion y Eval. Activ.fisica",
+          "codigo": "1800239",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Alanes Garcia Gary Farlin",
+                  "aula": "SP-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua Ii",
+          "codigo": "1800240",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Guaraguara Villca Epifania",
+                  "aula": "PB-3",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Taller Tsu En Educacion Deportiva",
+          "codigo": "1800241",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Paz Foronda Claudia Andrea",
+                  "aula": "MA-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Paz Foronda Claudia Andrea",
+                  "aula": "SP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Paz Foronda Claudia Andrea",
+                  "aula": "MA-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "G",
+      "nombre": "Septimo",
+      "materias": [
+        {
+          "nombre": "Planificacion y Gestion Estrategica",
+          "codigo": "1800242",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "15:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Actividad Fisica y Salud Publica",
+          "codigo": "1800243",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "SP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "PP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "PP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Didactica Aplic. Activ. Fisica y Deporte",
+          "codigo": "1800244",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Chuquichambi Villca Ladislao",
+                  "aula": "TP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Chuquichambi Villca Ladislao",
+                  "aula": "PB-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodologia del Entrenamiento Deportivo",
+          "codigo": "1800245",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "MA-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "SP-8",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Galetovic Flores More Silvia",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles I",
+          "codigo": "1800246",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Saavedra Saravia Maria del Rosario",
+                  "aula": "SP-9",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Saavedra Saravia Maria del Rosario",
+                  "aula": "SP-11",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "H",
+      "nombre": "Octavo",
+      "materias": [
+        {
+          "nombre": "Administracion y Dir. Activ.fis. y Deportivas",
+          "codigo": "1800247",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "CAMPO",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "SP-11",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "SP-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Act. Fisica y Dep. En Poblaciones Especiales",
+          "codigo": "1800248",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Vargas Fuentes Omar Marcelo",
+                  "aula": "SP-9",
+                  "hora_inicio": "15:00",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vargas Fuentes Omar Marcelo",
+                  "aula": "AUD.2",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Fisica y Deporte",
+          "codigo": "1800249",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "SP-9",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "TP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Duarte Avaroma David",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Especializacion Deportiva",
+          "codigo": "1800250",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Luna Blacutt Roberto Carlos",
+                  "aula": "SP-8",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Luna Blacutt Roberto Carlos",
+                  "aula": "CAMPO",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles Ii",
+          "codigo": "1800251",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Castellon Camacho Hilarion",
+                  "aula": "004",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Castellon Camacho Hilarion",
+                  "aula": "SP-3",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Trabajo de Grado I",
+          "codigo": "1800252",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Meneces Gabriel Rosario",
+                  "aula": "003",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Deportiva",
+          "codigo": "1800265",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Arrazola Sandoval Victor Hugo",
+                  "aula": "MA-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Arrazola Sandoval Victor Hugo",
+                  "aula": "PP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Nutricion Deportiva",
+          "codigo": "1800266",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Wuinch Anaya Jorge Gabriel",
+                  "aula": "PB-1",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Wuinch Anaya Jorge Gabriel",
+                  "aula": "SP-2",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "I",
+      "nombre": "Noveno",
+      "materias": [
+        {
+          "nombre": "Direc. Recursos Hum. En Org. Deportivas",
+          "codigo": "1800254",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "004",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "SP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Ramirez Carpio Marcos Waldo",
+                  "aula": "SP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Nuevas Tenden. y Metod. Act. Fisica y Salud",
+          "codigo": "1800255",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "PB-4",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "SP-11",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Lopez Emilia",
+                  "aula": "SP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Escuelas Deportivas",
+          "codigo": "1800256",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Ardaya Villarroel Franz Semith",
+                  "aula": "TP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Ardaya Villarroel Franz Semith",
+                  "aula": "SP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Ardaya Villarroel Franz Semith",
+                  "aula": "SP-10",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Perfeccionamiento y Destreza",
+          "codigo": "1800257",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Gonzales Delgado Jael Caroline",
+                  "aula": "SP-4",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Gonzales Delgado Jael Caroline",
+                  "aula": "CAMPO",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Gonzales Delgado Jael Caroline",
+                  "aula": "MA-4",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Trabajo de Grado Ii",
+          "codigo": "1800258",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Garabito Arando Raul",
+                  "aula": "SP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "10:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Garabito Arando Raul",
+                  "aula": "SP-11",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intr. Diseno y Gestion Pro.depor.y.recreativ.",
+          "codigo": "1800259",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Alanes Garcia Gary Farlin",
+                  "aula": "SP-10",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Alanes Garcia Gary Farlin",
+                  "aula": "SP-5",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Alanes Garcia Gary Farlin",
+                  "aula": "PP-1",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gestion Calidad Servicios Deportivos y Recre.",
+          "codigo": "1800280",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "carrera_id": 4,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "PREPARATORIO",
+      "nombre": "Preparatorio",
+      "materias": [
+        {
+          "nombre": "Lectura Musical",
+          "codigo": "1814001",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Chiri Villarroel Lenis",
+                  "aula": "TP-4",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Chiri Villarroel Lenis",
+                  "aula": "TP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Chiri Villarroel Lenis",
+                  "aula": "TP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Chiri Villarroel Lenis",
+                  "aula": "TP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Chiri Villarroel Lenis",
+                  "aula": "TP-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Auditiva",
+          "codigo": "1814002",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Condori Guarachi Raquel",
+                  "aula": "TP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Condori Guarachi Raquel",
+                  "aula": "TP-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Apreciacion",
+          "codigo": "1814003",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Calderon Carrasco Ismael Alejandro",
+                  "aula": "TP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Calderon Carrasco Ismael Alejandro",
+                  "aula": "TP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Conjunto Coral O Instrumental",
+          "codigo": "1814005",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

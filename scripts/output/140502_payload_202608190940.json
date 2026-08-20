@@ -1,0 +1,75 @@
+{
+  "carrera_id": 2,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Comunicacion Organizacional",
+          "codigo": "1812038",
+          "grupos": [
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "PB-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "AUD.2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Comunicacion para el Desarrollo",
+          "codigo": "1812036",
+          "grupos": [
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "003",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "AUD.2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "003",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

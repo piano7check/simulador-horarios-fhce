@@ -7,6 +7,7 @@ import {
   mdiChevronLeft,
   mdiBookOpenVariant,
   mdiChevronDown,
+  mdiChevronRight,
   mdiPlus,
   mdiDeleteSweep,
   mdiPrinter,
@@ -534,16 +535,24 @@ async function toggleMateria(materia: Materia) {
 
       <v-list v-else density="compact" nav class="materias-panel">
         <template v-for="nivel in niveles" :key="nivel.codigo">
-          <!-- Nivel -->
+          <!-- Nivel: se ve como un botón/chip (fondo tonal + esquinas
+               redondeadas) en vez de solo texto, para que quede claro que
+               se puede tocar -->
           <v-list-item
             :active="nivelActivo === nivel.codigo"
             color="primary"
+            variant="tonal"
+            rounded="lg"
+            class="mx-1 mb-1 nivel-chip"
             @click="seleccionarNivel(nivel.codigo)"
           >
             <v-list-item-title class="font-weight-medium">
               Semestre {{ nivel.nombre }}
             </v-list-item-title>
             <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
+            <template #append>
+              <v-icon :icon="nivelActivo === nivel.codigo ? mdiChevronDown : mdiChevronRight" size="small" />
+            </template>
           </v-list-item>
 
           <!-- Materias del nivel -->
@@ -850,12 +859,18 @@ async function toggleMateria(materia: Materia) {
             <v-list-item
               :active="nivelActivo === nivel.codigo"
               color="primary"
+              variant="tonal"
+              rounded="lg"
+              class="mx-1 mb-1 nivel-chip"
               @click="seleccionarNivel(nivel.codigo)"
             >
               <v-list-item-title class="font-weight-medium">
                 {{ nivel.nombre }}
               </v-list-item-title>
               <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
+              <template #append>
+                <v-icon :icon="nivelActivo === nivel.codigo ? mdiChevronDown : mdiChevronRight" size="small" />
+              </template>
             </v-list-item>
 
             <v-expand-transition>

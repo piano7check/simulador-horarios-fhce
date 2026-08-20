@@ -1,0 +1,2401 @@
+{
+  "carrera_id": 3,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Teoria de la Comunicacion I",
+          "codigo": "1812015",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Salinas Valdivieso Erika Jimena",
+                  "aula": "SP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Salinas Valdivieso Erika Jimena",
+                  "aula": "MA-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Salinas Valdivieso Erika Jimena",
+                  "aula": "PB-2",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Salinas Valdivieso Erika Jimena",
+                  "aula": "SP-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Semiotica y Analisis del Discurso",
+          "codigo": "1812019",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "PB-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "PB-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Comunicacion Organizacional",
+          "codigo": "1812038",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "003",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "PP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "PB-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "AUD.2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Alcocer Romero Wilson",
+                  "aula": "MA-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Alcocer Romero Wilson",
+                  "aula": "003",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Introduccion A la Investigacion",
+          "codigo": "1812201",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "TP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "AUD.P",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "AUD.P",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "MA-8",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "PB-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "004",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Expresion Oral y Retorica",
+          "codigo": "1812202",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.P",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Historia de la Comunicacion",
+          "codigo": "1812203",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "PB-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "PB-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "AUD.2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Castro Escalante Sonia Arminda",
+                  "aula": "PB-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Pensamiento Critico",
+          "codigo": "1812204",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "PP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "PP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "SP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "TP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Mendoza Flores Jesus Edwin",
+                  "aula": "PP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Mendoza Flores Jesus Edwin",
+                  "aula": "003",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Comunicacion Escrita",
+          "codigo": "1812012",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "AUD.1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "SP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "AUD.2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.P",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "AUD.1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "AUD.1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "AUD.1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teoria de la Comunicacion Ii",
+          "codigo": "1812021",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Jordan Arandia Javier Augusto",
+                  "aula": "SP-11",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Jordan Arandia Javier Augusto",
+                  "aula": "003",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zabaleta Mercado Mabel Rocio",
+                  "aula": "SP-11",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Zabaleta Mercado Mabel Rocio",
+                  "aula": "SP-11",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Analitica de Datos",
+          "codigo": "1812205",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Bustamante Maldonado Daniel Fernando",
+                  "aula": "PP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Bustamante Maldonado Daniel Fernando",
+                  "aula": "PB-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aliendre Lafuente Romer Simon",
+                  "aula": "PB-7",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aliendre Lafuente Romer Simon",
+                  "aula": "PB-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Diseno y Composicion Dig. del Mensaje Visual",
+          "codigo": "1812206",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Jimenez Orlando David",
+                  "aula": "PB-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Arratia Jimenez Orlando David",
+                  "aula": "TP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Jimenez Orlando David",
+                  "aula": "TP-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Arratia Jimenez Orlando David",
+                  "aula": "AUD.1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gestion Estrategica de Identidad y Marca Corp",
+          "codigo": "1812207",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "MA-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "MA-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "003",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Panozo Moreira Lorgio",
+                  "aula": "MA-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia del Comportamiento Humano",
+          "codigo": "1812208",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "PB-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "MA-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "PB-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "SP-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Sociologia de la Globalizacion",
+          "codigo": "1812209",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Mendoza Flores Jesus Edwin",
+                  "aula": "003",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Mendoza Flores Jesus Edwin",
+                  "aula": "003",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Mendoza Flores Jesus Edwin",
+                  "aula": "004",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Mendoza Flores Jesus Edwin",
+                  "aula": "AUD.P",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Taller de Fotografia",
+          "codigo": "1812045",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "PB-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodologia de la Investigacion I",
+          "codigo": "1812210",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "003",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "TP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "MA-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "PB-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "003",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "PB-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teorias Esteticas y Comunicacion",
+          "codigo": "1812211",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Jordan Arandia Javier Augusto",
+                  "aula": "SP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Jordan Arandia Javier Augusto",
+                  "aula": "SP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Jordan Arandia Javier Augusto",
+                  "aula": "004",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Jordan Arandia Javier Augusto",
+                  "aula": "MA-8",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Narrativa Sonora",
+          "codigo": "1812212",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Yañez Paz Alex Aldo",
+                  "aula": "TP-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Yañez Paz Alex Aldo",
+                  "aula": "SP-9",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Yañez Paz Alex Aldo",
+                  "aula": "003",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "SP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "MA-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "PB-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "003",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "SP-9",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "003",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Redaccion Periodistica",
+          "codigo": "1812213",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "AUD.1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "SP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "SP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "SP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gestion de Comunidades En Social Media",
+          "codigo": "1812214",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Aguilar Hinojosa Jheyson Saul",
+                  "aula": "MA-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aguilar Hinojosa Jheyson Saul",
+                  "aula": "PB-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos de Filosofia de la Comunicacion",
+          "codigo": "1812215",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Orosco Llave Henry Jimy",
+                  "aula": "003",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Orosco Llave Henry Jimy",
+                  "aula": "PP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Sanchez Echevarria Mireya",
+                  "aula": "MA-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sanchez Echevarria Mireya",
+                  "aula": "MA-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Publicidad y Propaganda",
+          "codigo": "1812046",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "MA-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "TP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "MA-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodologia de la Investigacion Ii",
+          "codigo": "1812216",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "PB-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "PB-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "MA-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Plaza Martinez Pedro Ovio",
+                  "aula": "PB-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Plaza Martinez Pedro Ovio",
+                  "aula": "PP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Plaza Martinez Pedro Ovio",
+                  "aula": "SP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Intervenciones Culturales",
+          "codigo": "1812217",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Corrales Collao Carmen Paola",
+                  "aula": "PB-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Corrales Collao Carmen Paola",
+                  "aula": "003",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Corrales Collao Carmen Paola",
+                  "aula": "SP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Corrales Collao Carmen Paola",
+                  "aula": "PB-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Narrativa Audiovisual",
+          "codigo": "1812218",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "MA-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "PB-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "PB-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "003",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "AUD.1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "PB-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Periodismo Digital I",
+          "codigo": "1812219",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "PB-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Soto Pareja Juan Carlos",
+                  "aula": "AUD.1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia Organizacional",
+          "codigo": "1812220",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "SP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "TP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "PP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camargo Oropeza Jose Alejandro",
+                  "aula": "PB-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Antropologia Cultural Boliviana",
+          "codigo": "1812221",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rocha Torrico Jose Antonio",
+                  "aula": "AUD.P",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Rocha Torrico Jose Antonio",
+                  "aula": "AUD.2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Rocha Torrico Jose Antonio",
+                  "aula": "PB-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Rocha Torrico Jose Antonio",
+                  "aula": "SP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Comunicacion y Educacion",
+          "codigo": "1812026",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Nina Calle Roberto",
+                  "aula": "MA-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Nina Calle Roberto",
+                  "aula": "SP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Legislacion y Etica de la Comunicacion",
+          "codigo": "1812042",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zapata Arriaran Maria Rossana",
+                  "aula": "003",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zapata Arriaran Maria Rossana",
+                  "aula": "SP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zapata Arriaran Maria Rossana",
+                  "aula": "PP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zapata Arriaran Maria Rossana",
+                  "aula": "PB-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Elaboracion y Gestion de Proyectos Sociales",
+          "codigo": "1812222",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "AUD.1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "004",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Carrillo Fuentes Juan Angel",
+                  "aula": "003",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "PB-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "SP-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "PB-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Narrativa Cinematografica",
+          "codigo": "1812223",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "BIBLIO1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Periodismo Digital Ii",
+          "codigo": "1812224",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "PB-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "MA-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gestion de Eventos Corporativos",
+          "codigo": "1812225",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Terrazas Costas Angel Mauricio",
+                  "aula": "003",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Terrazas Costas Angel Mauricio",
+                  "aula": "SP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Terrazas Costas Angel Mauricio",
+                  "aula": "PP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Terrazas Costas Angel Mauricio",
+                  "aula": "MA-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Historia Critica de Bolivia y el Mundo",
+          "codigo": "1812226",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fernandez Teran Jose Roberto",
+                  "aula": "004",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Fernandez Teran Jose Roberto",
+                  "aula": "003",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fernandez Teran Jose Roberto",
+                  "aula": "003",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Fernandez Teran Jose Roberto",
+                  "aula": "SP-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Comunicacion para el Desarrollo",
+          "codigo": "1812036",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "003",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "003",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "AUD.2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "003",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Comunicacion Poder y Politica",
+          "codigo": "1812052",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fernandez Teran Jose Roberto",
+                  "aula": "004",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Fernandez Teran Jose Roberto",
+                  "aula": "003",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Proyecto Integrador",
+          "codigo": "1812227",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "TP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "SP-11",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "PP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "SP-11",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "SP-11",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "PB-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Proyectos Digitales Multiformato",
+          "codigo": "1812228",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "SP-11",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "SP-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "PB-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "SP-11",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "TP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "PB-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Periodismo En Situacion de Conflicto",
+          "codigo": "1812229",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Alcocer Romero Wilson",
+                  "aula": "MA-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Alcocer Romero Wilson",
+                  "aula": "MA-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Narracion Periodistica",
+          "codigo": "1812230",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "PB-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "PP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "004",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Sosa Grandon Francisco Ruben",
+                  "aula": "PB-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Recursos Digitales Educativos",
+          "codigo": "1812231",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "PP-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "MA-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "G",
+      "nombre": "Septimo",
+      "materias": [
+        {
+          "nombre": "Periodismo de Investigacion",
+          "codigo": "1812047",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "TP-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Colque Rollano Javier Martin",
+                  "aula": "TP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Comunicacion y Derechos Humanos",
+          "codigo": "1812054",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Picolominy Rojas Giovanni Pietro",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Picolominy Rojas Giovanni Pietro",
+                  "aula": "SP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Talller de Produccion Aplicada",
+          "codigo": "1812232",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Bilbao Vignaud Franz Alberto",
+                  "aula": "AUD.1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Emprendimiento y Modelo de Negocios Digitales",
+          "codigo": "1812233",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "PP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "PB-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Zapata Zurita Jose Gunnar",
+                  "aula": "AUD.1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-4",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "H",
+      "nombre": "Octavo",
+      "materias": [
+        {
+          "nombre": "Taller Modalidades de Graduacion I",
+          "codigo": "1812234",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "MA-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "SP-9",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "PB-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "SP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "SP-10",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rojas Burgos Constantino",
+                  "aula": "SP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "SP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "003",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "PB-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "4",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "PB-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "SP-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Calle Mamani Freddy",
+                  "aula": "SP-10",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Preprofesional",
+          "codigo": "1812235",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Picolominy Rojas Giovanni Pietro",
+                  "aula": "003",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Picolominy Rojas Giovanni Pietro",
+                  "aula": "MA-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Picolominy Rojas Giovanni Pietro",
+                  "aula": "SP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "I",
+      "nombre": "Noveno",
+      "materias": [
+        {
+          "nombre": "Taller de Modalidades de Graduacion Ii",
+          "codigo": "1812236",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Zubieta Pedro Luis",
+                  "aula": "PB-4",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Zubieta Pedro Luis",
+                  "aula": "003",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Lopez Zubieta Pedro Luis",
+                  "aula": "PB-4",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Flores Chavarria Jorge Luis",
+                  "aula": "MA-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Flores Chavarria Jorge Luis",
+                  "aula": "PP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Flores Chavarria Jorge Luis",
+                  "aula": "PB-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "SP-11",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "PB-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Lopez Villarroel Rina",
+                  "aula": "PP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

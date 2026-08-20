@@ -1,0 +1,2848 @@
+{
+  "carrera_id": 6,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Linguistica General",
+          "codigo": "1803301",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Loza Lopez Angeles Lenny",
+                  "aula": "TP-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Loza Lopez Angeles Lenny",
+                  "aula": "MA-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles I",
+          "codigo": "1803302",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "MA-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rosales Vasquez Denise Mariel",
+                  "aula": "PB-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rosales Vasquez Denise Mariel",
+                  "aula": "PP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rosales Vasquez Denise Mariel",
+                  "aula": "PB-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "4",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "TP-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "MA-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Frances I",
+          "codigo": "1803303",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Valdez Rojas Paola Teresa",
+                  "aula": "PB-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Valdez Rojas Paola Teresa",
+                  "aula": "PB-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Valdez Rojas Paola Teresa",
+                  "aula": "PB-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "4",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Valdez Rojas Paola Teresa",
+                  "aula": "PB-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Valdez Rojas Paola Teresa",
+                  "aula": "PB-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Valdez Rojas Paola Teresa",
+                  "aula": "SP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lenguaje I",
+          "codigo": "1803304",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rojas Paredes Pablo Javier",
+                  "aula": "TP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rojas Paredes Pablo Javier",
+                  "aula": "PB-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rojas Paredes Pablo Javier",
+                  "aula": "PB-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Rojas Paredes Pablo Javier",
+                  "aula": "PB-8",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "4",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Calla Sotomayor Cesar Alcides",
+                  "aula": "AUD.1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Historia de los Procesos Sociales",
+          "codigo": "1803305",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rivera Claure Juan Alain",
+                  "aula": "PB-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rivera Claure Juan Alain",
+                  "aula": "PB-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "SP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Linguistica Fonetica y Fonologia",
+          "codigo": "1803306",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "SP-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "SP-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles Ii",
+          "codigo": "1803307",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "PB-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "PB-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "PB-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "SP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "SP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "SP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "PB-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "PB-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "MA-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Frances Ii",
+          "codigo": "1803308",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "MA-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "SP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lenguaje Ii",
+          "codigo": "1803309",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "SP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "SP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "TP-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "PB-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "PB-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Literatura I",
+          "codigo": "1803310",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "MA-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "MA-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Linguistica Morfologia",
+          "codigo": "1803311",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "MA-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "SP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "SP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "SP-3",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles Iii",
+          "codigo": "1803312",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "PP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "MA-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "MA-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "MA-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "SP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "MA-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "SP-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "SP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Frances Iii",
+          "codigo": "1803313",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "SP-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "SP-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "PB-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "MA-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "PB-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lenguaje Iii",
+          "codigo": "1803314",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "PB-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "TP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "PB-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "SP-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "PP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Literatura Ii",
+          "codigo": "1803315",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rojas Paredes Pablo Javier",
+                  "aula": "MA-8",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Rojas Paredes Pablo Javier",
+                  "aula": "MA-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "SP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "SP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Antropologia Cultural",
+          "codigo": "1803063",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Zambrana Balladares Amilcar",
+                  "aula": "TP-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zambrana Balladares Amilcar",
+                  "aula": "AUD.P",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Linguistica Sintaxis",
+          "codigo": "1803316",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Estrada Garcia Carlos Alberto",
+                  "aula": "MA-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles Iv",
+          "codigo": "1803317",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "SP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "SP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "PB-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "SP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "PB-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "PB-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Valdez Torrez Leonila",
+                  "aula": "SP-9",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Valdez Torrez Leonila",
+                  "aula": "SP-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Valdez Torrez Leonila",
+                  "aula": "PB-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Frances Iv",
+          "codigo": "1803318",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "PB-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "SP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "PB-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "PP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "SP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "SP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Didactica General",
+          "codigo": "1803319",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "MA-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "SP-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "SP-6",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "PP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Metodologia de la Investigacion",
+          "codigo": "1803320",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "SP-3",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "TP-1",
+                  "hora_inicio": "07:30",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "SP-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "SP-9",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Quechua I",
+          "codigo": "1803034",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Perez Bedregal Raul",
+                  "aula": "SP-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Perez Bedregal Raul",
+                  "aula": "SP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Perez Bedregal Raul",
+                  "aula": "SP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Perez Bedregal Raul",
+                  "aula": "PP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Perez Bedregal Raul",
+                  "aula": "SP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Perez Bedregal Raul",
+                  "aula": "SP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Linguistica Semantica y Pragmatica",
+          "codigo": "1803321",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "PB-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Rivera Miranda Rene Gonzalo",
+                  "aula": "SP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Sanchez Echevarria Mireya",
+                  "aula": "SP-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sanchez Echevarria Mireya",
+                  "aula": "SP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles V",
+          "codigo": "1803322",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "SP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-2",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "TP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "TP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cespedes Guizada Maria Benita",
+                  "aula": "PB-1",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Recursos Didacticos",
+          "codigo": "1803323",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "MA-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Diseno Curricular",
+          "codigo": "1803324",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-8",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "MA-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Met y Tec Cualitativas de Invest Linguistica",
+          "codigo": "1803325",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "TP-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "SP-10",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "PB-7",
+                  "hora_inicio": "07:30",
+                  "hora_fin": "09:00"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "SP-7",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "SP-6",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Quechua Ii",
+          "codigo": "1803043",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-11",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-9",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Guaraguara Villca Epifania",
+                  "aula": "SP-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Guaraguara Villca Epifania",
+                  "aula": "LAEL.SV",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Guaraguara Villca Epifania",
+                  "aula": "SP-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Linguistica Aplicada",
+          "codigo": "1803326",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "SP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "SP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles Vi",
+          "codigo": "1803327",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "LAEL.AV",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "SP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-8",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Recursos Digitales",
+          "codigo": "1803328",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "SP-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Peeters Ilona Magdalena August",
+                  "aula": "PP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Introduccion A la Traductologia",
+          "codigo": "1803329",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "MA-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Fossati Lema Giovanni",
+                  "aula": "SP-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Investigacion Cuantitativa Aplicada A la Ling",
+          "codigo": "1803330",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Alvarez Quiroz Richard Milton",
+                  "aula": "SP-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Alvarez Quiroz Richard Milton",
+                  "aula": "TP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Alvarez Quiroz Richard Milton",
+                  "aula": "MA-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "G",
+      "nombre": "Septimo",
+      "materias": [
+        {
+          "nombre": "Traduccion Francesa",
+          "codigo": "1803042",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Soliz Lizarazu Jose Roberto",
+                  "aula": "PB-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicolinguistica",
+          "codigo": "1803062",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "SP-9",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "SP-11",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua Iii",
+          "codigo": "1803172",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-11",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "19:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "LAEL.SV",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "PB-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "PB-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ingles Vii",
+          "codigo": "1803331",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "MA-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "MA-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "SP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Claure Richard Patricia Angelica",
+                  "aula": "PB-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Evaluacion de Aprendizajes",
+          "codigo": "1803332",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-8",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Redaccion Academica",
+          "codigo": "1803333",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "PB-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "PB-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "PB-7",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "SP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "SP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Campanini Tejerina Silvana Carolina",
+                  "aula": "SP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "H",
+      "nombre": "Octavo",
+      "materias": [
+        {
+          "nombre": "Traduccion Inglesa",
+          "codigo": "1803041",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Valdez Torrez Leonila",
+                  "aula": "SP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Valdez Torrez Leonila",
+                  "aula": "SP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Semiologia",
+          "codigo": "1803054",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "SP-9",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Llanos Gutierrez Fernando Abad",
+                  "aula": "PB-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua Iv",
+          "codigo": "1803058",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "PB-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "12:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "LAEL.SV",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "004",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Sociolinguistica",
+          "codigo": "1803068",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "SP-8",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Limachi Perez Vicente Angelino",
+                  "aula": "SP-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Didactica de Lenguas I",
+          "codigo": "1803334",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Boutier Cruz Vda. de Zuleta Raquel Andrea",
+                  "aula": "PB-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Edicion y Correccion de Textos",
+          "codigo": "1803335",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "SP-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Irigoyen Arzabe Maria Eugenia",
+                  "aula": "PB-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Modalidades de Graduacion I",
+          "codigo": "1803336",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Loza Lopez Angeles Lenny",
+                  "aula": "LAEL.SV",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Loza Lopez Angeles Lenny",
+                  "aula": "BIBLIO2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "I",
+      "nombre": "Noveno",
+      "materias": [
+        {
+          "nombre": "Planificacion Linguistica",
+          "codigo": "1803337",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-10",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Didactica de Lenguas Ii",
+          "codigo": "1803339",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "PB-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zambrana Padilla Rosario del Carmen",
+                  "aula": "TP-7",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Traduccion Quechua",
+          "codigo": "1803340",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "PB-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Zurita Cavero Guely Julieta",
+                  "aula": "PB-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Analisis del Discurso",
+          "codigo": "1803341",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "PB-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Alandia Mercado Patricia Elba",
+                  "aula": "PB-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Modalidades de Graduacion Ii",
+          "codigo": "1803342",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "SP-10",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "MA-5",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "14:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "MA-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Mosquera Coca Marbin",
+                  "aula": "SP-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "J",
+      "nombre": "Decimo",
+      "materias": [
+        {
+          "nombre": "Practica Profesional",
+          "codigo": "1803347",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "SP-8",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "SP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Modalidades de Graduacion Iii",
+          "codigo": "1803348",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "MA-4",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Lopez Neumann Adolfo Ernesto Julian",
+                  "aula": "SP-11",
+                  "hora_inicio": "12:00",
+                  "hora_fin": "13:30"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Saavedra Saravia Maria del Rosario",
+                  "aula": "MA-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Saavedra Saravia Maria del Rosario",
+                  "aula": "MA-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
