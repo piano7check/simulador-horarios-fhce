@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useDisplay } from 'vuetify'
 import { mdiAccountCircle, mdiLogout } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from './AuthDialog.vue'
 
 const { user, signOut } = useAuth()
 const authDialog = ref(false)
+const { mobile } = useDisplay()
 
 const nombreMostrado = computed(() => {
   if (!user.value) return ''
@@ -25,7 +27,7 @@ const nombreMostrado = computed(() => {
         v-bind="props"
         :prepend-icon="mdiAccountCircle"
         variant="flat"
-        size="default"
+        :size="mobile ? 'small' : 'default'"
         class="user-cta-btn"
       >{{ nombreMostrado }}</v-btn>
     </template>
@@ -41,7 +43,7 @@ const nombreMostrado = computed(() => {
     v-else
     :icon="mdiAccountCircle"
     variant="flat"
-    size="default"
+    :size="mobile ? 'small' : 'default'"
     class="user-cta-btn"
     @click="authDialog = true"
   />

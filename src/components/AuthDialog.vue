@@ -59,12 +59,14 @@ async function loginConGoogle() {
 
 <template>
   <v-dialog :model-value="modelValue" max-width="400" @update:model-value="cerrar">
-    <v-card>
-      <v-card-title class="text-h6 pt-5">
-        {{ modo === 'login' ? 'Iniciar sesión' : 'Crear cuenta' }}
-      </v-card-title>
+    <v-card rounded="lg">
+      <v-card-item class="dialog-header">
+        <v-card-title class="text-white">
+          {{ modo === 'login' ? 'Iniciar sesión' : 'Crear cuenta' }}
+        </v-card-title>
+      </v-card-item>
 
-      <v-card-text>
+      <v-card-text class="pt-4 dialog-text">
         <v-alert v-if="mensajeConfirmacion" type="info" variant="tonal" class="mb-4">
           {{ mensajeConfirmacion }}
         </v-alert>
@@ -139,3 +141,14 @@ async function loginConGoogle() {
     </v-card>
   </v-dialog>
 </template>
+
+<style scoped>
+.dialog-header {
+  background: #4285f4;
+}
+
+.dialog-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+</style>

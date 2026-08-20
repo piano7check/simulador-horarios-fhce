@@ -470,9 +470,11 @@ async function toggleMateria(materia: Materia) {
   <auth-dialog v-model="authDialog" />
 
   <v-dialog v-model="dialogHorarioGuardado" max-width="520" persistent>
-    <v-card>
-      <v-card-title class="text-h6">Encontramos un horario guardado</v-card-title>
-      <v-card-text>
+    <v-card rounded="lg">
+      <v-card-item class="dialog-header">
+        <v-card-title class="text-white">Encontramos un horario guardado</v-card-title>
+      </v-card-item>
+      <v-card-text class="pt-4 dialog-text">
         Ya tienes un horario guardado para esta carrera. ¿Qué deseas hacer?
       </v-card-text>
       <v-card-actions>
@@ -484,9 +486,11 @@ async function toggleMateria(materia: Materia) {
   </v-dialog>
 
   <v-dialog v-model="dialogReemplazarHorario" max-width="520" persistent>
-    <v-card>
-      <v-card-title class="text-h6">Ya tienes un horario guardado</v-card-title>
-      <v-card-text>
+    <v-card rounded="lg">
+      <v-card-item class="dialog-header">
+        <v-card-title class="text-white">Ya tienes un horario guardado</v-card-title>
+      </v-card-item>
+      <v-card-text class="pt-4 dialog-text">
         Tenías otro horario guardado para esta carrera, distinto al que armaste ahora.
         ¿Querés reemplazarlo con este, o mantener el que ya estaba guardado?
       </v-card-text>
@@ -881,50 +885,55 @@ async function toggleMateria(materia: Materia) {
 
   <!-- Dialog de ayuda -->
   <v-dialog v-model="helpDialog" persistent max-width="520">
-    <v-card>
-      <v-card-title class="text-h6">Ayuda rápida</v-card-title>
-      <v-card-text>
-        <p class="text-subtitle-2 mb-1">Armar tu horario</p>
-        <ol class="mb-4">
+    <v-card rounded="lg">
+      <v-card-item class="dialog-header">
+        <template #prepend>
+          <v-icon :icon="mdiHelpCircle" color="white" />
+        </template>
+        <v-card-title class="text-white">Ayuda rápida</v-card-title>
+      </v-card-item>
+      <v-card-text class="pt-4 dialog-text">
+        <p class="dialog-section-title mb-2">Armar tu horario</p>
+        <ol class="dialog-list mb-4">
           <li>Escoge el semestre con las materias que quieres cursar.</li>
           <li>Selecciona el grupo de cada materia para verlo en el horario.</li>
           <li>¿Tienes un choque? Prueba con otro grupo de alguna materia involucrada.</li>
           <li>Si el choque persiste, quizás debas elegir a qué materia asistir este semestre.</li>
         </ol>
 
-        <v-divider class="mb-3" />
+        <v-divider class="mb-4" />
 
-        <p class="text-subtitle-2 mb-2">Guardar y exportar</p>
-        <div class="d-flex align-center ga-3 mb-2">
-          <v-btn icon variant="outlined" size="small" @click="imprimir">
+        <p class="dialog-section-title mb-2">Guardar y exportar</p>
+        <div class="dialog-action-row">
+          <v-btn icon variant="tonal" color="primary" size="small" @click="imprimir">
             <v-icon :icon="mdiPrinter" />
           </v-btn>
-          <span class="text-body-2">Imprime el horario directamente.</span>
+          <span>Imprime el horario directamente.</span>
         </div>
-        <div class="d-flex align-center ga-3 mb-2">
-          <v-btn icon variant="outlined" size="small" @click="descargarPDF">
+        <div class="dialog-action-row">
+          <v-btn icon variant="tonal" color="primary" size="small" @click="descargarPDF">
             <v-icon :icon="mdiFilePdfBox" />
           </v-btn>
-          <span class="text-body-2">Descarga el horario como PDF.</span>
+          <span>Descarga el horario como PDF.</span>
         </div>
-        <div class="d-flex align-center ga-3 mb-2">
-          <v-btn icon variant="outlined" size="small" @click="descargarImagen">
+        <div class="dialog-action-row">
+          <v-btn icon variant="tonal" color="primary" size="small" @click="descargarImagen">
             <v-icon :icon="mdiFileImageOutline" />
           </v-btn>
-          <span class="text-body-2">Descarga el horario como imagen.</span>
+          <span>Descarga el horario como imagen.</span>
         </div>
-        <div class="d-flex align-center ga-3">
-          <v-btn icon variant="outlined" size="small" color="success" @click="guardar">
+        <div class="dialog-action-row dialog-action-row--last">
+          <v-btn icon variant="tonal" color="success" size="small" @click="guardar">
             <v-icon :icon="mdiContentSave" />
           </v-btn>
-          <span class="text-body-2">
+          <span>
             {{ user ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.' : 'Si no has iniciado sesión, al guardar se abrirá el registro.' }}
           </span>
         </div>
       </v-card-text>
       <v-card-actions>
         <v-spacer />
-        <v-btn text @click="helpDialog = false">Cerrar</v-btn>
+        <v-btn variant="text" @click="helpDialog = false">Cerrar</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -939,6 +948,47 @@ async function toggleMateria(materia: Materia) {
 </template>
 
 <style scoped>
+.dialog-header {
+  background: #4285f4;
+}
+
+.dialog-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.dialog-section-title {
+  color: #1565c0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dialog-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.dialog-list li {
+  margin-bottom: 6px;
+}
+.dialog-list li:last-child {
+  margin-bottom: 0;
+}
+
+.dialog-action-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dialog-action-row span {
+  padding-top: 4px;
+}
+.dialog-action-row--last {
+  margin-bottom: 0;
+}
+
 .topbar-unificada {
   background: #4285f4;
   color: #ffffff;
