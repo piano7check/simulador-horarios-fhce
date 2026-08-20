@@ -1066,14 +1066,12 @@ async function toggleMateria(materia: Materia) {
    panel: se ajustan a su propio contenido (ícono + nombre + flechita),
    sin el hueco vacío que quedaba antes de la flechita cuando el nombre
    era corto. */
-.nivel-chip,
 .materia-chip {
   display: inline-flex !important;
   width: fit-content;
   max-width: 100%;
   padding-inline: 10px !important;
 }
-.nivel-chip :deep(.v-list-item__append),
 .materia-chip :deep(.v-list-item__append) {
   margin-inline-start: 8px;
 }
