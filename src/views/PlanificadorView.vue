@@ -567,7 +567,7 @@ async function toggleMateria(materia: Materia) {
                   color="orange-darken-1"
                   variant="tonal"
                   rounded="lg"
-                  class="mx-1 mb-1 pl-6 materia-chip"
+                  class="ml-6 mr-1 mb-1 materia-chip"
                   @click="toggleMateria(materia)"
                 >
                   <template #prepend>
@@ -889,7 +889,7 @@ async function toggleMateria(materia: Materia) {
                     color="orange-darken-1"
                     variant="tonal"
                     rounded="lg"
-                    class="mx-1 mb-1 pl-6 materia-chip"
+                    class="ml-6 mr-1 mb-1 materia-chip"
                     @click="toggleMateria(materia)"
                   >
                     <template #prepend>
