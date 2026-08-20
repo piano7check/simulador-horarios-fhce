@@ -516,6 +516,14 @@ async function toggleMateria(materia: Materia) {
 
       <v-divider />
 
+      <div class="materias-hint px-4 pt-2 pb-1">
+        <span class="materias-hint__nivel">Semestre</span>
+        <span class="materias-hint__arrow">→</span>
+        <span class="materias-hint__materia">Materia</span>
+        <span class="materias-hint__arrow">→</span>
+        <span>Grupo</span>
+      </div>
+
       <div v-if="cargando" class="d-flex justify-center py-6">
         <v-progress-circular indeterminate size="32" />
       </div>
@@ -542,10 +550,12 @@ async function toggleMateria(materia: Materia) {
           <v-expand-transition>
             <div v-if="nivelActivo === nivel.codigo">
               <template v-for="materia in nivel.materias" :key="materia.id">
-                <!-- Materia (click expande grupos) -->
+                <!-- Materia (click expande grupos): color naranja bien
+                     distinto del azul del semestre, para que se note que
+                     es otro nivel de selección -->
                 <v-list-item
                   :active="materiasExpandidas.has(materia.id)"
-                  color="secondary"
+                  color="orange-darken-1"
                   class="pl-8"
                   @click="toggleMateria(materia)"
                 >
@@ -819,6 +829,14 @@ async function toggleMateria(materia: Materia) {
         class="flex-shrink-0 overflow-y-auto border-t materias-panel materias-mobile-panel"
         style="max-height: 45vh"
       >
+        <div class="materias-hint px-4 pt-2 pb-1">
+          <span class="materias-hint__nivel">Semestre</span>
+          <span class="materias-hint__arrow">→</span>
+          <span class="materias-hint__materia">Materia</span>
+          <span class="materias-hint__arrow">→</span>
+          <span>Grupo</span>
+        </div>
+
         <div v-if="cargando" class="d-flex justify-center py-4">
           <v-progress-circular indeterminate size="28" />
         </div>
@@ -845,7 +863,7 @@ async function toggleMateria(materia: Materia) {
                 <template v-for="materia in nivel.materias" :key="materia.id">
                   <v-list-item
                     :active="materiasExpandidas.has(materia.id)"
-                    color="secondary"
+                    color="orange-darken-1"
                     class="pl-8"
                     @click="toggleMateria(materia)"
                   >
@@ -1003,6 +1021,29 @@ async function toggleMateria(materia: Materia) {
 
 .topbar-unificada__icon {
   color: #ffffff !important;
+}
+
+/* Guía "Semestre → Materia → Grupo": mismos colores que usan los ítems
+   activos de la lista, para que un estudiante nuevo entienda de un
+   vistazo qué va tocando en cada paso. */
+.materias-hint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.materias-hint__nivel {
+  color: #4285f4;
+  font-weight: 700;
+}
+.materias-hint__materia {
+  color: #fb8c00;
+  font-weight: 700;
+}
+.materias-hint__arrow {
+  opacity: 0.5;
 }
 
 /* Panel "Añadir materias" (desktop y mobile): un solo tamaño de letra por
