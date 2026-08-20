@@ -5,7 +5,7 @@ import AuthButton from '@/components/AuthButton.vue'
 
 <template>
   <v-app>
-    <v-app-bar density="compact" flat class="google-topbar" color="#4285f4" theme="dark">
+    <v-app-bar density="compact" flat class="google-topbar" color="#1565c0" theme="dark">
       <v-app-bar-title class="app-bar-title">
         <div class="d-flex align-center" style="min-width: 0">
           <router-link
@@ -66,7 +66,7 @@ import AuthButton from '@/components/AuthButton.vue'
 
 <style scoped>
 .google-topbar {
-  background: #4285f4;
+  background: #1565c0;
   color: #fff;
 }
 
