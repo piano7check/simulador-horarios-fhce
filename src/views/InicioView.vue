@@ -49,7 +49,7 @@ async function seleccionar(carrera: Carrera) {
     <v-card max-width="500" width="100%" elevation="2" rounded="lg">
       <v-card-title class="text-center pt-6">
         <h1 class="text-h5 inicio-title" style="margin: 0">
-          Simulador de Horarios FHCE
+          Horarios FHCE
         </h1>
         <div class="text-body-2 text-center mt-2">
           Planifica tus materias, combina grupos, guarda y exporta tu horario en PDF.
@@ -150,11 +150,5 @@ async function seleccionar(carrera: Carrera) {
   white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
-}
-@media (max-width: 420px) {
-  .inicio-title {
-    font-size: 1.05rem; /* reduce slightly on very small screens */
-    line-height: 1.15;
-  }
 }
 </style>

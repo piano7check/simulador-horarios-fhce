@@ -13,7 +13,7 @@ import AuthButton from '@/components/AuthButton.vue'
             class="brand-link text-decoration-none d-inline-flex align-center ga-2"
           >
             <img src="/favicon.svg" alt="Icono de la app" class="app-logo" />
-            <span class="brand-text">Simulador de Horarios FHCE</span>
+            <span class="brand-text">Horarios FHCE</span>
           </router-link>
           <v-menu location="bottom start">
             <template #activator="{ props }">
@@ -91,6 +91,7 @@ import AuthButton from '@/components/AuthButton.vue'
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  font-size: 1.15rem;
 }
 
 .app-logo {
@@ -112,11 +113,11 @@ import AuthButton from '@/components/AuthButton.vue'
     display: none;
   }
   .app-logo {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
   .brand-text {
-    font-size: 0.92rem;
+    font-size: 1rem;
   }
 }
 </style>

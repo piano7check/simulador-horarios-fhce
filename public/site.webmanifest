@@ -1,6 +1,6 @@
 {
-  "name": "Simulador de Horarios FHCE",
-  "short_name": "Horario FHCE",
+  "name": "Horarios FHCE",
+  "short_name": "Horarios FHCE",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

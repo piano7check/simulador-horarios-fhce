@@ -686,8 +686,13 @@ async function toggleMateria(materia: Materia) {
 
   <!-- ════════ MOBILE ════════ -->
   <div class="d-flex d-md-none flex-column" style="height: 100%">
-    <!-- Parte superior: cursos seleccionados -->
-    <div class="flex-grow-1 overflow-y-auto" style="min-height: 0">
+    <!-- Parte superior: cursos seleccionados. Sin nada seleccionado todavía
+         no hay horario que scrollear, así que no se fuerza a ocupar el
+         espacio restante — se deja ese lugar para el panel de materias. -->
+    <div
+      :class="cursosSeleccionados.length > 0 ? 'flex-grow-1 overflow-y-auto' : 'flex-shrink-0'"
+      style="min-height: 0"
+    >
       <!-- Header mobile: título + iconos en una sola fila para ahorrar espacio vertical -->
       <v-toolbar density="compact" flat class="topbar-unificada" color="#4285f4" theme="dark">
         <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" class="topbar-unificada__icon" />
@@ -727,12 +732,11 @@ async function toggleMateria(materia: Materia) {
         <!-- Sin grupos seleccionados -->
         <div
           v-if="cursosSeleccionados.length === 0"
-          class="d-flex flex-column align-center justify-center"
-          style="min-height: 40vh"
+          class="d-flex flex-column align-center justify-center py-6"
         >
           <template v-if="materias.length === 0 && !cargando && !errorMsg">
-            <v-icon size="48" color="grey-lighten-1">mdi-emoticon-sad-outline</v-icon>
-            <p class="text-body-1 text-medium-emphasis mt-3 text-center">
+            <v-icon size="36" color="grey-lighten-1">mdi-emoticon-sad-outline</v-icon>
+            <p class="text-body-2 text-medium-emphasis mt-2 text-center">
               Parece que no encontramos los horarios de esta carrera
             </p>
             <a
@@ -745,8 +749,8 @@ async function toggleMateria(materia: Materia) {
             </a>
           </template>
           <template v-else>
-            <v-icon :icon="mdiBookOpenVariant" size="48" color="grey-lighten-1" />
-            <p class="text-body-1 text-medium-emphasis mt-3 text-center">
+            <v-icon :icon="mdiBookOpenVariant" size="36" color="grey-lighten-1" />
+            <p class="text-body-2 text-medium-emphasis mt-2 text-center">
               Selecciona grupos para comenzar
             </p>
           </template>
