@@ -565,7 +565,9 @@ async function toggleMateria(materia: Materia) {
                 <v-list-item
                   :active="materiasExpandidas.has(materia.id)"
                   color="orange-darken-1"
-                  class="pl-8"
+                  variant="tonal"
+                  rounded="lg"
+                  class="mx-1 mb-1 pl-6 materia-chip"
                   @click="toggleMateria(materia)"
                 >
                   <template #prepend>
@@ -574,6 +576,12 @@ async function toggleMateria(materia: Materia) {
                   <v-list-item-title class="text-body-2">
                     {{ materia.nombre }}
                   </v-list-item-title>
+                  <template #append>
+                    <v-icon
+                      :icon="materiasExpandidas.has(materia.id) ? mdiChevronDown : mdiChevronRight"
+                      size="small"
+                    />
+                  </template>
                 </v-list-item>
 
                 <!-- Grupos como checkboxes -->
@@ -879,7 +887,9 @@ async function toggleMateria(materia: Materia) {
                   <v-list-item
                     :active="materiasExpandidas.has(materia.id)"
                     color="orange-darken-1"
-                    class="pl-8"
+                    variant="tonal"
+                    rounded="lg"
+                    class="mx-1 mb-1 pl-6 materia-chip"
                     @click="toggleMateria(materia)"
                   >
                     <template #prepend>
@@ -888,6 +898,12 @@ async function toggleMateria(materia: Materia) {
                     <v-list-item-title>
                       {{ materia.nombre }}
                     </v-list-item-title>
+                    <template #append>
+                      <v-icon
+                        :icon="materiasExpandidas.has(materia.id) ? mdiChevronDown : mdiChevronRight"
+                        size="small"
+                      />
+                    </template>
                   </v-list-item>
 
                   <v-expand-transition>
