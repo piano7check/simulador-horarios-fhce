@@ -570,11 +570,9 @@ async function toggleMateria(materia: Materia) {
                   class="ml-6 mr-1 mb-1 materia-chip"
                   @click="toggleMateria(materia)"
                 >
-                  <template #prepend>
-                    <v-icon :icon="mdiBookOpenVariant" size="x-small" />
-                  </template>
-                  <v-list-item-title class="text-body-2">
-                    {{ materia.nombre }}
+                  <v-list-item-title class="text-body-2 d-flex align-center materia-title-row">
+                    <v-icon :icon="mdiBookOpenVariant" size="x-small" class="mr-1 flex-shrink-0" />
+                    <span class="text-truncate">{{ materia.nombre }}</span>
                   </v-list-item-title>
                   <template #append>
                     <v-icon
@@ -892,11 +890,9 @@ async function toggleMateria(materia: Materia) {
                     class="ml-6 mr-1 mb-1 materia-chip"
                     @click="toggleMateria(materia)"
                   >
-                    <template #prepend>
-                      <v-icon :icon="mdiBookOpenVariant" size="x-small" />
-                    </template>
-                    <v-list-item-title>
-                      {{ materia.nombre }}
+                    <v-list-item-title class="d-flex align-center materia-title-row">
+                      <v-icon :icon="mdiBookOpenVariant" size="x-small" class="mr-1 flex-shrink-0" />
+                      <span class="text-truncate">{{ materia.nombre }}</span>
                     </v-list-item-title>
                     <template #append>
                       <v-icon
@@ -1052,6 +1048,34 @@ async function toggleMateria(materia: Materia) {
 
 .topbar-unificada__icon {
   color: #ffffff !important;
+}
+
+/* Fila de título de materia: ícono + nombre pegados (sin el espaciador
+   grande que agrega Vuetify al usar el slot #prepend), para que el
+   nombre de la materia tenga el máximo ancho disponible y no se corte
+   antes de tiempo. min-width:0 es necesario para que el ellipsis del
+   nombre funcione dentro de un contenedor flex. */
+.materia-title-row {
+  min-width: 0;
+}
+.materia-title-row .text-truncate {
+  min-width: 0;
+}
+
+/* Los chips de semestre/materia dejan de estirarse a lo ancho de todo el
+   panel: se ajustan a su propio contenido (ícono + nombre + flechita),
+   sin el hueco vacío que quedaba antes de la flechita cuando el nombre
+   era corto. */
+.nivel-chip,
+.materia-chip {
+  display: inline-flex !important;
+  width: fit-content;
+  max-width: 100%;
+  padding-inline: 10px !important;
+}
+.nivel-chip :deep(.v-list-item__append),
+.materia-chip :deep(.v-list-item__append) {
+  margin-inline-start: 8px;
 }
 
 /* Guía "Semestre → Materia → Grupo": mismos colores que usan los ítems
