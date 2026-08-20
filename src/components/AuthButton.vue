@@ -31,13 +31,21 @@ const nombreMostrado = computed(() => {
         class="user-cta-btn"
       >{{ nombreMostrado }}</v-btn>
     </template>
-    <v-list density="compact" min-width="180">
-      <v-list-item>
-        <v-list-item-subtitle class="text-caption">{{ user.email }}</v-list-item-subtitle>
-      </v-list-item>
-      <v-divider />
-      <v-list-item :prepend-icon="mdiLogout" title="Cerrar sesión" @click="signOut" />
-    </v-list>
+    <v-card rounded="lg" min-width="220">
+      <v-card-item class="dialog-header">
+        <template #prepend>
+          <v-icon :icon="mdiAccountCircle" color="white" />
+        </template>
+        <v-card-title class="text-white text-subtitle-1">{{ nombreMostrado }}</v-card-title>
+      </v-card-item>
+      <v-list density="compact">
+        <v-list-item>
+          <v-list-item-subtitle class="text-caption">{{ user.email }}</v-list-item-subtitle>
+        </v-list-item>
+        <v-divider />
+        <v-list-item :prepend-icon="mdiLogout" title="Cerrar sesión" @click="signOut" />
+      </v-list>
+    </v-card>
   </v-menu>
   <v-btn
     v-else
@@ -50,6 +58,10 @@ const nombreMostrado = computed(() => {
 </template>
 
 <style scoped>
+.dialog-header {
+  background: #4285f4;
+}
+
 .user-cta-btn {
   background: linear-gradient(135deg, #e8f0fe 0%, #d2e3fc 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.7);

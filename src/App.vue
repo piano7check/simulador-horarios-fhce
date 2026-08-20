@@ -27,22 +27,30 @@ import AuthButton from '@/components/AuthButton.vue'
                 Ing. Gustavo Rojas Valdivia
               </v-btn>
             </template>
-            <v-list density="compact" min-width="240">
-              <v-list-item :prepend-icon="mdiAccountOutline" title="Autor: Ing. Gustavo Rojas Valdivia" />
-              <v-divider />
-              <v-list-item
-                :prepend-icon="mdiWhatsapp"
-                title="77435817"
-                href="https://wa.me/59177435817"
-                target="_blank"
-                rel="noopener"
-              />
-              <v-list-item
-                :prepend-icon="mdiEmailOutline"
-                title="grv.trainer@gmail.com"
-                href="mailto:grv.trainer@gmail.com"
-              />
-            </v-list>
+            <v-card rounded="lg" min-width="240">
+              <v-card-item class="dialog-header">
+                <template #prepend>
+                  <v-icon :icon="mdiAccountOutline" color="white" />
+                </template>
+                <v-card-title class="text-white text-subtitle-1">Autor</v-card-title>
+              </v-card-item>
+              <v-list density="compact">
+                <v-list-item title="Ing. Gustavo Rojas Valdivia" class="font-weight-medium" />
+                <v-divider />
+                <v-list-item
+                  :prepend-icon="mdiWhatsapp"
+                  title="77435817"
+                  href="https://wa.me/59177435817"
+                  target="_blank"
+                  rel="noopener"
+                />
+                <v-list-item
+                  :prepend-icon="mdiEmailOutline"
+                  title="grv.trainer@gmail.com"
+                  href="mailto:grv.trainer@gmail.com"
+                />
+              </v-list>
+            </v-card>
           </v-menu>
         </div>
       </v-app-bar-title>
@@ -60,6 +68,10 @@ import AuthButton from '@/components/AuthButton.vue'
 .google-topbar {
   background: #4285f4;
   color: #fff;
+}
+
+.dialog-header {
+  background: #4285f4;
 }
 
 .app-bar-title {

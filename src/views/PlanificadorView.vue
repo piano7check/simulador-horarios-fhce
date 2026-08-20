@@ -506,15 +506,13 @@ async function toggleMateria(materia: Materia) {
   <v-layout class="d-none d-md-flex" style="height: 100%">
     <!-- Sidebar izquierdo -->
     <v-navigation-drawer permanent width="320">
-      <v-list-item>
-        <template #prepend>
-          <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" />
-        </template>
-        <v-list-item-title class="text-subtitle-1 font-weight-bold">
+      <v-toolbar density="compact" flat class="topbar-unificada" color="#4285f4" theme="dark">
+        <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" class="topbar-unificada__icon" />
+        <v-toolbar-title class="text-subtitle-1 text-truncate">
           {{ nombreCarreraLegible }}
-        </v-list-item-title>
-        <v-list-item-subtitle>{{ GESTION }}</v-list-item-subtitle>
-      </v-list-item>
+        </v-toolbar-title>
+      </v-toolbar>
+      <div class="sidebar-gestion text-caption text-medium-emphasis px-4 py-2">{{ GESTION }}</div>
 
       <v-divider />
 
@@ -526,7 +524,7 @@ async function toggleMateria(materia: Materia) {
         {{ errorMsg }}
       </v-alert>
 
-      <v-list v-else density="compact" nav>
+      <v-list v-else density="compact" nav class="materias-panel">
         <template v-for="nivel in niveles" :key="nivel.codigo">
           <!-- Nivel -->
           <v-list-item
@@ -814,7 +812,7 @@ async function toggleMateria(materia: Materia) {
     <v-expand-transition>
       <div
         v-show="panelMobileAbierto"
-        class="flex-shrink-0 overflow-y-auto border-t materias-mobile-panel"
+        class="flex-shrink-0 overflow-y-auto border-t materias-panel materias-mobile-panel"
         style="max-height: 45vh"
       >
         <div v-if="cargando" class="d-flex justify-center py-4">
@@ -1003,8 +1001,22 @@ async function toggleMateria(materia: Materia) {
   color: #ffffff !important;
 }
 
-/* Panel "Añadir materias" (mobile): un solo tamaño de letra por nivel
-   jerárquico y filas más bajas para que entren más ítems sin scroll. */
+/* Panel "Añadir materias" (desktop y mobile): un solo tamaño de letra por
+   nivel jerárquico (semestre / materia / grupo), consistente entre las dos
+   vistas. En mobile además se comprimen las filas para que entren más
+   ítems sin tanto scroll. */
+.materias-panel :deep(.v-list-item-title) {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+.materias-panel :deep(.v-list-item-subtitle) {
+  font-size: 0.72rem;
+}
+.materias-panel :deep(.v-label) {
+  font-size: 0.85rem;
+  opacity: 1;
+}
+
 .materias-mobile-panel :deep(.v-list-item) {
   min-height: 34px;
 }
