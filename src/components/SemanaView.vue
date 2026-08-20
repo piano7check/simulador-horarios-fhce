@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { useDisplay } from 'vuetify'
-import { mdiAlertCircleOutline, mdiMapMarker } from '@mdi/js'
+import { mdiAlertCircleOutline } from '@mdi/js'
 import type { Clase } from '@/services/horarios'
 import { descargarHorario, descargarHorarioImagen, imprimirHorario } from '@/utils/exportarHorario'
 
@@ -27,17 +27,8 @@ const props = defineProps<{
 const { mobile } = useDisplay()
 const intervalHeight = computed(() => (mobile.value ? 42 : 50))
 
-/* -- Navegación por día (mobile): el calendario semanal se hace scrolleable
-   horizontalmente con columnas más anchas; las pestañas saltan a cada día -- */
-const DIAS_TABS = [
-  { key: 'Lunes', corto: 'Lun' },
-  { key: 'Martes', corto: 'Mar' },
-  { key: 'Miercoles', corto: 'Mié' },
-  { key: 'Jueves', corto: 'Jue' },
-  { key: 'Viernes', corto: 'Vie' },
-  { key: 'Sabado', corto: 'Sáb' },
-] as const
-
+/* -- Calendario semanal (mobile): se hace scrolleable horizontalmente con
+   columnas más anchas; al entrar se posiciona en el día actual -- */
 function diaActualODefault(): string {
   const map: Record<number, string> = {
     1: 'Lunes',
@@ -50,7 +41,6 @@ function diaActualODefault(): string {
   return map[new Date().getDay()] ?? 'Lunes'
 }
 
-const diaActivoMobile = ref(diaActualODefault())
 const calendarWrapperRef = ref<HTMLElement | null>(null)
 
 /* -- Detalle de evento: la celda del calendario es angosta y puede truncar
@@ -85,13 +75,8 @@ function scrollToDia(dia: string, smooth: boolean) {
   el?.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', inline: 'start', block: 'nearest' })
 }
 
-function irADia(dia: string) {
-  diaActivoMobile.value = dia
-  nextTick(() => scrollToDia(dia, true))
-}
-
 onMounted(() => {
-  if (mobile.value) nextTick(() => scrollToDia(diaActivoMobile.value, false))
+  if (mobile.value) nextTick(() => scrollToDia(diaActualODefault(), false))
 })
 
 /* -- Rango dinámico: solo intervalos con eventos -- */
@@ -237,6 +222,7 @@ interface EventoCal {
   dia: string
   aula: string
   docente: string
+  conflicto: boolean
 }
 
 const eventosBase = computed<EventoCal[]>(() => {
@@ -266,6 +252,7 @@ const eventosBase = computed<EventoCal[]>(() => {
         dia: c.dia,
         aula: c.aula,
         docente: c.docente,
+        conflicto: false,
       })
     }
   }
@@ -278,18 +265,9 @@ function timeMin(t: string) {
   return (parts[0] ?? 0) * 60 + (parts[1] ?? 0)
 }
 
-interface Conflicto {
-  materia1: string
-  grupo1: number
-  materia2: string
-  grupo2: number
-  dia: string
-}
-
+/** Claves "grupoKey|dia" de todos los eventos que chocan con otro */
 const conflictos = computed(() => {
-  const lista: Conflicto[] = []
   const keys = new Set<string>()
-  const seen = new Set<string>()
   const evts = eventosBase.value
 
   for (let i = 0; i < evts.length; i++) {
@@ -304,49 +282,22 @@ const conflictos = computed(() => {
       const bE = timeMin(b.end.slice(11))
 
       if (aS < bE && bS < aE) {
-        const id = [a.grupoKey, b.grupoKey].sort().join('|') + '|' + a.dia
-        if (!seen.has(id)) {
-          seen.add(id)
-          lista.push({
-            materia1: a.materiaNombre,
-            grupo1: a.grupoNumero,
-            materia2: b.materiaNombre,
-            grupo2: b.grupoNumero,
-            dia: a.dia,
-          })
-        }
         keys.add(`${a.grupoKey}|${a.dia}`)
         keys.add(`${b.grupoKey}|${b.dia}`)
       }
     }
   }
-  return { lista, keys }
+  return { keys }
 })
 
-/** Días (mobile) que tienen algún choque, para marcar la pestaña */
-const diasConConflicto = computed(() => {
-  const set = new Set<string>()
-  for (const key of conflictos.value.keys) {
-    const dia = key.split('|')[1]
-    if (dia) set.add(dia)
-  }
-  return set
-})
-
-/** Eventos finales: solapamientos forzados a rojo */
+/** Eventos finales: cada uno marca si está en choque, sin perder su color */
 const eventos = computed(() =>
   eventosBase.value.map((e) => ({
     ...e,
-    color: conflictos.value.keys.has(`${e.grupoKey}|${e.dia}`) ? '#D32F2F' : e.color,
+    conflicto: conflictos.value.keys.has(`${e.grupoKey}|${e.dia}`),
   })),
 )
 
-/** Eventos del día activo (mobile), ordenados por hora, para la agenda */
-const eventosDelDiaActivo = computed(() =>
-  eventos.value
-    .filter((e) => e.dia === diaActivoMobile.value)
-    .sort((a, b) => a.start.localeCompare(b.start)),
-)
 
 /* -- Leyenda de colores -- */
 const leyenda = computed(() =>
@@ -478,63 +429,6 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
         </template>
       </div>
 
-      <!-- Alerta de choques -->
-      <v-alert
-        v-if="conflictos.lista.length"
-        type="error"
-        variant="tonal"
-        density="compact"
-        :class="mobile ? 'mb-2' : 'mb-3'"
-        :icon="mdiAlertCircleOutline"
-      >
-        <div class="font-weight-bold mb-1">Choques de horario detectados:</div>
-        <div v-for="(c, i) in conflictos.lista" :key="i" class="text-body-2">
-          {{ c.materia1 }} (G{{ c.grupo1 }}) ↔ {{ c.materia2 }} (G{{ c.grupo2 }}) - {{ c.dia }}
-        </div>
-      </v-alert>
-
-      <!-- Pestañas de día (solo mobile): filtran la agenda de abajo y saltan
-           a la columna correspondiente del calendario completo -->
-      <div v-if="mobile" class="dia-tabs mb-2">
-        <button
-          v-for="dia in DIAS_TABS"
-          :key="dia.key"
-          type="button"
-          class="dia-tab"
-          :class="{ 'dia-tab--active': diaActivoMobile === dia.key }"
-          @click="irADia(dia.key)"
-        >
-          {{ dia.corto }}
-          <span v-if="diasConConflicto.has(dia.key)" class="dia-tab__dot" />
-        </button>
-      </div>
-
-      <!-- Agenda del día (solo mobile): lista vertical con el texto completo,
-           sin los límites de ancho/alto de las celdas del calendario -->
-      <div v-if="mobile" class="agenda-dia mb-3">
-        <div v-if="eventosDelDiaActivo.length === 0" class="text-caption text-medium-emphasis text-center py-3">
-          Sin clases este día
-        </div>
-        <div
-          v-for="ev in eventosDelDiaActivo"
-          :key="ev.grupoKey + ev.start"
-          class="agenda-card"
-          :style="{ borderLeftColor: ev.color }"
-          @click="abrirDetalle(ev)"
-        >
-          <div class="agenda-card__hora">{{ ev.start.slice(11) }} - {{ ev.end.slice(11) }}</div>
-          <div class="agenda-card__materia">G{{ ev.grupoNumero }}: {{ ev.materiaNombre }}</div>
-          <div class="agenda-card__aula">
-            <v-icon :icon="mdiMapMarker" size="14" />
-            {{ ev.aula || 'Aula no especificada' }}
-          </div>
-          <div class="agenda-card__meta">{{ ev.docente }}</div>
-        </div>
-      </div>
-
-      <p v-if="mobile" class="text-caption text-medium-emphasis mb-1">
-        Vista semanal completa (para imprimir o descargar)
-      </p>
       <div ref="calendarWrapperRef" class="calendar-scroll-wrapper">
         <v-calendar
           :model-value="calendarValue"
@@ -556,8 +450,13 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
         >
           <!-- Contenido custom de cada evento -->
           <template #event="{ event: ev }">
-            <div class="semana-ev px-1" @click="abrirDetalle(ev as unknown as EventoCal)">
+            <div
+              class="semana-ev px-1"
+              :class="{ 'semana-ev--conflicto': ev.conflicto }"
+              @click="abrirDetalle(ev as unknown as EventoCal)"
+            >
               <div class="semana-ev__name font-weight-bold">
+                <v-icon v-if="ev.conflicto" :icon="mdiAlertCircleOutline" size="11" class="mr-1" />
                 G{{ ev.grupoNumero }}: {{ ev.materiaNombre }}
               </div>
               <!-- El aula va antes que el docente: si la celda es muy baja y
@@ -585,79 +484,6 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
 .calendar-scroll-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-}
-.dia-tabs {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-.dia-tab {
-  flex: 0 0 auto;
-  position: relative;
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid #cfd8e3;
-  background: #fff;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #37474f;
-}
-.dia-tab--active {
-  background: #1565c0;
-  border-color: #1565c0;
-  color: #fff;
-}
-.dia-tab__dot {
-  position: absolute;
-  top: 3px;
-  right: 5px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #d32f2f;
-}
-.agenda-dia {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.agenda-card {
-  border: 1px solid #e0e6f0;
-  border-left: 4px solid #1976d2;
-  border-radius: 8px;
-  padding: 8px 10px;
-  background: #fff;
-  cursor: pointer;
-}
-.agenda-card__hora {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #546279;
-  margin-bottom: 2px;
-}
-.agenda-card__materia {
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: #14213d;
-  line-height: 1.3;
-  word-break: break-word;
-}
-.agenda-card__aula {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: #0d47a1;
-  margin-top: 3px;
-  word-break: break-word;
-}
-.agenda-card__meta {
-  font-size: 0.78rem;
-  color: #45526b;
-  word-break: break-word;
-  margin-top: 2px;
 }
 :deep(.v-calendar-daily_head-day-label) {
   display: none !important;
@@ -693,6 +519,9 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
   overflow: hidden;
   line-height: 1.3;
   cursor: pointer;
+}
+.semana-ev--conflicto {
+  box-shadow: inset 0 0 0 2px #ffffff, inset 0 0 0 4px #d32f2f;
 }
 .semana-ev__name {
   display: -webkit-box;

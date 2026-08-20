@@ -90,6 +90,7 @@ const TABLA_STYLE_CSS = `
   td { border: 1px solid #ddd; padding: 2px 4px; text-align: left; font-size: 0.75em; min-height: 24px; vertical-align: middle; min-width: 0; }
   .hora-col { background-color: #f2f2f2; font-weight: bold; font-size: 0.68rem; width: 112px; max-width: 112px; text-align: center; white-space: nowrap; padding: 2px 4px; }
   .clase-item { background-color: #e3f2fd; border-radius: 4px; padding: 4px 6px; border-left: 4px solid #2196f3; display: block; max-width: 100%; min-width: 0; white-space: normal; word-break: break-word; }
+  .clase-choque { font-size: 0.68em; font-weight: 700; color: #d32f2f; margin-bottom: 2px; }
   .lista-clases { margin-top: 18px; padding: 10px; background: #f9f9f9; border-radius: 6px; font-size: 0.8em; }
   .legend-list { column-count: 2; column-gap: 16px; list-style: none; padding-left: 0; margin: 0 }
   .legend-list li { break-inside: avoid; }
@@ -158,6 +159,7 @@ function buildCalendarioBodyHtml(
       const details = Array.from(ev.querySelectorAll('.semana-ev__detail')).map((d) => (d.textContent || '').trim())
       const aula = details[0] ?? ''
       const teacher = details[1] ?? ''
+      const esConflicto = !!ev.querySelector('.semana-ev--conflicto')
       // Extraer color del elemento (inline style o computed style)
       const cs = window.getComputedStyle(ev)
       let bg = ''
@@ -169,10 +171,11 @@ function buildCalendarioBodyHtml(
         // Use a very light background (blend towards white) so printed cells
         // are nearly white and text remains black for maximum contrast.
         const bgLight = lightenHex(bgHex, 0.88)
-        const borderHex = darkenHex(bgHex, 0.18)
+        const borderHex = esConflicto ? '#d32f2f' : darkenHex(bgHex, 0.18)
         const textColor = '#000000'
 
-      const content = `<div class=\"clase-item\" style=\"background:${bgLight};border-left-color:${borderHex};color:${textColor}\"><div class=\"clase-title\">${escapeHtml(String(name))}<\/div><div class=\"clase-detail\">${escapeHtml(String(teacher))}<\/div><div class=\"clase-aula\">${escapeHtml(String(aula))}<\/div><\/div>`
+      const conflictoTag = esConflicto ? '<div class="clase-choque">⚠ Choque de horario</div>' : ''
+      const content = `<div class=\"clase-item\" style=\"background:${bgLight};border-left-color:${borderHex};color:${textColor}\">${conflictoTag}<div class=\"clase-title\">${escapeHtml(String(name))}<\/div><div class=\"clase-aula\">${escapeHtml(String(aula))}<\/div><div class=\"clase-detail\">${escapeHtml(String(teacher))}<\/div><\/div>`
       const prev = grid[row]![dayIndex] || ''
       grid[row]![dayIndex] = prev ? prev + '<hr/>' + content : content
     })
