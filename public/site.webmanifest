@@ -1,7 +1,17 @@
 {
+  "id": "/",
   "name": "Horarios FHCE",
   "short_name": "Horarios FHCE",
+  "description": "Simulador de horarios para carreras de Humanidades de la UMSS. Crea, combina y exporta horarios fácilmente.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
@@ -12,10 +22,16 @@
       "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#1565c0",
   "background_color": "#ffffff",
   "display": "standalone"
 }
