@@ -1,10 +1,12 @@
 import { supabase } from '@/lib/supabase'
 import { conCache } from '@/utils/cacheLocal'
 
-// El catálogo (carreras/materias/clases) casi no cambia dentro de una
-// gestión, así que se cachea localmente por horas en vez de minutos:
-// prioriza ahorrar datos y tolerar señal mala sobre tener siempre lo último.
-const TTL_CATALOGO = 12 * 60 * 60 * 1000
+// TTLs elegidos según el riesgo de cada dato si queda desactualizado.
+// Nombres de carrera/materia: bajo riesgo, se refrescan con menos frecuencia.
+const TTL_METADATA = 60 * 60 * 1000 // 1h
+// Día/hora/aula/docente de cada grupo: es lo que decide si el estudiante
+// llega bien a clase, así que se revalida seguido apenas hay conexión.
+const TTL_CLASES = 10 * 60 * 1000 // 10min
 
 // -- Tipos ----------------------------------------------
 
@@ -41,7 +43,7 @@ export interface CargaResult {
 // -- Servicios ------------------------------------------
 
 export async function obtenerCarreras(facultadId: number): Promise<Carrera[]> {
-  return conCache(`carreras:${facultadId}`, TTL_CATALOGO, async () => {
+  return conCache(`carreras:${facultadId}`, TTL_METADATA, async () => {
     const { data, error } = await supabase.rpc('obtener_carreras_por_facultad', {
       p_facultad_id: facultadId,
     })
@@ -51,7 +53,7 @@ export async function obtenerCarreras(facultadId: number): Promise<Carrera[]> {
 }
 
 export async function obtenerMaterias(carreraId: number): Promise<Materia[]> {
-  return conCache(`materias:${carreraId}`, TTL_CATALOGO, async () => {
+  return conCache(`materias:${carreraId}`, TTL_METADATA, async () => {
     const { data, error } = await supabase.rpc('obtener_materias_por_carrera', {
       p_carrera_id: carreraId,
     })
@@ -61,7 +63,7 @@ export async function obtenerMaterias(carreraId: number): Promise<Materia[]> {
 }
 
 export async function obtenerClases(materiaId: number, gestion: string): Promise<Clase[]> {
-  return conCache(`clases:${materiaId}:${gestion}`, TTL_CATALOGO, async () => {
+  return conCache(`clases:${materiaId}:${gestion}`, TTL_CLASES, async () => {
     const { data, error } = await supabase.rpc('obtener_clases_por_materia', {
       p_materia_id: materiaId,
       p_gestion: gestion,

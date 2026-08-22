@@ -3,6 +3,7 @@ import { ref, computed, onMounted, watch } from 'vue'
 import { useDisplay } from 'vuetify'
 import { useRoute } from 'vue-router'
 import { obtenerMaterias, obtenerClases, type Materia, type Clase } from '@/services/horarios'
+import { usandoDatosSinConexion } from '@/utils/cacheLocal'
 import {
   mdiChevronLeft,
   mdiBookOpenVariant,
@@ -135,6 +136,40 @@ function sonMismosGrupos(actuales: Set<string>, guardados: string[]) {
   if (actuales.size !== guardados.length) return false
   for (const g of guardados) if (!actuales.has(g)) return false
   return true
+}
+
+/**
+ * Precarga en segundo plano las clases de TODAS las materias de la carrera
+ * (no solo las que el estudiante ya abrió), para que después pueda armar y
+ * comparar combinaciones de horario libremente aunque se corte la señal.
+ * El horario completo de una carrera pesa muy poco (decenas de KB), así
+ * que no hace falta pedir confirmación — pero si el estudiante tiene
+ * activado "ahorro de datos" en el navegador, se respeta y no se precarga
+ * nada que no haya pedido explícitamente.
+ */
+async function precargarTodaLaCarrera() {
+  const conexion = (navigator as any).connection
+  if (conexion && (conexion.saveData || ['slow-2g', '2g'].includes(conexion.effectiveType))) return
+
+  const pendientes = materias.value.filter((m) => !clasesCache.value[m.id])
+  const CONCURRENCIA = 3
+  let siguienteIndice = 0
+
+  async function procesarSiguiente(): Promise<void> {
+    const i = siguienteIndice++
+    const materia = pendientes[i]
+    if (!materia) return
+    if (!clasesCache.value[materia.id]) {
+      try {
+        clasesCache.value[materia.id] = await obtenerClases(materia.id, GESTION)
+      } catch {
+        // precarga oportunista: si falla, se reintenta cuando el estudiante la abra
+      }
+    }
+    return procesarSiguiente()
+  }
+
+  await Promise.all(Array.from({ length: CONCURRENCIA }, procesarSiguiente))
 }
 
 async function precargarClasesParaGrupos(grupos: string[]) {
@@ -389,6 +424,9 @@ onMounted(async () => {
     const val = (q.last_scraped ?? q.lastScraped) as string | undefined
     lastScraped.value = val ?? null
 
+    // Se dispara sin esperar: no debe demorar el resto de la carga inicial.
+    void precargarTodaLaCarrera()
+
     // Restaurar un borrador pendiente de guardar (ej. tras volver de un login
     // con Google, que recarga la página completa y borra el estado en memoria).
     const borrador = sessionStorage.getItem(STORAGE_KEY_BORRADOR)
@@ -468,6 +506,24 @@ async function toggleMateria(materia: Materia) {
 </script>
 
 <template>
+  <!-- Advertencia global: si no se pudo confirmar el dato más reciente
+       (sin conexión, red caída o muy lenta) se muestra la última copia
+       guardada, pero hay que dejar claro que podría no ser exacta —
+       aula/horario/docente equivocados hacen que el estudiante falte
+       a clase. No se auto-cierra, solo la descarta el usuario. -->
+  <v-snackbar
+    v-model="usandoDatosSinConexion"
+    color="warning"
+    location="top"
+    :timeout="-1"
+    multi-line
+  >
+    Sin conexión a internet: utilizando datos guardados en la última conexión.
+    <template #actions>
+      <v-btn variant="text" @click="usandoDatosSinConexion = false">Entendido</v-btn>
+    </template>
+  </v-snackbar>
+
   <auth-dialog v-model="authDialog" />
 
   <v-dialog v-model="dialogHorarioGuardado" max-width="520" persistent>
