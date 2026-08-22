@@ -498,6 +498,12 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
   background: #fff;
   z-index: 3;
 }
+/* Las columnas de los días cierran su grilla con un border-bottom propio
+   (.v-calendar-daily__day), pero la columna de horas no lo tenía, así
+   que la última línea horizontal no se veía en esa columna. */
+:deep(.v-calendar-daily__intervals-body) {
+  border-bottom: rgba(var(--v-border-color), var(--v-border-opacity)) 1px solid;
+}
 /* Vuetify centra la etiqueta de cada hora sobre la línea divisoria con
    "top: -6px", superponiéndola con el intervalo anterior (por eso la
    línea de la tabla parece "cortar" el texto). Se deja cada etiqueta
@@ -513,6 +519,12 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
 }
 :deep(.v-calendar-daily__interval:first-child) {
   border-top: none;
+}
+/* La línea que separa el encabezado (días) de la primera hora (6:45) usa
+   por defecto un degradado que se desvanece hacia la izquierda, sobre la
+   columna de horas, dejándola "cortada". Se reemplaza por una línea sólida. */
+:deep(.v-calendar-daily__intervals-head::after) {
+  background: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
 }
 /* Vuetify envuelve el calendario en sus propios contenedores internos que
    pueden terminar creando SU PROPIO scroll (aparte del que agregamos
