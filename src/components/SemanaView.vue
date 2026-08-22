@@ -442,6 +442,7 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           :interval-minutes="90"
           :interval-count="rangoVisible.intervalCount"
           :interval-height="intervalHeight"
+          :show-interval-label="() => true"
           :weekday-format="weekdayFormat"
           :day-format="dayFormat"
           now="2000-01-01 00:00:00"
@@ -496,6 +497,22 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
 :deep(.v-calendar-daily__intervals-body) {
   background: #fff;
   z-index: 3;
+}
+/* Vuetify centra la etiqueta de cada hora sobre la línea divisoria con
+   "top: -6px", superponiéndola con el intervalo anterior (por eso la
+   línea de la tabla parece "cortar" el texto). Se deja cada etiqueta
+   dentro de su propio intervalo, sin cruzar la línea. */
+:deep(.v-calendar-daily__interval-text) {
+  top: 0;
+}
+/* La columna de horas solo traía una marquita de 8px junto al borde
+   derecho; se le agrega la misma línea completa que ya tienen las
+   columnas de los días, para que la grilla se vea continua fila a fila. */
+:deep(.v-calendar-daily__interval) {
+  border-top: rgba(var(--v-border-color), var(--v-border-opacity)) 1px solid;
+}
+:deep(.v-calendar-daily__interval:first-child) {
+  border-top: none;
 }
 /* Vuetify envuelve el calendario en sus propios contenedores internos que
    pueden terminar creando SU PROPIO scroll (aparte del que agregamos
