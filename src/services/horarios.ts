@@ -1,4 +1,10 @@
 import { supabase } from '@/lib/supabase'
+import { conCache } from '@/utils/cacheLocal'
+
+// El catálogo (carreras/materias/clases) casi no cambia dentro de una
+// gestión, así que se cachea localmente por horas en vez de minutos:
+// prioriza ahorrar datos y tolerar señal mala sobre tener siempre lo último.
+const TTL_CATALOGO = 12 * 60 * 60 * 1000
 
 // -- Tipos ----------------------------------------------
 
@@ -35,29 +41,34 @@ export interface CargaResult {
 // -- Servicios ------------------------------------------
 
 export async function obtenerCarreras(facultadId: number): Promise<Carrera[]> {
-  const { data, error } = await supabase.rpc('obtener_carreras_por_facultad', {
-    p_facultad_id: facultadId,
+  return conCache(`carreras:${facultadId}`, TTL_CATALOGO, async () => {
+    const { data, error } = await supabase.rpc('obtener_carreras_por_facultad', {
+      p_facultad_id: facultadId,
+    })
+    if (error) throw error
+    return data as Carrera[]
   })
-  if (error) throw error
-  return data as Carrera[]
 }
 
 export async function obtenerMaterias(carreraId: number): Promise<Materia[]> {
-  const { data, error } = await supabase.rpc('obtener_materias_por_carrera', {
-    p_carrera_id: carreraId,
+  return conCache(`materias:${carreraId}`, TTL_CATALOGO, async () => {
+    const { data, error } = await supabase.rpc('obtener_materias_por_carrera', {
+      p_carrera_id: carreraId,
+    })
+    if (error) throw error
+    return data as Materia[]
   })
-  if (error) throw error
-  return data as Materia[]
 }
 
-
 export async function obtenerClases(materiaId: number, gestion: string): Promise<Clase[]> {
-  const { data, error } = await supabase.rpc('obtener_clases_por_materia', {
-    p_materia_id: materiaId,
-    p_gestion: gestion,
+  return conCache(`clases:${materiaId}:${gestion}`, TTL_CATALOGO, async () => {
+    const { data, error } = await supabase.rpc('obtener_clases_por_materia', {
+      p_materia_id: materiaId,
+      p_gestion: gestion,
+    })
+    if (error) throw error
+    return data as Clase[]
   })
-  if (error) throw error
-  return data as Clase[]
 }
 
 export async function cargarHorarios(payload: {
