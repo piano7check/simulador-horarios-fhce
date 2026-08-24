@@ -12,9 +12,12 @@ export const GESTION_ACTUAL = '2/2026'
 // TTLs elegidos según el riesgo de cada dato si queda desactualizado.
 // Nombres de carrera/materia: bajo riesgo, se refrescan con menos frecuencia.
 const TTL_METADATA = 60 * 60 * 1000 // 1h
-// Día/hora/aula/docente de cada grupo: es lo que decide si el estudiante
-// llega bien a clase, así que se revalida seguido apenas hay conexión.
-const TTL_CLASES = 10 * 60 * 1000 // 10min
+// Día/hora/aula/docente/aula virtual/WhatsApp de cada grupo: es lo que
+// decide si el estudiante llega bien a clase (o al grupo virtual
+// correcto), y el staff (auxiliar/docente/administrador) puede editarlo
+// en cualquier momento desde /admin — se revalida muy seguido apenas hay
+// conexión para que esos cambios se vean casi al instante.
+const TTL_CLASES = 2 * 60 * 1000 // 2min
 
 // -- Tipos ----------------------------------------------
 

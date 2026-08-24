@@ -73,6 +73,18 @@ const detalleHorario = computed(() => {
   return `${ev.start.slice(11)} - ${ev.end.slice(11)}`
 })
 
+/** Nombra la plataforma según el dominio del link, para que el estudiante
+ * sepa de un vistazo si es Classroom, Moodle, etc. sin tener que abrirlo. */
+function etiquetaAulaVirtual(url: string): string {
+  const u = url.toLowerCase()
+  if (u.includes('classroom.google.com')) return 'Classroom'
+  if (u.includes('moodle')) return 'Moodle'
+  if (u.includes('meet.google.com')) return 'Google Meet'
+  if (u.includes('zoom.us')) return 'Zoom'
+  if (u.includes('teams.microsoft.com')) return 'Microsoft Teams'
+  return 'Aula virtual'
+}
+
 function scrollToDia(dia: string, smooth: boolean) {
   const wrapper = calendarWrapperRef.value
   if (!wrapper) return
@@ -417,7 +429,7 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
             {{ detalleHorario }}
           </p>
           <p v-if="eventoDetalle.aulaVirtual" class="mb-2">
-            <strong>Aula virtual:</strong>
+            <strong>{{ etiquetaAulaVirtual(eventoDetalle.aulaVirtual) }}:</strong>
             <a :href="eventoDetalle.aulaVirtual" target="_blank" rel="noopener">Abrir enlace</a>
           </p>
           <p v-if="eventoDetalle.whatsappGrupo" class="mb-0">
