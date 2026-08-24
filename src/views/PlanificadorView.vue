@@ -56,7 +56,7 @@ const helpDialog = ref(false)
 // Sidebar: nivel seleccionado y materias expandidas
 const nivelActivo = ref<string | null>(null)
 const materiasExpandidas = ref(new Set<number>())
-const busqueda = ref('')
+const busqueda = ref<string | null>('')
 const clasesCache = ref<Record<number, Clase[]>>({})
 const cargandoClases = ref<Record<number, boolean>>({})
 
@@ -361,8 +361,8 @@ const niveles = computed<Nivel[]>(() => {
 // niveles a la vez (un estudiante puede llevar materias de semestres
 // distintos por repetición o adelanto, así que no tiene sentido limitar
 // la búsqueda al nivel actualmente abierto).
-function normalizarTexto(s: string) {
-  return s
+function normalizarTexto(s: string | null | undefined) {
+  return (s ?? '')
     .normalize('NFD')
     .replace(/\p{Diacritic}/gu, '')
     .toLowerCase()
