@@ -10,6 +10,7 @@ import {
   type Clase,
 } from '@/services/horarios'
 import { usandoDatosSinConexion } from '@/utils/cacheLocal'
+import { normalizarTexto } from '@/utils/texto'
 import {
   mdiChevronLeft,
   mdiBookOpenVariant,
@@ -371,14 +372,6 @@ const niveles = computed<Nivel[]>(() => {
 // niveles a la vez (un estudiante puede llevar materias de semestres
 // distintos por repetición o adelanto, así que no tiene sentido limitar
 // la búsqueda al nivel actualmente abierto).
-function normalizarTexto(s: string | null | undefined) {
-  return (s ?? '')
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-    .trim()
-}
-
 const busquedaActiva = computed(() => normalizarTexto(busqueda.value).length > 0)
 
 function materiaCoincidePorTexto(m: Materia, termino: string) {

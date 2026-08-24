@@ -43,6 +43,11 @@ export interface Clase {
   whatsapp_grupo: string | null
 }
 
+export interface DocenteMateria {
+  materia_id: number
+  docente: string
+}
+
 export interface CargaResult {
   ok: boolean
   materias: number
@@ -69,6 +74,20 @@ export async function obtenerMaterias(carreraId: number): Promise<Materia[]> {
     })
     if (error) throw error
     return data as Materia[]
+  })
+}
+
+export async function obtenerDocentesPorCarrera(
+  carreraId: number,
+  gestion: string,
+): Promise<DocenteMateria[]> {
+  return conCache(`docentes:${carreraId}:${gestion}`, TTL_METADATA, async () => {
+    const { data, error } = await supabase.rpc('obtener_docentes_por_carrera', {
+      p_carrera_id: carreraId,
+      p_gestion: gestion,
+    })
+    if (error) throw error
+    return data as DocenteMateria[]
   })
 }
 

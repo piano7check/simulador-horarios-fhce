@@ -6,6 +6,7 @@ import AuthDialog from '@/components/AuthDialog.vue'
 import {
   obtenerCarreras,
   obtenerMaterias,
+  obtenerDocentesPorCarrera,
   GESTION_ACTUAL,
   type Carrera,
   type Materia,
@@ -17,6 +18,7 @@ import {
   type GrupoAdmin,
   type RolUsuario,
 } from '@/services/admin'
+import { normalizarTexto } from '@/utils/texto'
 
 const GESTION = GESTION_ACTUAL
 const FACULTAD_ID = 1
@@ -63,6 +65,37 @@ const materias = ref<Materia[]>([])
 const cargandoMaterias = ref(false)
 const materiaSeleccionada = ref<Materia | null>(null)
 
+// Docentes por materia (materia_id -> nombres), para poder buscar por
+// docente igual que en el buscador de materias del planificador.
+const docentesPorMateria = ref<Map<number, string[]>>(new Map())
+const busquedaMateria = ref('')
+
+function materiaCoincidePorTexto(m: Materia, termino: string) {
+  return normalizarTexto(m.nombre).includes(termino) || normalizarTexto(m.codigo).includes(termino)
+}
+
+function docenteDeMateriaQueCoincide(materiaId: number, termino: string): string | null {
+  const docentes = docentesPorMateria.value.get(materiaId) ?? []
+  return docentes.find((d) => normalizarTexto(d).includes(termino)) ?? null
+}
+
+const materiasFiltradas = computed(() => {
+  const termino = normalizarTexto(busquedaMateria.value)
+  if (!termino) return materias.value
+  return materias.value.filter(
+    (m) =>
+      materiaCoincidePorTexto(m, termino) || docenteDeMateriaQueCoincide(m.id, termino) !== null,
+  )
+})
+
+/** Nombre del docente que hizo coincidir la materia en la búsqueda actual,
+ * solo si el nombre/código de la materia por sí solo NO coincidía. */
+function docenteQueCoincide(materia: Materia): string | null {
+  const termino = normalizarTexto(busquedaMateria.value)
+  if (!termino || materiaCoincidePorTexto(materia, termino)) return null
+  return docenteDeMateriaQueCoincide(materia.id, termino)
+}
+
 const grupos = ref<GrupoAdmin[]>([])
 const cargandoGrupos = ref(false)
 
@@ -96,12 +129,29 @@ async function seleccionarCarrera(carrera: Carrera | null) {
   materiaSeleccionada.value = null
   materias.value = []
   grupos.value = []
+  busquedaMateria.value = ''
+  docentesPorMateria.value = new Map()
   if (!carrera) return
   cargandoMaterias.value = true
   try {
     materias.value = await obtenerMaterias(carrera.id)
   } finally {
     cargandoMaterias.value = false
+  }
+
+  // Aparte y sin bloquear: si falla, el selector sigue funcionando, solo
+  // no se puede buscar por docente hasta que se pueda cargar.
+  try {
+    const listaDocentes = await obtenerDocentesPorCarrera(carrera.id, GESTION)
+    const mapa = new Map<number, string[]>()
+    for (const { materia_id, docente } of listaDocentes) {
+      const lista = mapa.get(materia_id) ?? []
+      lista.push(docente)
+      mapa.set(materia_id, lista)
+    }
+    docentesPorMateria.value = mapa
+  } catch {
+    docentesPorMateria.value = new Map()
   }
 }
 
@@ -210,12 +260,14 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
           <v-autocomplete
             v-if="carreraSeleccionada"
             v-model="materiaSeleccionada"
-            :items="materias"
+            v-model:search="busquedaMateria"
+            :items="materiasFiltradas"
+            :no-filter="true"
             item-title="nombre"
             item-value="id"
             :return-object="true"
             label="Materia"
-            placeholder="Buscar materia..."
+            placeholder="Buscar materia o docente..."
             :loading="cargandoMaterias"
             density="comfortable"
             variant="outlined"
@@ -223,7 +275,18 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
             hide-details
             clearable
             @update:model-value="seleccionarMateria"
-          />
+          >
+            <template #item="{ item, props: itemProps }">
+              <v-list-item
+                v-bind="itemProps"
+                :subtitle="
+                  docenteQueCoincide(item.raw)
+                    ? `Docente: ${docenteQueCoincide(item.raw)}`
+                    : undefined
+                "
+              />
+            </template>
+          </v-autocomplete>
         </v-card-text>
       </v-card>
 
