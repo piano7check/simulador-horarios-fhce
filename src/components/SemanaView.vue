@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useDisplay } from 'vuetify'
 import { mdiAlertCircleOutline, mdiFormatListBulleted } from '@mdi/js'
 import type { Clase } from '@/services/horarios'
@@ -213,18 +213,53 @@ const COLORES = [
   '#AD1457', // rosa oscuro
 ]
 
-/** Un color por cada grupo seleccionado (grupoKey = "materiaId-grupoNumero") */
-const coloresGrupos = computed(() => {
-  const map = new Map<string, string>()
-  let idx = 0
-  for (const c of props.cursos) {
-    if (!map.has(c.key)) {
-      map.set(c.key, COLORES[idx % COLORES.length]!)
-      idx++
-    }
+// Hash simple y estable (no cripto), solo como respaldo para cuando ya no
+// queda ningún color libre en la paleta (más de 20 grupos distintos a la
+// vez) — en ese caso sí puede repetirse alguno.
+function hashTexto(s: string): number {
+  let hash = 0
+  for (let i = 0; i < s.length; i++) {
+    hash = (hash * 31 + s.charCodeAt(i)) | 0
   }
-  return map
-})
+  return Math.abs(hash)
+}
+
+/** Un color por cada grupo seleccionado (grupoKey = "materiaId-grupoNumero").
+ * Es la referencia visual del estudiante para identificar su materia, así
+ * que una vez asignado no debe cambiar solo porque se agregó o quitó otra
+ * materia — por eso NO es un computed puro (que recalcularía todo de
+ * cero), sino un estado que se va acumulando: los grupos que ya tenían
+ * color lo conservan, y a los nuevos se les da el primer color de la
+ * paleta que ningún otro grupo activo esté usando en ese momento (evita
+ * colisiones mientras haya colores libres, sin tocar los ya asignados). */
+const coloresGrupos = ref<Map<string, string>>(new Map())
+
+watch(
+  () => props.cursos.map((c) => c.key),
+  (keysActuales) => {
+    const anterior = coloresGrupos.value
+    const nuevo = new Map<string, string>()
+
+    // Conservar el color de los grupos que siguen seleccionados.
+    for (const key of keysActuales) {
+      const colorPrevio = anterior.get(key)
+      if (colorPrevio) nuevo.set(key, colorPrevio)
+    }
+
+    // A los grupos nuevos, darles un color que ningún otro grupo activo
+    // esté usando ahora mismo (si ya no queda ninguno libre, se cae al
+    // hash, que sí puede repetir).
+    for (const key of keysActuales) {
+      if (nuevo.has(key)) continue
+      const usados = new Set(nuevo.values())
+      const libre = COLORES.find((c) => !usados.has(c))
+      nuevo.set(key, libre ?? COLORES[hashTexto(key) % COLORES.length]!)
+    }
+
+    coloresGrupos.value = nuevo
+  },
+  { immediate: true },
+)
 
 /* -- Eventos base -- */
 interface EventoCal {
