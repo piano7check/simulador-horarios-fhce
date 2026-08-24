@@ -1,5 +1,9 @@
-import html2canvas from 'html2canvas-pro'
-import { jsPDF } from 'jspdf'
+// jsPDF y html2canvas-pro son librerías pesadas que solo hacen falta si el
+// estudiante realmente exporta/imprime el horario — no para verlo ni
+// editarlo. Se cargan bajo demanda (import dinámico) en vez de venir
+// incluidas en el bundle principal, para no hacer descargar ~300KB extra
+// a quienes nunca las usan.
+import type { jsPDF as JsPDF } from 'jspdf'
 
 /**
  * Carta horizontal: 279.4 × 215.9 mm
@@ -21,7 +25,10 @@ interface ExportOpts {
 }
 
 function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' } as any)[c])
+  return s.replace(
+    /[&<>"']/g,
+    (c) => (({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }) as any)[c],
+  )
 }
 
 // Parse basic CSS color strings (rgb(...), rgba(...), #rrggbb, #rgb)
@@ -40,7 +47,11 @@ function parseColorToHex(input?: string): string | null {
   const hex = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(input)
   if (hex && hex[1]) {
     let v = hex[1]
-    if (v && v.length === 3) v = v.split('').map((c) => c + c).join('')
+    if (v && v.length === 3)
+      v = v
+        .split('')
+        .map((c) => c + c)
+        .join('')
     return '#' + v.toLowerCase()
   }
   return null
@@ -114,7 +125,9 @@ function buildCalendarioBodyHtml(
   meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>,
 ): string {
   try {
-    const dayContainers = Array.from(elemento.querySelectorAll('.v-calendar-daily__day')) as HTMLElement[]
+    const dayContainers = Array.from(
+      elemento.querySelectorAll('.v-calendar-daily__day'),
+    ) as HTMLElement[]
     if (!dayContainers.length) return ''
 
     const rows = 11
@@ -135,8 +148,12 @@ function buildCalendarioBodyHtml(
     }
 
     const grid: string[][] = Array.from({ length: rows }, () => Array.from({ length: 6 }, () => ''))
-    const firstInterval = elemento.querySelector('.v-calendar-daily__interval') as HTMLElement | null
-    const intervalPx = firstInterval ? (parseFloat(window.getComputedStyle(firstInterval).height) || 44) : 44
+    const firstInterval = elemento.querySelector(
+      '.v-calendar-daily__interval',
+    ) as HTMLElement | null
+    const intervalPx = firstInterval
+      ? parseFloat(window.getComputedStyle(firstInterval).height) || 44
+      : 44
 
     const events = Array.from(elemento.querySelectorAll('.v-event-timed')) as HTMLElement[]
     events.forEach((ev) => {
@@ -156,7 +173,9 @@ function buildCalendarioBodyHtml(
       const nameEl = ev.querySelector('.semana-ev__name')
       const name = nameEl ? (nameEl.textContent || '').trim() : (ev.textContent || '').trim() || ''
       // El aula va primero en la celda (semana-ev__detail--aula), el docente después
-      const details = Array.from(ev.querySelectorAll('.semana-ev__detail')).map((d) => (d.textContent || '').trim())
+      const details = Array.from(ev.querySelectorAll('.semana-ev__detail')).map((d) =>
+        (d.textContent || '').trim(),
+      )
       const aula = details[0] ?? ''
       const teacher = details[1] ?? ''
       const esConflicto = !!ev.querySelector('.semana-ev--conflicto')
@@ -167,12 +186,12 @@ function buildCalendarioBodyHtml(
       const mColor = /background(?:-color)?:\s*([^;]+)/i.exec(inlineStyle)
       if (mColor && mColor[1]) bg = mColor[1].trim()
       if (!bg) bg = cs.backgroundColor || ''
-        const bgHex = parseColorToHex(bg) || '#e3f2fd'
-        // Use a very light background (blend towards white) so printed cells
-        // are nearly white and text remains black for maximum contrast.
-        const bgLight = lightenHex(bgHex, 0.88)
-        const borderHex = esConflicto ? '#d32f2f' : darkenHex(bgHex, 0.18)
-        const textColor = '#000000'
+      const bgHex = parseColorToHex(bg) || '#e3f2fd'
+      // Use a very light background (blend towards white) so printed cells
+      // are nearly white and text remains black for maximum contrast.
+      const bgLight = lightenHex(bgHex, 0.88)
+      const borderHex = esConflicto ? '#d32f2f' : darkenHex(bgHex, 0.18)
+      const textColor = '#000000'
 
       const conflictoTag = esConflicto ? '<div class="clase-choque">⚠ Choque de horario</div>' : ''
       const content = `<div class=\"clase-item\" style=\"background:${bgLight};border-left-color:${borderHex};color:${textColor}\">${conflictoTag}<div class=\"clase-title\">${escapeHtml(String(name))}<\/div><div class=\"clase-aula\">${escapeHtml(String(aula))}<\/div><div class=\"clase-detail\">${escapeHtml(String(teacher))}<\/div><\/div>`
@@ -186,14 +205,18 @@ function buildCalendarioBodyHtml(
       html += '<div class="print-header">'
       if (meta?.titulo) html += `<div class="print-title">${escapeHtml(meta.titulo)}</div>`
       if (meta?.subtitulo) html += `<div class="print-subtitle">${escapeHtml(meta.subtitulo)}</div>`
-      if (meta?.gestion) html += `<div class="print-meta"><strong>Gestion:</strong> ${escapeHtml(meta.gestion)}</div>`
-      if (meta?.estudiante) html += `<div class="print-meta"><strong>Nombre:</strong> ${escapeHtml(meta.estudiante)}</div>`
+      if (meta?.gestion)
+        html += `<div class="print-meta"><strong>Gestion:</strong> ${escapeHtml(meta.gestion)}</div>`
+      if (meta?.estudiante)
+        html += `<div class="print-meta"><strong>Nombre:</strong> ${escapeHtml(meta.estudiante)}</div>`
       html += '</div>'
     }
 
     html += '<table>'
-    html += '<colgroup><col style="width:112px" /><col /><col /><col /><col /><col /><col /></colgroup>'
-    html += '<thead><tr><th>Horario</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th></tr></thead><tbody>'
+    html +=
+      '<colgroup><col style="width:112px" /><col /><col /><col /><col /><col /><col /></colgroup>'
+    html +=
+      '<thead><tr><th>Horario</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th></tr></thead><tbody>'
     for (let r = 0; r < rows; r++) {
       html += '<tr>'
       html += `<td class="hora-col">${times[r]}</td>`
@@ -204,13 +227,15 @@ function buildCalendarioBodyHtml(
 
     // Construir leyenda con colores: extraer títulos únicos y color desde las celdas
     const legendItems: Record<string, { color: string }> = {}
-    for (let r = 0; r < rows; r++) for (let d = 0; d < 6; d++) if (grid[r] && grid[r]![d]) {
-      const cell = grid[r]![d] as string
-      const m = cell.match(/<div class="clase-title">([^<]+)<\/div>/)
-      const colorMatch = cell.match(/style="[^"]*background:([^;"]+)[;"]/)
-      const color = colorMatch ? (colorMatch[1] || '').trim() : ''
-      if (m && m[1]) legendItems[m[1]] = { color: parseColorToHex(color) || '#e3f2fd' }
-    }
+    for (let r = 0; r < rows; r++)
+      for (let d = 0; d < 6; d++)
+        if (grid[r] && grid[r]![d]) {
+          const cell = grid[r]![d] as string
+          const m = cell.match(/<div class="clase-title">([^<]+)<\/div>/)
+          const colorMatch = cell.match(/style="[^"]*background:([^;"]+)[;"]/)
+          const color = colorMatch ? (colorMatch[1] || '').trim() : ''
+          if (m && m[1]) legendItems[m[1]] = { color: parseColorToHex(color) || '#e3f2fd' }
+        }
     html += '<div class="lista-clases"><h3>Resumen de Clases</h3><ul class="legend-list">'
     for (const key of Object.keys(legendItems).slice(0, 200)) {
       const col = legendItems[key]!.color
@@ -227,7 +252,10 @@ function buildCalendarioBodyHtml(
   }
 }
 
-function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>): string {
+function generatePrintableHTMLFromCalendar(
+  elemento: HTMLElement,
+  meta?: Pick<ExportOpts, 'titulo' | 'subtitulo' | 'gestion' | 'estudiante'>,
+): string {
   const bodyHtml = buildCalendarioBodyHtml(elemento, meta)
   if (!bodyHtml) return ''
 
@@ -237,7 +265,8 @@ function generatePrintableHTMLFromCalendar(elemento: HTMLElement, meta?: Pick<Ex
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   `
 
-  let html = '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+  let html =
+    '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
   html += `<title>Horario - impresión</title>`
   html += `<style>${TABLA_STYLE_CSS}${printOnlyCss}</style>`
   html += '</head><body>' + bodyHtml + '</body></html>'
@@ -275,6 +304,7 @@ async function renderTablaACanvas(
     } catch (e) {
       // ignore
     }
+    const { default: html2canvas } = await import('html2canvas-pro')
     return await html2canvas(container, {
       scale: 2,
       useCORS: true,
@@ -299,14 +329,19 @@ async function renderCanvasParaExport(opts: ExportOpts): Promise<HTMLCanvasEleme
   const pxPerMm = 96 / 25.4
   const anchoPx = Math.round(AREA_W * pxPerMm)
 
-  const canvas = await renderTablaACanvas(elemento, { titulo, subtitulo, gestion, estudiante }, anchoPx)
+  const canvas = await renderTablaACanvas(
+    elemento,
+    { titulo, subtitulo, gestion, estudiante },
+    anchoPx,
+  )
   if (!canvas || canvas.width === 0 || canvas.height === 0) {
     throw new Error('No se pudo generar el horario para exportar')
   }
   return canvas
 }
 
-async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
+async function generarPDF(opts: ExportOpts): Promise<JsPDF> {
+  const { jsPDF } = await import('jspdf')
   const canvas = await renderCanvasParaExport(opts)
   const pxPerMm = 96 / 25.4
   const scale = 2
@@ -316,7 +351,9 @@ async function generarPDF(opts: ExportOpts): Promise<jsPDF> {
   const finalW = imageWidthMm * scaleFactor
   const finalH = imageHeightMm * scaleFactor
 
-  const blob: Blob | null = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 0.95))
+  const blob: Blob | null = await new Promise((resolve) =>
+    canvas.toBlob(resolve, 'image/png', 0.95),
+  )
   if (!blob) throw new Error('No blob')
   const imgData = await new Promise<string>((resolve, reject) => {
     const fr = new FileReader()
@@ -358,7 +395,13 @@ async function openPrintWindowPreserveText(opts: ExportOpts): Promise<boolean> {
 
     doc.close()
     w.focus()
-    setTimeout(() => { try { w.print() } catch (e) { /* nothing */ } }, 500)
+    setTimeout(() => {
+      try {
+        w.print()
+      } catch (e) {
+        /* nothing */
+      }
+    }, 500)
     return true
   } catch (err) {
     console.error('openPrintWindowPreserveText error', err)
@@ -387,7 +430,13 @@ export async function descargarHorario(opts: ExportOpts): Promise<void> {
     descargarBlob(pdf.output('blob') as Blob, filename)
     return
   } catch (err) {
-    try { pdf.save(filename); return } catch (e) { console.error('Error al descargar PDF:', e); throw e }
+    try {
+      pdf.save(filename)
+      return
+    } catch (e) {
+      console.error('Error al descargar PDF:', e)
+      throw e
+    }
   }
 }
 
@@ -395,7 +444,9 @@ export async function descargarHorario(opts: ExportOpts): Promise<void> {
  * reconstrucción de la semana completa, sin depender de la vista actual. */
 export async function descargarHorarioImagen(opts: ExportOpts): Promise<void> {
   const canvas = await renderCanvasParaExport(opts)
-  const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png', 0.95))
+  const blob = await new Promise<Blob | null>((resolve) =>
+    canvas.toBlob(resolve, 'image/png', 0.95),
+  )
   if (!blob) throw new Error('No se pudo generar la imagen')
   descargarBlob(blob, buildNombreArchivo(opts, 'png'))
 }
@@ -420,6 +471,11 @@ export async function imprimirHorario(opts: ExportOpts): Promise<void> {
     }
   } catch (e) {
     console.error('Error al abrir PDF para imprimir:', e)
-    try { const blobUrl = pdf.output('bloburl'); window.open(blobUrl as unknown as string, '_blank') } catch (err) { console.error('Error fallback imprimir:', err) }
+    try {
+      const blobUrl = pdf.output('bloburl')
+      window.open(blobUrl as unknown as string, '_blank')
+    } catch (err) {
+      console.error('Error fallback imprimir:', err)
+    }
   }
 }
