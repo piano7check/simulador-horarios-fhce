@@ -191,21 +191,23 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 
       <v-card rounded="lg" class="mb-4">
         <v-card-text>
-          <v-select
+          <v-autocomplete
             v-model="carreraSeleccionada"
             :items="carreras"
             item-title="nombre"
             item-value="id"
             :return-object="true"
             label="Carrera"
+            placeholder="Buscar carrera..."
             :loading="cargandoCarreras"
             density="comfortable"
             variant="outlined"
             hide-details
+            clearable
             @update:model-value="seleccionarCarrera"
           />
 
-          <v-select
+          <v-autocomplete
             v-if="carreraSeleccionada"
             v-model="materiaSeleccionada"
             :items="materias"
@@ -213,11 +215,13 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
             item-value="id"
             :return-object="true"
             label="Materia"
+            placeholder="Buscar materia..."
             :loading="cargandoMaterias"
             density="comfortable"
             variant="outlined"
             class="mt-4"
             hide-details
+            clearable
             @update:model-value="seleccionarMateria"
           />
         </v-card-text>
