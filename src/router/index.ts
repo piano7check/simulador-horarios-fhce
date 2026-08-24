@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('@/views/InicioView.vue'),
     },
     {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('@/views/AdminView.vue'),
+    },
+    {
       path: '/:carrera',
       name: 'planificador',
       component: () => import('@/views/PlanificadorView.vue'),

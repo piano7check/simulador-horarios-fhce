@@ -2,7 +2,13 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { useDisplay } from 'vuetify'
 import { useRoute } from 'vue-router'
-import { obtenerMaterias, obtenerClases, type Materia, type Clase } from '@/services/horarios'
+import {
+  obtenerMaterias,
+  obtenerClases,
+  GESTION_ACTUAL,
+  type Materia,
+  type Clase,
+} from '@/services/horarios'
 import { usandoDatosSinConexion } from '@/utils/cacheLocal'
 import {
   mdiChevronLeft,
@@ -44,8 +50,7 @@ const nombreCarreraLegible =
     : capitalizarSlug(carrera)
 const STORAGE_KEY_BORRADOR = `horario_pendiente_${carreraId}`
 
-// TODO: hacerlo dinámico
-const GESTION = '2/2026'
+const GESTION = GESTION_ACTUAL
 
 const materias = ref<Materia[]>([])
 const cargando = ref(true)

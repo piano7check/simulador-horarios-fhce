@@ -228,6 +228,8 @@ interface EventoCal {
   dia: string
   aula: string
   docente: string
+  aulaVirtual: string | null
+  whatsappGrupo: string | null
   conflicto: boolean
 }
 
@@ -258,6 +260,8 @@ const eventosBase = computed<EventoCal[]>(() => {
         dia: c.dia,
         aula: c.aula,
         docente: c.docente,
+        aulaVirtual: c.aula_virtual,
+        whatsappGrupo: c.whatsapp_grupo,
         conflicto: false,
       })
     }
@@ -408,9 +412,17 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
             <strong>Docente:</strong> {{ eventoDetalle.docente || 'No especificado' }}
           </p>
           <p class="mb-2"><strong>Aula:</strong> {{ eventoDetalle.aula || 'No especificada' }}</p>
-          <p class="mb-0">
+          <p :class="eventoDetalle.aulaVirtual || eventoDetalle.whatsappGrupo ? 'mb-2' : 'mb-0'">
             <strong>Horario:</strong> {{ DIA_LABEL[eventoDetalle.dia] ?? eventoDetalle.dia }},
             {{ detalleHorario }}
+          </p>
+          <p v-if="eventoDetalle.aulaVirtual" class="mb-2">
+            <strong>Aula virtual:</strong>
+            <a :href="eventoDetalle.aulaVirtual" target="_blank" rel="noopener">Abrir enlace</a>
+          </p>
+          <p v-if="eventoDetalle.whatsappGrupo" class="mb-0">
+            <strong>Grupo de WhatsApp:</strong>
+            <a :href="eventoDetalle.whatsappGrupo" target="_blank" rel="noopener">Unirme</a>
           </p>
         </v-card-text>
         <v-card-actions>

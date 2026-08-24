@@ -1,6 +1,14 @@
 import { supabase } from '@/lib/supabase'
 import { conCache } from '@/utils/cacheLocal'
 
+// Gestión (semestre) que consulta toda la app. Un solo lugar para
+// actualizar cuando cambie el semestre — antes estaba repetida como
+// constante local en PlanificadorView.vue y AdminView.vue, con el riesgo
+// de actualizar una y olvidarse la otra.
+// TODO: hacerlo dinámico (leer la gestión vigente desde la base en vez de
+// hardcodearla).
+export const GESTION_ACTUAL = '2/2026'
+
 // TTLs elegidos según el riesgo de cada dato si queda desactualizado.
 // Nombres de carrera/materia: bajo riesgo, se refrescan con menos frecuencia.
 const TTL_METADATA = 60 * 60 * 1000 // 1h
@@ -31,6 +39,8 @@ export interface Clase {
   aula: string
   hora_inicio: string
   hora_fin: string
+  aula_virtual: string | null
+  whatsapp_grupo: string | null
 }
 
 export interface CargaResult {
