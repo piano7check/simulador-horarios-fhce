@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { obtenerCarreras, type Carrera } from '@/services/horarios'
+import { obtenerCarrerasConHorarioGuardado } from '@/services/horarioGuardado'
+import { useAuth } from '@/composables/useAuth'
 import { mdiMagnify, mdiSchool, mdiChevronRight } from '@mdi/js'
 
 const router = useRouter()
+const { user, signInPulse } = useAuth()
 const carreras = ref<Carrera[]>([])
 const carreraSeleccionada = ref<Carrera | null>(null)
 const busqueda = ref('')
@@ -15,6 +18,22 @@ const navegando = ref(false)
 // TODO: obtener facultad_id dinámicamente si se requiere
 const FACULTAD_ID = 1
 
+/** Si el usuario logueado ya tiene guardado el horario de una sola
+ * carrera, se salta la pantalla de "elegir carrera" y va directo ahí
+ * (con más de una guardada, no hay forma de adivinar cuál, así que se
+ * deja la lista normal). */
+async function irDirectoSiTieneHorarioGuardado() {
+  if (!user.value) return
+  try {
+    const carreraIds = await obtenerCarrerasConHorarioGuardado(user.value.id)
+    if (carreraIds.length !== 1) return
+    const carrera = carreras.value.find((c) => c.id === carreraIds[0])
+    if (carrera) await seleccionar(carrera)
+  } catch {
+    // si falla, se queda en la lista normal para elegir a mano
+  }
+}
+
 onMounted(async () => {
   try {
     carreras.value = await obtenerCarreras(FACULTAD_ID)
@@ -23,7 +42,12 @@ onMounted(async () => {
   } finally {
     cargando.value = false
   }
+  await irDirectoSiTieneHorarioGuardado()
 })
+
+// Cubre el caso de iniciar sesión ya estando en esta pantalla (no solo
+// llegar con la sesión ya abierta desde antes).
+watch(signInPulse, irDirectoSiTieneHorarioGuardado)
 
 async function seleccionar(carrera: Carrera) {
   carreraSeleccionada.value = carrera
@@ -48,9 +72,7 @@ async function seleccionar(carrera: Carrera) {
   <v-container class="d-flex flex-column align-center justify-center" style="min-height: 100dvh">
     <v-card max-width="500" width="100%" elevation="2" rounded="lg">
       <v-card-title class="text-center pt-6">
-        <h1 class="text-h5 inicio-title" style="margin: 0">
-          Horarios FHCE
-        </h1>
+        <h1 class="text-h5 inicio-title" style="margin: 0">Horarios FHCE</h1>
         <div class="text-body-2 text-center mt-2">
           Planifica tus materias, combina grupos, guarda y exporta tu horario en PDF.
         </div>

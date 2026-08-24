@@ -1,5 +1,18 @@
 import { supabase } from '@/lib/supabase'
 
+/** IDs de las carreras para las que el usuario ya tiene un horario
+ * guardado, sin necesidad de saber de antemano cuál — para que, al
+ * iniciar sesión, la app pueda saltarse la pantalla de "elegir carrera"
+ * cuando ya hay una obvia. */
+export async function obtenerCarrerasConHorarioGuardado(userId: string): Promise<number[]> {
+  const { data, error } = await supabase
+    .from('horarios_guardados')
+    .select('carrera_id')
+    .eq('user_id', userId)
+  if (error) throw error
+  return (data ?? []).map((r) => r.carrera_id as number)
+}
+
 export async function cargarHorario(userId: string, carreraId: number): Promise<string[]> {
   const { data } = await supabase
     .from('horarios_guardados')
