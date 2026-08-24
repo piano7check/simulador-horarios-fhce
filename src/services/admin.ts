@@ -4,7 +4,8 @@ export interface GrupoAdmin {
   id: number
   numero: string
   aula_virtual: string | null
-  whatsapp_grupo: string | null
+  whatsapp_docente: string | null
+  whatsapp_auxiliar: string | null
 }
 
 export type RolUsuario = 'auxiliar' | 'docente' | 'administrador'
@@ -29,12 +30,19 @@ export async function obtenerGruposAdmin(
 
 export async function actualizarGrupoExtra(
   grupoId: number,
-  aulaVirtual: string | null,
-  whatsappGrupo: string | null,
+  datos: {
+    aulaVirtual: string | null
+    whatsappDocente: string | null
+    whatsappAuxiliar: string | null
+  },
 ): Promise<void> {
   const { error } = await supabase
     .from('grupos')
-    .update({ aula_virtual: aulaVirtual, whatsapp_grupo: whatsappGrupo })
+    .update({
+      aula_virtual: datos.aulaVirtual,
+      whatsapp_docente: datos.whatsappDocente,
+      whatsapp_auxiliar: datos.whatsappAuxiliar,
+    })
     .eq('id', grupoId)
   if (error) throw error
 }

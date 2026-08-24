@@ -101,7 +101,9 @@ const cargandoGrupos = ref(false)
 
 // Edición local por grupo, para no pisar lo cargado en el server mientras
 // el admin todavía está escribiendo.
-const edicion = ref<Record<number, { aulaVirtual: string; whatsappGrupo: string }>>({})
+const edicion = ref<
+  Record<number, { aulaVirtual: string; whatsappDocente: string; whatsappAuxiliar: string }>
+>({})
 const guardando = ref<Record<number, boolean>>({})
 const snackbarMsg = ref('')
 const snackbar = ref(false)
@@ -165,7 +167,11 @@ async function seleccionarMateria(materia: Materia | null) {
     edicion.value = Object.fromEntries(
       grupos.value.map((g) => [
         g.id,
-        { aulaVirtual: g.aula_virtual ?? '', whatsappGrupo: g.whatsapp_grupo ?? '' },
+        {
+          aulaVirtual: g.aula_virtual ?? '',
+          whatsappDocente: g.whatsapp_docente ?? '',
+          whatsappAuxiliar: g.whatsapp_auxiliar ?? '',
+        },
       ]),
     )
   } finally {
@@ -178,11 +184,11 @@ async function guardarGrupo(grupo: GrupoAdmin) {
   if (!datos) return
   guardando.value = { ...guardando.value, [grupo.id]: true }
   try {
-    await actualizarGrupoExtra(
-      grupo.id,
-      datos.aulaVirtual.trim() || null,
-      datos.whatsappGrupo.trim() || null,
-    )
+    await actualizarGrupoExtra(grupo.id, {
+      aulaVirtual: datos.aulaVirtual.trim() || null,
+      whatsappDocente: datos.whatsappDocente.trim() || null,
+      whatsappAuxiliar: datos.whatsappAuxiliar.trim() || null,
+    })
     snackbarMsg.value = `Guardado: Grupo ${grupo.numero}`
     snackbarColor.value = 'success'
     snackbar.value = true
@@ -312,8 +318,17 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
               hide-details
             />
             <v-text-field
-              v-model="edicion[grupo.id]!.whatsappGrupo"
-              label="Grupo de WhatsApp (link)"
+              v-model="edicion[grupo.id]!.whatsappDocente"
+              label="Grupo de WhatsApp - Docente (link)"
+              placeholder="https://chat.whatsapp.com/..."
+              variant="outlined"
+              density="comfortable"
+              class="mb-3"
+              hide-details
+            />
+            <v-text-field
+              v-model="edicion[grupo.id]!.whatsappAuxiliar"
+              label="Grupo de WhatsApp - Auxiliar (link)"
               placeholder="https://chat.whatsapp.com/..."
               variant="outlined"
               density="comfortable"

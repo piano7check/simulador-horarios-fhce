@@ -43,7 +43,8 @@ export interface Clase {
   hora_inicio: string
   hora_fin: string
   aula_virtual: string | null
-  whatsapp_grupo: string | null
+  whatsapp_docente: string | null
+  whatsapp_auxiliar: string | null
 }
 
 export interface DocenteMateria {
