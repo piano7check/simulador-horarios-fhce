@@ -522,12 +522,16 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
 :deep(.v-calendar-daily_head-day-label) {
   display: none !important;
 }
-/* Vuetify ya fija la columna de horas a la izquierda (position:sticky) al
-   scrollear horizontalmente, pero sin fondo propio los eventos de los días
-   se ven "pasar por debajo" del texto. Se le da un fondo sólido y más
-   z-index para que quede siempre legible por encima. */
+/* Vuetify NO fija la columna de horas por su cuenta: hay que hacerlo a
+   mano para que, al scrollear horizontalmente en mobile (la grilla mide
+   880px de ancho mínimo), el estudiante siga viendo a qué hora
+   corresponde cada materia sin importar qué día esté mirando. Se le da
+   fondo sólido y más z-index para que los eventos de los días no se vean
+   "pasar por debajo" del texto al quedar fija por encima. */
 :deep(.v-calendar-daily__intervals-head),
 :deep(.v-calendar-daily__intervals-body) {
+  position: sticky;
+  left: 0;
   background: #fff;
   z-index: 3;
 }
