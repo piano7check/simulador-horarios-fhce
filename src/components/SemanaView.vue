@@ -26,6 +26,11 @@ const props = defineProps<{
 /* -- Responsive -- */
 const { mobile } = useDisplay()
 const intervalHeight = computed(() => (mobile.value ? 42 : 50))
+// La etiqueta de hora es corta ("6:45", "14:15"), así que en mobile no hace
+// falta el ancho por defecto de Vuetify (60px) — angostarla deja más
+// espacio visible para las columnas de los días, que es lo que el
+// estudiante realmente necesita ver al scrollear.
+const intervalWidth = computed(() => (mobile.value ? 42 : 60))
 
 /* -- Calendario semanal (mobile): se hace scrolleable horizontalmente con
    columnas más anchas; al entrar se posiciona en el día actual -- */
@@ -450,6 +455,7 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           :interval-minutes="90"
           :interval-count="rangoVisible.intervalCount"
           :interval-height="intervalHeight"
+          :interval-width="intervalWidth"
           :show-interval-label="() => true"
           :weekday-format="weekdayFormat"
           :day-format="dayFormat"
@@ -525,21 +531,30 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
 /* Vuetify NO fija la columna de horas por su cuenta: hay que hacerlo a
    mano para que, al scrollear horizontalmente en mobile (la grilla mide
    880px de ancho mínimo), el estudiante siga viendo a qué hora
-   corresponde cada materia sin importar qué día esté mirando. Se le da
-   fondo sólido y más z-index para que los eventos de los días no se vean
-   "pasar por debajo" del texto al quedar fija por encima. */
+   corresponde cada materia sin importar qué día esté mirando. Se pinta
+   igual que la fila de los días (mismo azul, texto blanco) para que se
+   lea como parte del mismo encabezado, con más z-index para que los
+   eventos de los días no se vean "pasar por debajo" del texto al quedar
+   fija por encima. */
 :deep(.v-calendar-daily__intervals-head),
 :deep(.v-calendar-daily__intervals-body) {
   position: sticky;
   left: 0;
-  background: #fff;
+  background-color: #1565c0;
+  border-right-color: #e0e0e0 !important;
   z-index: 3;
 }
-/* Las columnas de los días cierran su grilla con un border-bottom propio
-   (.v-calendar-daily__day), pero la columna de horas no lo tenía, así
-   que la última línea horizontal no se veía en esa columna. */
+:deep(.v-calendar-daily__interval-text) {
+  color: #fff !important;
+}
+/* El color de línea de Vuetify (rgba(0,0,0,0.12)) se ve gris claro sobre
+   blanco, pero sobre el fondo azul de esta columna se ve como una franja
+   oscura (el negro semitransparente oscurece el azul en vez de aclararlo).
+   Se usa el mismo gris ya "resuelto" (#e0e0e0, equivalente a como se ve
+   sobre blanco) en vez de la versión semitransparente, para que la línea
+   se vea igual en toda la tabla sin importar el fondo detrás. */
 :deep(.v-calendar-daily__intervals-body) {
-  border-bottom: rgba(var(--v-border-color), var(--v-border-opacity)) 1px solid;
+  border-bottom: #e0e0e0 1px solid;
 }
 /* Vuetify centra la etiqueta de cada hora sobre la línea divisoria con
    "top: -6px", superponiéndola con el intervalo anterior (por eso la
@@ -552,24 +567,31 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
    derecho; se le agrega la misma línea completa que ya tienen las
    columnas de los días, para que la grilla se vea continua fila a fila. */
 :deep(.v-calendar-daily__interval) {
-  border-top: rgba(var(--v-border-color), var(--v-border-opacity)) 1px solid;
+  border-top: #e0e0e0 1px solid;
 }
 :deep(.v-calendar-daily__interval:first-child) {
   border-top: none;
 }
 /* La línea que separa el encabezado (días) de la primera hora (6:45) usa
    por defecto un degradado que se desvanece hacia la izquierda, sobre la
-   columna de horas, dejándola "cortada". Se reemplaza por una línea sólida. */
+   columna de horas, dejándola "cortada". Se reemplaza por una línea
+   sólida, del mismo color que el resto de líneas de la grilla. */
 :deep(.v-calendar-daily__intervals-head::after) {
-  background: rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+  background: #e0e0e0 !important;
 }
-/* Vuetify envuelve el calendario en sus propios contenedores internos que
-   pueden terminar creando SU PROPIO scroll (aparte del que agregamos
-   nosotros en .calendar-scroll-wrapper). Cuando eso pasa, la columna de
-   horas queda "sticky" respecto al contenedor interno de Vuetify en vez
-   del nuestro, y al saltar de día con las pestañas deja de quedar fija.
-   Se anula ese scroll interno para que el único que scrollea sea el
-   wrapper que controlamos, y así left:0 se calcule contra ese. */
+/* Vuetify envuelve el calendario en varios contenedores internos con
+   "overflow: hidden" propio (el div raíz .v-calendar-daily, .v-calendar-daily__body,
+   .v-calendar-daily__scroll-area y .v-calendar-daily__pane). Cualquiera de
+   esos overflow "no visible" que quede ANTES de llegar a
+   .calendar-scroll-wrapper hace que la columna de horas quede "sticky"
+   respecto a ESE contenedor interno en vez del nuestro — y como ese
+   contenedor interno nunca scrollea (el que scrollea es nuestro wrapper),
+   la columna termina moviéndose junto con todo lo demás en vez de quedar
+   fija. Se anulan todos esos overflow para que el único contenedor con
+   scroll real en la cadena sea el wrapper que controlamos, y así left:0
+   se calcule contra ese. */
+:deep(.v-calendar-daily),
+:deep(.v-calendar-daily__body),
 :deep(.v-calendar-daily__scroll-area),
 :deep(.v-calendar-daily__pane) {
   overflow: visible !important;
