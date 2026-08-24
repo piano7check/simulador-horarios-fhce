@@ -371,6 +371,31 @@ function normalizarTexto(s: string | null | undefined) {
 
 const busquedaActiva = computed(() => normalizarTexto(busqueda.value).length > 0)
 
+function materiaCoincidePorTexto(m: Materia, termino: string) {
+  return normalizarTexto(m.nombre).includes(termino) || normalizarTexto(m.codigo).includes(termino)
+}
+
+// El docente solo se conoce una vez que se cargaron las clases de la
+// materia (clasesCache); la precarga en segundo plano de toda la carrera
+// hace que, en la práctica, ya estén disponibles para buscar apenas el
+// estudiante empieza a escribir.
+function docenteDeMateriaQueCoincide(materiaId: number, termino: string): string | null {
+  const clases = clasesCache.value[materiaId]
+  if (!clases) return null
+  const match = clases.find((c) => normalizarTexto(c.docente).includes(termino))
+  return match?.docente ?? null
+}
+
+/** Nombre del docente que hizo coincidir la materia en la búsqueda actual,
+ * solo si el nombre/código de la materia por sí solo NO coincidía (para no
+ * mostrar el dato de más cuando ya es obvio por qué apareció). */
+function docenteQueCoincide(materia: Materia): string | null {
+  if (!busquedaActiva.value) return null
+  const termino = normalizarTexto(busqueda.value)
+  if (materiaCoincidePorTexto(materia, termino)) return null
+  return docenteDeMateriaQueCoincide(materia.id, termino)
+}
+
 const nivelesFiltrados = computed<Nivel[]>(() => {
   if (!busquedaActiva.value) return niveles.value
   const termino = normalizarTexto(busqueda.value)
@@ -378,7 +403,7 @@ const nivelesFiltrados = computed<Nivel[]>(() => {
   for (const nivel of niveles.value) {
     const materiasFiltradas = nivel.materias.filter(
       (m) =>
-        normalizarTexto(m.nombre).includes(termino) || normalizarTexto(m.codigo).includes(termino),
+        materiaCoincidePorTexto(m, termino) || docenteDeMateriaQueCoincide(m.id, termino) !== null,
     )
     if (materiasFiltradas.length > 0) resultado.push({ ...nivel, materias: materiasFiltradas })
   }
@@ -626,7 +651,7 @@ async function toggleMateria(materia: Materia) {
       <template v-else>
         <v-text-field
           v-model="busqueda"
-          placeholder="Buscar materia..."
+          placeholder="Buscar materia o docente..."
           density="compact"
           variant="solo-filled"
           flat
@@ -695,6 +720,9 @@ async function toggleMateria(materia: Materia) {
                       />
                       <span class="text-truncate">{{ materia.nombre }}</span>
                     </v-list-item-title>
+                    <v-list-item-subtitle v-if="docenteQueCoincide(materia)" class="text-caption">
+                      Docente: {{ docenteQueCoincide(materia) }}
+                    </v-list-item-subtitle>
                     <template #append>
                       <v-icon
                         :icon="
@@ -997,7 +1025,7 @@ async function toggleMateria(materia: Materia) {
         <template v-else>
           <v-text-field
             v-model="busqueda"
-            placeholder="Buscar materia..."
+            placeholder="Buscar materia o docente..."
             density="compact"
             variant="solo-filled"
             flat
@@ -1059,6 +1087,9 @@ async function toggleMateria(materia: Materia) {
                         />
                         <span class="text-truncate">{{ materia.nombre }}</span>
                       </v-list-item-title>
+                      <v-list-item-subtitle v-if="docenteQueCoincide(materia)" class="text-caption">
+                        Docente: {{ docenteQueCoincide(materia) }}
+                      </v-list-item-subtitle>
                       <template #append>
                         <v-icon
                           :icon="
