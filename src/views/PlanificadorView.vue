@@ -964,33 +964,6 @@ async function toggleMateria(materia: Materia) {
       </v-container>
     </div>
 
-    <!-- Última actualización y link para reportar (mobile) -->
-    <div class="flex-shrink-0">
-      <div class="px-4 pb-2">
-        <div class="text-caption text-medium-emphasis">
-          Actualizado por última vez el: {{ formatScraped(lastScraped) }}
-        </div>
-        <div class="text-caption mt-1">
-          <a
-            :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
-            target="_blank"
-            rel="noopener"
-            style="text-decoration: underline; color: inherit"
-          >
-            Reportar un problema
-          </a>
-          <a
-            href="#"
-            @click.prevent="helpDialog = true"
-            class="text-caption text-medium-emphasis"
-            style="text-decoration: underline; color: inherit; margin-left: 12px"
-          >
-            Necesito ayuda
-          </a>
-        </div>
-      </div>
-    </div>
-
     <!-- Toggle panel inferior -->
     <div class="flex-shrink-0">
       <v-btn
@@ -1127,6 +1100,33 @@ async function toggleMateria(materia: Materia) {
         </template>
       </div>
     </v-expand-transition>
+
+    <!-- Última actualización y link para reportar (mobile) -->
+    <div class="flex-shrink-0">
+      <div class="px-4 py-2">
+        <div class="text-caption text-medium-emphasis">
+          Actualizado por última vez el: {{ formatScraped(lastScraped) }}
+        </div>
+        <div class="text-caption mt-1">
+          <a
+            :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
+            target="_blank"
+            rel="noopener"
+            style="text-decoration: underline; color: inherit"
+          >
+            Reportar un problema
+          </a>
+          <a
+            href="#"
+            @click.prevent="helpDialog = true"
+            class="text-caption text-medium-emphasis"
+            style="text-decoration: underline; color: inherit; margin-left: 12px"
+          >
+            Necesito ayuda
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Dialog de ayuda -->
