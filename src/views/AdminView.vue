@@ -217,9 +217,11 @@ async function guardarGrupo(grupo: GrupoAdmin) {
   }
 }
 
+// -- Pestañas del panel (Roles solo aparece para administrador) --
+const tabActiva = ref<'grupos' | 'roles'>('grupos')
+
 // -- Gestión de roles (solo administrador) --
 const ROLES_DISPONIBLES: RolUsuario[] = ['auxiliar', 'docente', 'administrador']
-const dialogRoles = ref(false)
 const usuariosConRol = ref<UsuarioConRol[]>([])
 const cargandoUsuariosConRol = ref(false)
 const emailBusqueda = ref('')
@@ -240,10 +242,9 @@ async function cargarUsuariosConRol() {
   }
 }
 
-async function abrirDialogRoles() {
-  dialogRoles.value = true
-  await cargarUsuariosConRol()
-}
+watch(tabActiva, (tab) => {
+  if (tab === 'roles') cargarUsuariosConRol()
+})
 
 async function asignarRolPorEmail() {
   const email = emailBusqueda.value.trim()
@@ -297,7 +298,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
   <v-container class="py-6" style="max-width: 720px">
     <div class="d-flex align-center mb-4">
       <v-btn :icon="mdiChevronLeft" variant="text" to="/" class="mr-1" />
-      <h1 class="text-h6" style="margin: 0">Administración de grupos</h1>
+      <h1 class="text-h6" style="margin: 0">Administración</h1>
     </div>
 
     <!-- Sin sesión -->
@@ -329,213 +330,212 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         <span class="text-caption text-medium-emphasis">
           Conectado como {{ nombreUsuario }} ({{ miRol }})
         </span>
-        <div>
-          <v-btn
-            v-if="esAdministrador"
-            size="small"
-            variant="text"
-            :prepend-icon="mdiAccountCog"
-            @click="abrirDialogRoles"
-          >
-            Gestionar roles
-          </v-btn>
-          <v-btn size="small" variant="text" :prepend-icon="mdiLogout" @click="signOut">
-            Cerrar sesión
-          </v-btn>
-        </div>
+        <v-btn size="small" variant="text" :prepend-icon="mdiLogout" @click="signOut">
+          Cerrar sesión
+        </v-btn>
       </div>
 
-      <v-card rounded="lg" class="mb-4">
-        <v-card-text>
-          <v-autocomplete
-            v-model="carreraSeleccionada"
-            :items="carreras"
-            item-title="nombre"
-            item-value="id"
-            :return-object="true"
-            label="Carrera"
-            placeholder="Buscar carrera..."
-            :loading="cargandoCarreras"
-            density="comfortable"
-            variant="outlined"
-            hide-details
-            clearable
-            @update:model-value="seleccionarCarrera"
-          />
+      <v-tabs v-if="esAdministrador" v-model="tabActiva" class="mb-4">
+        <v-tab value="grupos">Grupos</v-tab>
+        <v-tab value="roles" :prepend-icon="mdiAccountCog">Roles</v-tab>
+      </v-tabs>
 
-          <v-autocomplete
-            v-if="carreraSeleccionada"
-            v-model="materiaSeleccionada"
-            v-model:search="busquedaMateria"
-            :items="materiasFiltradas"
-            :no-filter="true"
-            item-title="nombre"
-            item-value="id"
-            :return-object="true"
-            label="Materia"
-            placeholder="Buscar materia o docente..."
-            :loading="cargandoMaterias"
-            density="comfortable"
-            variant="outlined"
-            class="mt-4"
-            hide-details
-            clearable
-            @update:model-value="seleccionarMateria"
-          >
-            <template #item="{ item, props: itemProps }">
-              <v-list-item
-                v-bind="itemProps"
-                :subtitle="
-                  docenteQueCoincide(item.raw)
-                    ? `Docente: ${docenteQueCoincide(item.raw)}`
-                    : undefined
-                "
+      <v-window v-model="tabActiva">
+        <v-window-item value="grupos">
+          <v-card rounded="lg" class="mb-4">
+            <v-card-text>
+              <v-autocomplete
+                v-model="carreraSeleccionada"
+                :items="carreras"
+                item-title="nombre"
+                item-value="id"
+                :return-object="true"
+                label="Carrera"
+                placeholder="Buscar carrera..."
+                :loading="cargandoCarreras"
+                density="comfortable"
+                variant="outlined"
+                hide-details
+                clearable
+                @update:model-value="seleccionarCarrera"
               />
-            </template>
-          </v-autocomplete>
 
-          <v-select
-            v-if="materiaSeleccionada && !cargandoGrupos && grupos.length > 0"
-            :model-value="grupoSeleccionado"
-            :items="grupos"
-            :item-title="(g: GrupoAdmin) => `Grupo ${g.numero}`"
-            item-value="id"
-            :return-object="true"
-            label="Grupo"
-            density="comfortable"
-            variant="outlined"
-            class="mt-4"
-            hide-details
-            @update:model-value="seleccionarGrupo"
-          />
-        </v-card-text>
-      </v-card>
+              <v-autocomplete
+                v-if="carreraSeleccionada"
+                v-model="materiaSeleccionada"
+                v-model:search="busquedaMateria"
+                :items="materiasFiltradas"
+                :no-filter="true"
+                item-title="nombre"
+                item-value="id"
+                :return-object="true"
+                label="Materia"
+                placeholder="Buscar materia o docente..."
+                :loading="cargandoMaterias"
+                density="comfortable"
+                variant="outlined"
+                class="mt-4"
+                hide-details
+                clearable
+                @update:model-value="seleccionarMateria"
+              >
+                <template #item="{ item, props: itemProps }">
+                  <v-list-item
+                    v-bind="itemProps"
+                    :subtitle="
+                      docenteQueCoincide(item.raw)
+                        ? `Docente: ${docenteQueCoincide(item.raw)}`
+                        : undefined
+                    "
+                  />
+                </template>
+              </v-autocomplete>
 
-      <div v-if="cargandoGrupos" class="d-flex justify-center py-6">
-        <v-progress-circular indeterminate />
-      </div>
+              <v-select
+                v-if="materiaSeleccionada && !cargandoGrupos && grupos.length > 0"
+                :model-value="grupoSeleccionado"
+                :items="grupos"
+                :item-title="(g: GrupoAdmin) => `Grupo ${g.numero}`"
+                item-value="id"
+                :return-object="true"
+                label="Grupo"
+                density="comfortable"
+                variant="outlined"
+                class="mt-4"
+                hide-details
+                @update:model-value="seleccionarGrupo"
+              />
+            </v-card-text>
+          </v-card>
 
-      <v-alert v-else-if="materiaSeleccionada && grupos.length === 0" type="info" variant="tonal">
-        Esta materia no tiene grupos cargados para la gestión {{ GESTION }}.
-      </v-alert>
+          <div v-if="cargandoGrupos" class="d-flex justify-center py-6">
+            <v-progress-circular indeterminate />
+          </div>
 
-      <v-card v-else-if="grupoSeleccionado" rounded="lg" class="mb-3">
-        <v-card-title class="text-subtitle-1">Grupo {{ grupoSeleccionado.numero }}</v-card-title>
-        <v-card-text v-if="edicion[grupoSeleccionado.id]">
-          <v-text-field
-            v-model="edicion[grupoSeleccionado.id]!.aulaVirtual"
-            label="Aula virtual - Classroom o Moodle (link)"
-            placeholder="https://classroom.google.com/... o https://moodle..."
-            variant="outlined"
-            density="comfortable"
-            class="mb-3"
-            hide-details
-          />
-          <v-text-field
-            v-model="edicion[grupoSeleccionado.id]!.whatsappDocente"
-            label="Grupo de WhatsApp - Docente (link)"
-            placeholder="https://chat.whatsapp.com/..."
-            variant="outlined"
-            density="comfortable"
-            class="mb-3"
-            hide-details
-          />
-          <v-text-field
-            v-model="edicion[grupoSeleccionado.id]!.whatsappAuxiliar"
-            label="Grupo de WhatsApp - Auxiliar (link)"
-            placeholder="https://chat.whatsapp.com/..."
-            variant="outlined"
-            density="comfortable"
-            hide-details
-          />
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            variant="flat"
-            :prepend-icon="mdiContentSave"
-            :loading="guardando[grupoSeleccionado.id]"
-            @click="guardarGrupo(grupoSeleccionado)"
+          <v-alert
+            v-else-if="materiaSeleccionada && grupos.length === 0"
+            type="info"
+            variant="tonal"
           >
-            Guardar
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+            Esta materia no tiene grupos cargados para la gestión {{ GESTION }}.
+          </v-alert>
+
+          <v-card v-else-if="grupoSeleccionado" rounded="lg" class="mb-3">
+            <v-card-title class="text-subtitle-1"
+              >Grupo {{ grupoSeleccionado.numero }}</v-card-title
+            >
+            <v-card-text v-if="edicion[grupoSeleccionado.id]">
+              <v-text-field
+                v-model="edicion[grupoSeleccionado.id]!.aulaVirtual"
+                label="Aula virtual - Classroom o Moodle (link)"
+                placeholder="https://classroom.google.com/... o https://moodle..."
+                variant="outlined"
+                density="comfortable"
+                class="mb-3"
+                hide-details
+              />
+              <v-text-field
+                v-model="edicion[grupoSeleccionado.id]!.whatsappDocente"
+                label="Grupo de WhatsApp - Docente (link)"
+                placeholder="https://chat.whatsapp.com/..."
+                variant="outlined"
+                density="comfortable"
+                class="mb-3"
+                hide-details
+              />
+              <v-text-field
+                v-model="edicion[grupoSeleccionado.id]!.whatsappAuxiliar"
+                label="Grupo de WhatsApp - Auxiliar (link)"
+                placeholder="https://chat.whatsapp.com/..."
+                variant="outlined"
+                density="comfortable"
+                hide-details
+              />
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer />
+              <v-btn
+                color="primary"
+                variant="flat"
+                :prepend-icon="mdiContentSave"
+                :loading="guardando[grupoSeleccionado.id]"
+                @click="guardarGrupo(grupoSeleccionado)"
+              >
+                Guardar
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-window-item>
+
+        <v-window-item v-if="esAdministrador" value="roles">
+          <v-card rounded="lg">
+            <v-card-text>
+              <div class="d-flex flex-wrap ga-2 align-start mb-4">
+                <v-text-field
+                  v-model="emailBusqueda"
+                  label="Correo del usuario"
+                  placeholder="usuario@est.umss.edu"
+                  variant="outlined"
+                  density="comfortable"
+                  hide-details
+                  style="min-width: 220px; flex: 1 1 220px"
+                  @keyup.enter="asignarRolPorEmail"
+                />
+                <v-select
+                  v-model="rolAAsignar"
+                  :items="ROLES_DISPONIBLES"
+                  label="Rol"
+                  variant="outlined"
+                  density="comfortable"
+                  hide-details
+                  style="max-width: 160px"
+                />
+                <v-btn
+                  color="primary"
+                  variant="flat"
+                  :loading="asignandoRol"
+                  @click="asignarRolPorEmail"
+                >
+                  Asignar
+                </v-btn>
+              </div>
+              <p class="text-caption text-medium-emphasis mb-4">
+                La cuenta debe haber iniciado sesión al menos una vez en la app. Si el correo ya
+                tiene un rol, se reemplaza por el nuevo.
+              </p>
+
+              <v-divider class="mb-4" />
+
+              <div v-if="cargandoUsuariosConRol" class="d-flex justify-center py-4">
+                <v-progress-circular indeterminate />
+              </div>
+              <v-alert v-else-if="usuariosConRol.length === 0" type="info" variant="tonal">
+                Todavía no hay usuarios con roles asignados.
+              </v-alert>
+              <v-list v-else density="compact">
+                <v-list-item v-for="u in usuariosConRol" :key="u.user_id">
+                  <v-list-item-title>{{ u.email }}</v-list-item-title>
+                  <v-list-item-subtitle>{{ u.rol }}</v-list-item-subtitle>
+                  <template #append>
+                    <v-btn
+                      size="small"
+                      variant="text"
+                      color="error"
+                      :loading="quitandoRol[u.user_id]"
+                      @click="quitarRolAUsuario(u)"
+                    >
+                      Quitar
+                    </v-btn>
+                  </template>
+                </v-list-item>
+              </v-list>
+            </v-card-text>
+          </v-card>
+        </v-window-item>
+      </v-window>
     </template>
 
     <auth-dialog v-model="authDialog" />
-
-    <v-dialog v-model="dialogRoles" max-width="560">
-      <v-card rounded="lg">
-        <v-card-title>Gestión de roles</v-card-title>
-        <v-card-text>
-          <div class="d-flex flex-wrap ga-2 align-start mb-4">
-            <v-text-field
-              v-model="emailBusqueda"
-              label="Correo del usuario"
-              placeholder="usuario@est.umss.edu"
-              variant="outlined"
-              density="comfortable"
-              hide-details
-              style="min-width: 220px; flex: 1 1 220px"
-              @keyup.enter="asignarRolPorEmail"
-            />
-            <v-select
-              v-model="rolAAsignar"
-              :items="ROLES_DISPONIBLES"
-              label="Rol"
-              variant="outlined"
-              density="comfortable"
-              hide-details
-              style="max-width: 160px"
-            />
-            <v-btn
-              color="primary"
-              variant="flat"
-              :loading="asignandoRol"
-              @click="asignarRolPorEmail"
-            >
-              Asignar
-            </v-btn>
-          </div>
-          <p class="text-caption text-medium-emphasis mb-4">
-            La cuenta debe haber iniciado sesión al menos una vez en la app. Si el correo ya tiene
-            un rol, se reemplaza por el nuevo.
-          </p>
-
-          <v-divider class="mb-4" />
-
-          <div v-if="cargandoUsuariosConRol" class="d-flex justify-center py-4">
-            <v-progress-circular indeterminate />
-          </div>
-          <v-alert v-else-if="usuariosConRol.length === 0" type="info" variant="tonal">
-            Todavía no hay usuarios con roles asignados.
-          </v-alert>
-          <v-list v-else density="compact">
-            <v-list-item v-for="u in usuariosConRol" :key="u.user_id">
-              <v-list-item-title>{{ u.email }}</v-list-item-title>
-              <v-list-item-subtitle>{{ u.rol }}</v-list-item-subtitle>
-              <template #append>
-                <v-btn
-                  size="small"
-                  variant="text"
-                  color="error"
-                  :loading="quitandoRol[u.user_id]"
-                  @click="quitarRolAUsuario(u)"
-                >
-                  Quitar
-                </v-btn>
-              </template>
-            </v-list-item>
-          </v-list>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn variant="text" @click="dialogRoles = false">Cerrar</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
 
     <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="2500">
       {{ snackbarMsg }}
