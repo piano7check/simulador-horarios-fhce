@@ -440,18 +440,18 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           </p>
           <p v-if="eventoDetalle.aulaVirtual" class="mb-2">
             <strong>{{ etiquetaAulaVirtual(eventoDetalle.aulaVirtual) }}:</strong>
-            <a :href="eventoDetalle.aulaVirtual" target="_blank" rel="noopener">Abrir enlace</a>
+            <a :href="eventoDetalle.aulaVirtual" target="_blank" rel="noopener"> Abrir enlace</a>
           </p>
           <p
             v-if="eventoDetalle.whatsappDocente"
             :class="eventoDetalle.whatsappAuxiliar ? 'mb-2' : 'mb-0'"
           >
             <strong>Grupo de WhatsApp (Docente):</strong>
-            <a :href="eventoDetalle.whatsappDocente" target="_blank" rel="noopener">Unirme</a>
+            <a :href="eventoDetalle.whatsappDocente" target="_blank" rel="noopener"> Unirme</a>
           </p>
           <p v-if="eventoDetalle.whatsappAuxiliar" class="mb-0">
             <strong>Grupo de WhatsApp (Auxiliar):</strong>
-            <a :href="eventoDetalle.whatsappAuxiliar" target="_blank" rel="noopener">Unirme</a>
+            <a :href="eventoDetalle.whatsappAuxiliar" target="_blank" rel="noopener"> Unirme</a>
           </p>
         </v-card-text>
         <v-card-actions>
