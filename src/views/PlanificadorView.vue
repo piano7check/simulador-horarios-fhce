@@ -445,6 +445,18 @@ function toggleGrupo(materiaId: number, grupoNumero: string) {
   gruposSeleccionados.value = next
 }
 
+/** Quitar un grupo puntual desde el botón "Quitar materia" del modal de
+ * detalle (SemanaView.vue) — más directo que volver al panel de materias
+ * a desmarcar el checkbox. Se guarda solo si ya hay sesión iniciada: a un
+ * usuario anónimo no tiene sentido interrumpirlo con el login justo por
+ * sacar una materia. */
+async function quitarGrupoDelHorario(key: string) {
+  const next = new Set(gruposSeleccionados.value)
+  next.delete(key)
+  gruposSeleccionados.value = next
+  if (user.value) await guardar()
+}
+
 // Datos para la vista principal: todos los grupos seleccionados con su info
 
 interface GrupoSeleccionado {
@@ -866,6 +878,7 @@ async function toggleMateria(materia: Materia) {
           :nombre-nivel="nombreNivel"
           :gestion="GESTION"
           :estudiante-nombre="estudianteRegistrado"
+          @quitar-grupo="quitarGrupoDelHorario"
         />
       </v-container>
     </v-main>
@@ -964,6 +977,7 @@ async function toggleMateria(materia: Materia) {
           :nombre-nivel="nombreNivel"
           :gestion="GESTION"
           :estudiante-nombre="estudianteRegistrado"
+          @quitar-grupo="quitarGrupoDelHorario"
         />
       </v-container>
     </div>

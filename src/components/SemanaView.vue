@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useDisplay } from 'vuetify'
-import { mdiAlertCircleOutline, mdiFormatListBulleted } from '@mdi/js'
+import { mdiAlertCircleOutline, mdiFormatListBulleted, mdiDeleteOutline } from '@mdi/js'
 import type { Clase } from '@/services/horarios'
 import { descargarHorario, descargarHorarioImagen, imprimirHorario } from '@/utils/exportarHorario'
 
@@ -21,6 +21,13 @@ const props = defineProps<{
   nombreNivel?: string
   gestion?: string
   estudianteNombre?: string
+}>()
+
+const emit = defineEmits<{
+  /** El estudiante pidió quitar un grupo del horario desde el modal de
+   * detalle (grupoKey = "materiaId-grupoNumero"). La selección en sí vive
+   * en el padre (PlanificadorView.vue), así que solo se avisa. */
+  quitarGrupo: [grupoKey: string]
 }>()
 
 /* -- Responsive -- */
@@ -65,6 +72,12 @@ const leyendaDialog = ref(false)
 
 function abrirDetalle(ev: EventoCal) {
   eventoDetalle.value = ev
+}
+
+function quitarMateria() {
+  if (!eventoDetalle.value) return
+  emit('quitarGrupo', eventoDetalle.value.grupoKey)
+  eventoDetalle.value = null
 }
 
 const detalleHorario = computed(() => {
@@ -490,6 +503,14 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           </p>
         </v-card-text>
         <v-card-actions>
+          <v-btn
+            variant="text"
+            color="error"
+            :prepend-icon="mdiDeleteOutline"
+            @click="quitarMateria"
+          >
+            Quitar materia
+          </v-btn>
           <v-spacer />
           <v-btn variant="text" @click="eventoDetalle = null">Cerrar</v-btn>
         </v-card-actions>
