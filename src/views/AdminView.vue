@@ -334,8 +334,8 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         <v-card-text v-if="edicion[grupoSeleccionado.id]">
           <v-text-field
             v-model="edicion[grupoSeleccionado.id]!.aulaVirtual"
-            label="Aula virtual (link)"
-            placeholder="https://..."
+            label="Aula virtual - Classroom o Moodle (link)"
+            placeholder="https://classroom.google.com/... o https://moodle..."
             variant="outlined"
             density="comfortable"
             class="mb-3"
