@@ -619,7 +619,7 @@ async function toggleMateria(materia: Materia) {
           :icon="mdiChevronLeft"
           variant="text"
           size="small"
-          to="/"
+          :to="{ path: '/', query: { elegir: '1' } }"
           class="topbar-unificada__icon"
         />
         <v-toolbar-title class="text-subtitle-1 text-truncate">
@@ -870,7 +870,7 @@ async function toggleMateria(materia: Materia) {
           :icon="mdiChevronLeft"
           variant="text"
           size="small"
-          to="/"
+          :to="{ path: '/', query: { elegir: '1' } }"
           class="topbar-unificada__icon"
         />
         <v-toolbar-title class="text-subtitle-2 text-truncate">

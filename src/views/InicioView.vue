@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { obtenerCarreras, type Carrera } from '@/services/horarios'
 import { obtenerCarrerasConHorarioGuardado } from '@/services/horarioGuardado'
 import { useAuth } from '@/composables/useAuth'
 import { mdiMagnify, mdiSchool, mdiChevronRight } from '@mdi/js'
 
+const route = useRoute()
 const router = useRouter()
 const { user, signInPulse, sesionLista } = useAuth()
 const carreras = ref<Carrera[]>([])
@@ -21,9 +22,14 @@ const FACULTAD_ID = 1
 /** Si el usuario logueado ya tiene guardado el horario de una sola
  * carrera, se salta la pantalla de "elegir carrera" y va directo ahí
  * (con más de una guardada, no hay forma de adivinar cuál, así que se
- * deja la lista normal). */
+ * deja la lista normal). No aplica si se llegó acá con ?elegir=1 (el
+ * botón "volver" del planificador), porque ahí la intención explícita
+ * del usuario es justamente ver la lista para elegir otra carrera —
+ * si no, el redirect lo devolvía altiro al mismo horario y "volver"
+ * no hacía nada. */
 async function irDirectoSiTieneHorarioGuardado() {
   if (!user.value) return
+  if (route.query.elegir) return
   try {
     const carreraIds = await obtenerCarrerasConHorarioGuardado(user.value.id)
     if (carreraIds.length !== 1) return
