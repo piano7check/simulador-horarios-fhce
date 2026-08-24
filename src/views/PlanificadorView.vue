@@ -16,6 +16,7 @@ import {
   mdiFileImageOutline,
   mdiHelpCircle,
   mdiContentSave,
+  mdiMagnify,
 } from '@mdi/js'
 import SemanaView from '@/components/SemanaView.vue'
 import AuthDialog from '@/components/AuthDialog.vue'
@@ -55,6 +56,7 @@ const helpDialog = ref(false)
 // Sidebar: nivel seleccionado y materias expandidas
 const nivelActivo = ref<string | null>(null)
 const materiasExpandidas = ref(new Set<number>())
+const busqueda = ref('')
 const clasesCache = ref<Record<number, Clase[]>>({})
 const cargandoClases = ref<Record<number, boolean>>({})
 
@@ -228,7 +230,10 @@ async function evaluarConflictoAntesDeGuardar() {
   if (!user.value) return
   try {
     const gruposGuardados = await cargarHorario(user.value.id, carreraId)
-    if (gruposGuardados.length === 0 || sonMismosGrupos(gruposSeleccionados.value, gruposGuardados)) {
+    if (
+      gruposGuardados.length === 0 ||
+      sonMismosGrupos(gruposSeleccionados.value, gruposGuardados)
+    ) {
       await guardar()
       return
     }
@@ -350,6 +355,34 @@ const niveles = computed<Nivel[]>(() => {
     map.get(m.nivel_codigo)!.materias.push(m)
   }
   return Array.from(map.values())
+})
+
+// Buscador de materias: ignora acentos/mayúsculas y busca en todos los
+// niveles a la vez (un estudiante puede llevar materias de semestres
+// distintos por repetición o adelanto, así que no tiene sentido limitar
+// la búsqueda al nivel actualmente abierto).
+function normalizarTexto(s: string) {
+  return s
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLowerCase()
+    .trim()
+}
+
+const busquedaActiva = computed(() => normalizarTexto(busqueda.value).length > 0)
+
+const nivelesFiltrados = computed<Nivel[]>(() => {
+  if (!busquedaActiva.value) return niveles.value
+  const termino = normalizarTexto(busqueda.value)
+  const resultado: Nivel[] = []
+  for (const nivel of niveles.value) {
+    const materiasFiltradas = nivel.materias.filter(
+      (m) =>
+        normalizarTexto(m.nombre).includes(termino) || normalizarTexto(m.codigo).includes(termino),
+    )
+    if (materiasFiltradas.length > 0) resultado.push({ ...nivel, materias: materiasFiltradas })
+  }
+  return resultado
 })
 
 // Extraer grupos únicos de las clases cacheadas de una materia
@@ -537,7 +570,9 @@ async function toggleMateria(materia: Materia) {
       <v-card-actions>
         <v-spacer />
         <v-btn variant="text" @click="mantenerHorarioActual">Mantener horario actual</v-btn>
-        <v-btn color="primary" variant="flat" @click="usarHorarioGuardado">Mostrar horario guardado</v-btn>
+        <v-btn color="primary" variant="flat" @click="usarHorarioGuardado"
+          >Mostrar horario guardado</v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -548,13 +583,15 @@ async function toggleMateria(materia: Materia) {
         <v-card-title class="text-white">Ya tienes un horario guardado</v-card-title>
       </v-card-item>
       <v-card-text class="pt-4 dialog-text">
-        Tenías otro horario guardado para esta carrera, distinto al que armaste ahora.
-        ¿Querés reemplazarlo con este, o mantener el que ya estaba guardado?
+        Tenías otro horario guardado para esta carrera, distinto al que armaste ahora. ¿Querés
+        reemplazarlo con este, o mantener el que ya estaba guardado?
       </v-card-text>
       <v-card-actions>
         <v-spacer />
         <v-btn variant="text" @click="usarHorarioGuardadoExistente">Mantener el guardado</v-btn>
-        <v-btn color="primary" variant="flat" @click="reemplazarHorarioGuardado">Reemplazar con este</v-btn>
+        <v-btn color="primary" variant="flat" @click="reemplazarHorarioGuardado"
+          >Reemplazar con este</v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -564,7 +601,13 @@ async function toggleMateria(materia: Materia) {
     <!-- Sidebar izquierdo -->
     <v-navigation-drawer permanent width="320">
       <v-toolbar density="compact" flat class="topbar-unificada" color="#4285f4" theme="dark">
-        <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" class="topbar-unificada__icon" />
+        <v-btn
+          :icon="mdiChevronLeft"
+          variant="text"
+          size="small"
+          to="/"
+          class="topbar-unificada__icon"
+        />
         <v-toolbar-title class="text-subtitle-1 text-truncate">
           {{ nombreCarreraLegible }}
         </v-toolbar-title>
@@ -580,105 +623,139 @@ async function toggleMateria(materia: Materia) {
         {{ errorMsg }}
       </v-alert>
 
-      <v-list v-else density="compact" nav class="materias-panel">
-        <template v-for="nivel in niveles" :key="nivel.codigo">
-          <!-- Nivel: se ve como un botón/chip (fondo tonal + esquinas
+      <template v-else>
+        <v-text-field
+          v-model="busqueda"
+          placeholder="Buscar materia..."
+          density="compact"
+          variant="solo-filled"
+          flat
+          hide-details
+          clearable
+          single-line
+          :prepend-inner-icon="mdiMagnify"
+          class="mx-2 mt-2 mb-1"
+        />
+
+        <v-list density="compact" nav class="materias-panel">
+          <div
+            v-if="busquedaActiva && nivelesFiltrados.length === 0"
+            class="text-center text-medium-emphasis text-body-2 py-4"
+          >
+            No se encontraron materias para "{{ busqueda }}"
+          </div>
+          <template v-for="nivel in nivelesFiltrados" :key="nivel.codigo">
+            <!-- Nivel: se ve como un botón/chip (fondo tonal + esquinas
                redondeadas) en vez de solo texto, para que quede claro que
                se puede tocar -->
-          <v-list-item
-            :active="nivelActivo === nivel.codigo"
-            color="primary"
-            variant="tonal"
-            rounded="lg"
-            class="mx-1 mb-1 nivel-chip"
-            @click="seleccionarNivel(nivel.codigo)"
-          >
-            <v-list-item-title class="font-weight-medium">
-              Semestre {{ nivel.nombre }}
-            </v-list-item-title>
-            <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
-            <template #append>
-              <v-icon :icon="nivelActivo === nivel.codigo ? mdiChevronDown : mdiChevronRight" size="small" />
-            </template>
-          </v-list-item>
+            <v-list-item
+              :active="busquedaActiva || nivelActivo === nivel.codigo"
+              color="primary"
+              variant="tonal"
+              rounded="lg"
+              class="mx-1 mb-1 nivel-chip"
+              @click="seleccionarNivel(nivel.codigo)"
+            >
+              <v-list-item-title class="font-weight-medium">
+                Semestre {{ nivel.nombre }}
+              </v-list-item-title>
+              <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
+              <template #append>
+                <v-icon
+                  :icon="
+                    busquedaActiva || nivelActivo === nivel.codigo
+                      ? mdiChevronDown
+                      : mdiChevronRight
+                  "
+                  size="small"
+                />
+              </template>
+            </v-list-item>
 
-          <!-- Materias del nivel -->
-          <v-expand-transition>
-            <div v-if="nivelActivo === nivel.codigo">
-              <template v-for="materia in nivel.materias" :key="materia.id">
-                <!-- Materia (click expande grupos): color naranja bien
+            <!-- Materias del nivel -->
+            <v-expand-transition>
+              <div v-if="busquedaActiva || nivelActivo === nivel.codigo">
+                <template v-for="materia in nivel.materias" :key="materia.id">
+                  <!-- Materia (click expande grupos): color naranja bien
                      distinto del azul del semestre, para que se note que
                      es otro nivel de selección -->
-                <v-list-item
-                  :active="materiasExpandidas.has(materia.id)"
-                  color="orange-darken-1"
-                  variant="tonal"
-                  rounded="lg"
-                  class="ml-6 mr-1 mb-1 materia-chip"
-                  @click="toggleMateria(materia)"
-                >
-                  <v-list-item-title class="text-body-2 d-flex align-center materia-title-row">
-                    <v-icon :icon="mdiBookOpenVariant" size="x-small" class="mr-1 flex-shrink-0" />
-                    <span class="text-truncate">{{ materia.nombre }}</span>
-                  </v-list-item-title>
-                  <template #append>
-                    <v-icon
-                      :icon="materiasExpandidas.has(materia.id) ? mdiChevronDown : mdiChevronRight"
-                      size="small"
-                    />
-                  </template>
-                </v-list-item>
-
-                <!-- Grupos como checkboxes -->
-                <v-expand-transition>
-                  <div v-if="materiasExpandidas.has(materia.id)">
-                    <div v-if="cargandoClases[materia.id]" class="d-flex justify-center py-2">
-                      <v-progress-circular indeterminate size="20" width="2" />
-                    </div>
-                    <template v-else>
-                      <v-checkbox
-                        v-for="grupo in gruposDeMateria(materia.id)"
-                        :key="grupo.numero"
-                        :model-value="isGrupoSeleccionado(materia.id, grupo.numero)"
-                        :label="`G ${grupo.numero}: ${grupo.docente}`"
-                        density="compact"
-                        hide-details
-                        class="pl-12"
-                        @update:model-value="toggleGrupo(materia.id, grupo.numero)"
+                  <v-list-item
+                    :active="materiasExpandidas.has(materia.id)"
+                    color="orange-darken-1"
+                    variant="tonal"
+                    rounded="lg"
+                    class="ml-6 mr-1 mb-1 materia-chip"
+                    @click="toggleMateria(materia)"
+                  >
+                    <v-list-item-title class="text-body-2 d-flex align-center materia-title-row">
+                      <v-icon
+                        :icon="mdiBookOpenVariant"
+                        size="x-small"
+                        class="mr-1 flex-shrink-0"
+                      />
+                      <span class="text-truncate">{{ materia.nombre }}</span>
+                    </v-list-item-title>
+                    <template #append>
+                      <v-icon
+                        :icon="
+                          materiasExpandidas.has(materia.id) ? mdiChevronDown : mdiChevronRight
+                        "
+                        size="small"
                       />
                     </template>
-                  </div>
-                </v-expand-transition>
-              </template>
-            </div>
-          </v-expand-transition>
-        </template>
+                  </v-list-item>
 
-        <!-- Última actualización y link para reportar (desktop) -->
-        <div class="pa-4">
-          <div class="text-caption text-medium-emphasis">
-            Actualizado por última vez el: {{ formatScraped(lastScraped) }}
+                  <!-- Grupos como checkboxes -->
+                  <v-expand-transition>
+                    <div v-if="materiasExpandidas.has(materia.id)">
+                      <div v-if="cargandoClases[materia.id]" class="d-flex justify-center py-2">
+                        <v-progress-circular indeterminate size="20" width="2" />
+                      </div>
+                      <template v-else>
+                        <v-checkbox
+                          v-for="grupo in gruposDeMateria(materia.id)"
+                          :key="grupo.numero"
+                          :model-value="isGrupoSeleccionado(materia.id, grupo.numero)"
+                          :label="`G ${grupo.numero}: ${grupo.docente}`"
+                          density="compact"
+                          hide-details
+                          class="pl-12"
+                          @update:model-value="toggleGrupo(materia.id, grupo.numero)"
+                        />
+                      </template>
+                    </div>
+                  </v-expand-transition>
+                </template>
+              </div>
+            </v-expand-transition>
+          </template>
+
+          <!-- Última actualización y link para reportar (desktop) -->
+          <div class="pa-4">
+            <div class="text-caption text-medium-emphasis">
+              Actualizado por última vez el: {{ formatScraped(lastScraped) }}
+            </div>
+            <div class="text-caption mt-2">
+              <a
+                :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
+                target="_blank"
+                rel="noopener"
+                style="text-decoration: underline; color: inherit"
+              >
+                Reportar un problema
+              </a>
+              <a
+                href="#"
+                @click.prevent="helpDialog = true"
+                class="text-caption text-medium-emphasis"
+                style="text-decoration: underline; color: inherit; margin-left: 12px"
+              >
+                Necesito ayuda
+              </a>
+            </div>
           </div>
-          <div class="text-caption mt-2">
-            <a
-              :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
-              target="_blank"
-              rel="noopener"
-              style="text-decoration: underline; color: inherit"
-            >
-              Reportar un problema
-            </a>
-            <a
-              href="#"
-              @click.prevent="helpDialog = true"
-              class="text-caption text-medium-emphasis"
-              style="text-decoration: underline; color: inherit; margin-left: 12px"
-            >
-              Necesito ayuda
-            </a>
-          </div>
-        </div>
-      </v-list>
+        </v-list>
+      </template>
     </v-navigation-drawer>
 
     <!-- Contenido principal desktop -->
@@ -695,7 +772,13 @@ async function toggleMateria(materia: Materia) {
           <v-btn icon variant="outlined" size="small" @click="descargarPDF" title="Descargar PDF">
             <v-icon :icon="mdiFilePdfBox" />
           </v-btn>
-          <v-btn icon variant="outlined" size="small" @click="descargarImagen" title="Descargar imagen">
+          <v-btn
+            icon
+            variant="outlined"
+            size="small"
+            @click="descargarImagen"
+            title="Descargar imagen"
+          >
             <v-icon :icon="mdiFileImageOutline" />
           </v-btn>
           <v-btn icon variant="outlined" size="small" @click="helpDialog = true" title="Ayuda">
@@ -767,7 +850,13 @@ async function toggleMateria(materia: Materia) {
     >
       <!-- Header mobile: título + iconos en una sola fila para ahorrar espacio vertical -->
       <v-toolbar density="compact" flat class="topbar-unificada" color="#4285f4" theme="dark">
-        <v-btn :icon="mdiChevronLeft" variant="text" size="small" to="/" class="topbar-unificada__icon" />
+        <v-btn
+          :icon="mdiChevronLeft"
+          variant="text"
+          size="small"
+          to="/"
+          class="topbar-unificada__icon"
+        />
         <v-toolbar-title class="text-subtitle-2 text-truncate">
           {{ nombreCarreraLegible }}
         </v-toolbar-title>
@@ -781,7 +870,13 @@ async function toggleMateria(materia: Materia) {
           <v-btn icon variant="text" density="compact" @click="descargarPDF" title="Descargar PDF">
             <v-icon :icon="mdiFilePdfBox" size="18" />
           </v-btn>
-          <v-btn icon variant="text" density="compact" @click="descargarImagen" title="Descargar imagen">
+          <v-btn
+            icon
+            variant="text"
+            density="compact"
+            @click="descargarImagen"
+            title="Descargar imagen"
+          >
             <v-icon :icon="mdiFileImageOutline" size="18" />
           </v-btn>
           <v-btn
@@ -899,72 +994,106 @@ async function toggleMateria(materia: Materia) {
           {{ errorMsg }}
         </v-alert>
 
-        <v-list v-else density="compact" nav>
-          <template v-for="nivel in niveles" :key="nivel.codigo">
-            <v-list-item
-              :active="nivelActivo === nivel.codigo"
-              color="primary"
-              variant="tonal"
-              rounded="lg"
-              class="mx-1 mb-1 nivel-chip"
-              @click="seleccionarNivel(nivel.codigo)"
+        <template v-else>
+          <v-text-field
+            v-model="busqueda"
+            placeholder="Buscar materia..."
+            density="compact"
+            variant="solo-filled"
+            flat
+            hide-details
+            clearable
+            single-line
+            :prepend-inner-icon="mdiMagnify"
+            class="mx-2 mt-2 mb-1"
+          />
+
+          <v-list density="compact" nav>
+            <div
+              v-if="busquedaActiva && nivelesFiltrados.length === 0"
+              class="text-center text-medium-emphasis text-body-2 py-4"
             >
-              <v-list-item-title class="font-weight-medium">
-                {{ nivel.nombre }}
-              </v-list-item-title>
-              <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
-              <template #append>
-                <v-icon :icon="nivelActivo === nivel.codigo ? mdiChevronDown : mdiChevronRight" size="small" />
-              </template>
-            </v-list-item>
+              No se encontraron materias para "{{ busqueda }}"
+            </div>
+            <template v-for="nivel in nivelesFiltrados" :key="nivel.codigo">
+              <v-list-item
+                :active="busquedaActiva || nivelActivo === nivel.codigo"
+                color="primary"
+                variant="tonal"
+                rounded="lg"
+                class="mx-1 mb-1 nivel-chip"
+                @click="seleccionarNivel(nivel.codigo)"
+              >
+                <v-list-item-title class="font-weight-medium">
+                  {{ nivel.nombre }}
+                </v-list-item-title>
+                <v-list-item-subtitle>{{ nivel.codigo }}</v-list-item-subtitle>
+                <template #append>
+                  <v-icon
+                    :icon="
+                      busquedaActiva || nivelActivo === nivel.codigo
+                        ? mdiChevronDown
+                        : mdiChevronRight
+                    "
+                    size="small"
+                  />
+                </template>
+              </v-list-item>
 
-            <v-expand-transition>
-              <div v-if="nivelActivo === nivel.codigo">
-                <template v-for="materia in nivel.materias" :key="materia.id">
-                  <v-list-item
-                    :active="materiasExpandidas.has(materia.id)"
-                    color="orange-darken-1"
-                    variant="tonal"
-                    rounded="lg"
-                    class="ml-6 mr-1 mb-1 materia-chip"
-                    @click="toggleMateria(materia)"
-                  >
-                    <v-list-item-title class="d-flex align-center materia-title-row">
-                      <v-icon :icon="mdiBookOpenVariant" size="x-small" class="mr-1 flex-shrink-0" />
-                      <span class="text-truncate">{{ materia.nombre }}</span>
-                    </v-list-item-title>
-                    <template #append>
-                      <v-icon
-                        :icon="materiasExpandidas.has(materia.id) ? mdiChevronDown : mdiChevronRight"
-                        size="small"
-                      />
-                    </template>
-                  </v-list-item>
-
-                  <v-expand-transition>
-                    <div v-if="materiasExpandidas.has(materia.id)">
-                      <div v-if="cargandoClases[materia.id]" class="d-flex justify-center py-2">
-                        <v-progress-circular indeterminate size="18" width="2" />
-                      </div>
-                      <template v-else>
-                        <v-checkbox
-                          v-for="grupo in gruposDeMateria(materia.id)"
-                          :key="grupo.numero"
-                          :model-value="isGrupoSeleccionado(materia.id, grupo.numero)"
-                          :label="`G ${grupo.numero}: ${grupo.docente}`"
-                          density="compact"
-                          hide-details
-                          class="pl-12"
-                          @update:model-value="toggleGrupo(materia.id, grupo.numero)"
+              <v-expand-transition>
+                <div v-if="busquedaActiva || nivelActivo === nivel.codigo">
+                  <template v-for="materia in nivel.materias" :key="materia.id">
+                    <v-list-item
+                      :active="materiasExpandidas.has(materia.id)"
+                      color="orange-darken-1"
+                      variant="tonal"
+                      rounded="lg"
+                      class="ml-6 mr-1 mb-1 materia-chip"
+                      @click="toggleMateria(materia)"
+                    >
+                      <v-list-item-title class="d-flex align-center materia-title-row">
+                        <v-icon
+                          :icon="mdiBookOpenVariant"
+                          size="x-small"
+                          class="mr-1 flex-shrink-0"
+                        />
+                        <span class="text-truncate">{{ materia.nombre }}</span>
+                      </v-list-item-title>
+                      <template #append>
+                        <v-icon
+                          :icon="
+                            materiasExpandidas.has(materia.id) ? mdiChevronDown : mdiChevronRight
+                          "
+                          size="small"
                         />
                       </template>
-                    </div>
-                  </v-expand-transition>
-                </template>
-              </div>
-            </v-expand-transition>
-          </template>
-        </v-list>
+                    </v-list-item>
+
+                    <v-expand-transition>
+                      <div v-if="materiasExpandidas.has(materia.id)">
+                        <div v-if="cargandoClases[materia.id]" class="d-flex justify-center py-2">
+                          <v-progress-circular indeterminate size="18" width="2" />
+                        </div>
+                        <template v-else>
+                          <v-checkbox
+                            v-for="grupo in gruposDeMateria(materia.id)"
+                            :key="grupo.numero"
+                            :model-value="isGrupoSeleccionado(materia.id, grupo.numero)"
+                            :label="`G ${grupo.numero}: ${grupo.docente}`"
+                            density="compact"
+                            hide-details
+                            class="pl-12"
+                            @update:model-value="toggleGrupo(materia.id, grupo.numero)"
+                          />
+                        </template>
+                      </div>
+                    </v-expand-transition>
+                  </template>
+                </div>
+              </v-expand-transition>
+            </template>
+          </v-list>
+        </template>
       </div>
     </v-expand-transition>
   </div>
@@ -1013,7 +1142,11 @@ async function toggleMateria(materia: Materia) {
             <v-icon :icon="mdiContentSave" />
           </v-btn>
           <span>
-            {{ user ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.' : 'Si no has iniciado sesión, al guardar se abrirá el registro.' }}
+            {{
+              user
+                ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.'
+                : 'Si no has iniciado sesión, al guardar se abrirá el registro.'
+            }}
           </span>
         </div>
       </v-card-text>
