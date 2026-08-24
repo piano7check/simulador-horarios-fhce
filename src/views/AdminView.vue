@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { mdiChevronLeft, mdiContentSave, mdiLogout, mdiAccountCog } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from '@/components/AuthDialog.vue'
@@ -29,7 +30,15 @@ const GESTION = GESTION_ACTUAL
 const FACULTAD_ID = 1
 
 const { user, signOut } = useAuth()
+const router = useRouter()
 const authDialog = ref(false)
+
+/** Al cerrar sesión, volver a la vista inicial (elegir carrera) en vez de
+ * quedarse en /admin ya sin permisos. */
+async function cerrarSesion() {
+  await signOut()
+  router.push('/')
+}
 
 const verificandoRol = ref(false)
 const miRol = ref<RolUsuario | null>(null)
@@ -320,7 +329,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
     <v-card v-else-if="!tienePermiso" rounded="lg">
       <v-card-text class="text-center py-8">
         <p class="mb-4">Tu cuenta ({{ nombreUsuario }}) no tiene permisos de administrador.</p>
-        <v-btn variant="text" @click="signOut">Cerrar sesión</v-btn>
+        <v-btn variant="text" @click="cerrarSesion">Cerrar sesión</v-btn>
       </v-card-text>
     </v-card>
 
@@ -330,7 +339,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         <span class="text-caption text-medium-emphasis">
           Conectado como {{ nombreUsuario }} ({{ miRol }})
         </span>
-        <v-btn size="small" variant="text" :prepend-icon="mdiLogout" @click="signOut">
+        <v-btn size="small" variant="text" :prepend-icon="mdiLogout" @click="cerrarSesion">
           Cerrar sesión
         </v-btn>
       </div>

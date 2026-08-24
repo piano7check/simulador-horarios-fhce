@@ -273,6 +273,9 @@ async function guardar() {
 // horario. signInPulse solo se mueve en un login nuevo de verdad.
 watch(signInPulse, async () => {
   if (!user.value) return
+  // En mobile, apenas hay sesión se debe ver directo el horario del
+  // usuario registrado, no quedar tapado por el panel de materias.
+  if (mobile.value) panelMobileAbierto.value = false
   if (guardarPendiente.value) {
     guardarPendiente.value = false
     await evaluarConflictoAntesDeGuardar()
@@ -514,6 +517,10 @@ onMounted(async () => {
       }
     } else {
       await cargarHorarioGuardado()
+      // Si ya había sesión desde antes (no es un login recién hecho, sino
+      // que abrió la página ya logueado), también debe verse el horario
+      // directo en mobile, no tapado por el panel de materias.
+      if (user.value && mobile.value) panelMobileAbierto.value = false
     }
   } catch {
     errorMsg.value = 'No se pudieron cargar las materias'

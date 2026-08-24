@@ -1,11 +1,21 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { mdiAccountCircle, mdiLogout } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from './AuthDialog.vue'
 
 const { user, signOut } = useAuth()
+const router = useRouter()
 const authDialog = ref(false)
+
+/** Al cerrar sesión, volver a la vista inicial (elegir carrera) sin
+ * importar en qué página se estaba — no tiene sentido quedarse en el
+ * horario de una carrera, o en /admin, ya sin sesión. */
+async function cerrarSesion() {
+  await signOut()
+  router.push('/')
+}
 
 const nombreMostrado = computed(() => {
   if (!user.value) return ''
@@ -27,7 +37,8 @@ const nombreMostrado = computed(() => {
         variant="flat"
         size="small"
         class="user-cta-btn"
-      >{{ nombreMostrado }}</v-btn>
+        >{{ nombreMostrado }}</v-btn
+      >
     </template>
     <v-card theme="light" rounded="lg" min-width="220">
       <v-card-item class="dialog-header">
@@ -41,7 +52,7 @@ const nombreMostrado = computed(() => {
           <v-list-item-subtitle class="text-caption">{{ user.email }}</v-list-item-subtitle>
         </v-list-item>
         <v-divider />
-        <v-list-item :prepend-icon="mdiLogout" title="Cerrar sesión" @click="signOut" />
+        <v-list-item :prepend-icon="mdiLogout" title="Cerrar sesión" @click="cerrarSesion" />
       </v-list>
     </v-card>
   </v-menu>
@@ -67,7 +78,10 @@ const nombreMostrado = computed(() => {
   box-shadow:
     0 0 0 2px rgba(255, 255, 255, 0.22),
     0 8px 18px rgba(26, 115, 232, 0.28);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
 .user-cta-btn:hover {
