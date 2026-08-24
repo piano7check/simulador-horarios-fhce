@@ -1,0 +1,2136 @@
+{
+  "carrera_id": 12,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Educacion Auditiva I",
+          "codigo": "1800072",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Maldonado Leyes Marcelo",
+                  "aula": "TP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Maldonado Leyes Marcelo",
+                  "aula": "TP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Maldonado Leyes Marcelo",
+                  "aula": "TP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lectura Musical I",
+          "codigo": "1800073",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral I",
+          "codigo": "1800074",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Lanza Segurola Alvaro Andres",
+                  "aula": "H242",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Lanza Segurola Alvaro Andres",
+                  "aula": "H242",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Armonia I",
+          "codigo": "1800075",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Cadima Fuentes Nelson Alvaro",
+                  "aula": "TP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cadima Fuentes Nelson Alvaro",
+                  "aula": "TP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Cadima Fuentes Nelson Alvaro",
+                  "aula": "TP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Temas de Historia de la Musica I",
+          "codigo": "1800076",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Complementario I",
+          "codigo": "1800077",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "H242",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "TP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento I",
+          "codigo": "1800492",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "TP-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "H242",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "H242",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Educacion Auditiva Ii",
+          "codigo": "1800079",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Maldonado Leyes Marcelo",
+                  "aula": "TP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Maldonado Leyes Marcelo",
+                  "aula": "TP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Maldonado Leyes Marcelo",
+                  "aula": "TP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lectura Musical Ii",
+          "codigo": "1800080",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-3",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral Ii",
+          "codigo": "1800081",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-4",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Hernandez Sofia Eduardo",
+                  "aula": "TP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Armonia Ii",
+          "codigo": "1800082",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Temas de Historia de la Musica Ii",
+          "codigo": "1800083",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Complementario Ii",
+          "codigo": "1800084",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "TP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "3",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Ii",
+          "codigo": "1800493",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "TP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "TP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "TP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Educacion Auditiva Iii",
+          "codigo": "1800086",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lectura Musical Iii",
+          "codigo": "1800087",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Crespo Calatayud Miguel Angel",
+                  "aula": "TP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Crespo Calatayud Miguel Angel",
+                  "aula": "TP-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral Iii",
+          "codigo": "1800088",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Bustamante Zurita Pedro Andres",
+                  "aula": "TP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Bustamante Zurita Pedro Andres",
+                  "aula": "TP-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Armonia Iii",
+          "codigo": "1800089",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Temas de Historia de la Musica Iii",
+          "codigo": "1800090",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Complementario Iii",
+          "codigo": "1800091",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "TP-6",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "5A",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Iii",
+          "codigo": "1800494",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "H242",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "H242",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "H242",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Crespo Calatayud Miguel Angel",
+                  "aula": "H242",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Crespo Calatayud Miguel Angel",
+                  "aula": "H242",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Crespo Calatayud Miguel Angel",
+                  "aula": "H242",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Practica Orquestal y Coral Iv",
+          "codigo": "1800095",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "TP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Mendez Hernandez Alexis Javier",
+                  "aula": "TP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Escobar Quevedo Rodrigo Jose",
+                  "aula": "H242",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Escobar Quevedo Rodrigo Jose",
+                  "aula": "TP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Analisis Musical I",
+          "codigo": "1800096",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Perez Donoso Pablo",
+                  "aula": "TP-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Perez Donoso Pablo",
+                  "aula": "TP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Musica Latinoamericana y En Bolivia",
+          "codigo": "1800097",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Complementario Iv",
+          "codigo": "1800098",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "5A",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Acustica y Organologia",
+          "codigo": "1800101",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "De Ugarte Aramayo Carlos Hugo",
+                  "aula": "PB-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "De Ugarte Aramayo Carlos Hugo",
+                  "aula": "TP-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "De Ugarte Aramayo Carlos Hugo",
+                  "aula": "TP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Contrapunto I",
+          "codigo": "1800119",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Iv",
+          "codigo": "1800495",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Uzeda Leon Noemi",
+                  "aula": "TP-6",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Taller de Creatividad Musical Informatica",
+          "codigo": "1800093",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "De Ugarte Aramayo Carlos Hugo",
+                  "aula": "TP-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "De Ugarte Aramayo Carlos Hugo",
+                  "aula": "TP-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "De Ugarte Aramayo Carlos Hugo",
+                  "aula": "TP-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral V",
+          "codigo": "1800102",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Cadima Fuentes Nelson Alvaro",
+                  "aula": "H242",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cadima Fuentes Nelson Alvaro",
+                  "aula": "TP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Analisis Musical Ii",
+          "codigo": "1800103",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Bravo Torres Daniel Alberto",
+                  "aula": "TP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Bravo Torres Daniel Alberto",
+                  "aula": "TP-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Complementario V",
+          "codigo": "1800105",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Contrapunto Ii",
+          "codigo": "1800126",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Valdivieso Taborga David Ricardo",
+                  "aula": "TP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Valdivieso Taborga David Ricardo",
+                  "aula": "TP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento V",
+          "codigo": "1800496",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Inturias Villarroel Adriana",
+                  "aula": "TP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumentos Bolivianos I",
+          "codigo": "1800501",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Perez Donoso Pablo",
+                  "aula": "TP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Perez Donoso Pablo",
+                  "aula": "H242",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Practica Orquestal y Coral Vi",
+          "codigo": "1800109",
+          "grupos": [
+            {
+              "numero": "O1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Analisis Musical Iii",
+          "codigo": "1800110",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Silva Teran Andres Giovanni",
+                  "aula": "TP-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Silva Teran Andres Giovanni",
+                  "aula": "TP-6",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Didactica de la Musica I",
+          "codigo": "1800111",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Valdivieso Taborga David Ricardo",
+                  "aula": "TP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Valdivieso Taborga David Ricardo",
+                  "aula": "TP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Etnomusicologia",
+          "codigo": "1800112",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Contrapunto Iii",
+          "codigo": "1800178",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Vi",
+          "codigo": "1800497",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "H242",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "5A",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aliss Paredes Emilio Jose",
+                  "aula": "TP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumentos Bolivianos Ii",
+          "codigo": "1800502",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "G",
+      "nombre": "Septimo",
+      "materias": [
+        {
+          "nombre": "Ensambles de Camara I",
+          "codigo": "1800431",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral Vii",
+          "codigo": "1800432",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Silva Teran Andres Giovanni",
+                  "aula": "H242",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Silva Teran Andres Giovanni",
+                  "aula": "H242",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Silva Teran Andres Giovanni",
+                  "aula": "H242",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fonetica",
+          "codigo": "1800433",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Actuacion y Dramaturgia I",
+          "codigo": "1800434",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas Instrumentales I",
+          "codigo": "1800435",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumentacion y Orquestacion",
+          "codigo": "1800447",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "TP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Moya Salguero Jose Luis",
+                  "aula": "TP-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas de Direccion I",
+          "codigo": "1800448",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "H242",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "H242",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lectura y Reduccion de Partituras",
+          "codigo": "1800449",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Bravo Torres Daniel Alberto",
+                  "aula": "TP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Bravo Torres Daniel Alberto",
+                  "aula": "TP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Vii",
+          "codigo": "1800498",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "H",
+      "nombre": "Octavo",
+      "materias": [
+        {
+          "nombre": "Didactica de la Musica Ii",
+          "codigo": "1800117",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Valdivieso Taborga David Ricardo",
+                  "aula": "TP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Valdivieso Taborga David Ricardo",
+                  "aula": "TP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gest. de la Educac. Musical y de la Cultura I",
+          "codigo": "1800124",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Ensambles de Camara Ii",
+          "codigo": "1800458",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral Viii",
+          "codigo": "1800459",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-4",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Actuacion y Dramaturgia Ii",
+          "codigo": "1800460",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-3",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas Instrumentales Ii",
+          "codigo": "1800461",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "H242",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas de Direccion Ii",
+          "codigo": "1800474",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "H242",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "H242",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Viii",
+          "codigo": "1800499",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Shakhmatova de Guillen Natalya",
+                  "aula": "TP-4",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "I",
+      "nombre": "Noveno",
+      "materias": [
+        {
+          "nombre": "Tecnicas Contemporaneas",
+          "codigo": "1800130",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Bravo Torres Daniel Alberto",
+                  "aula": "TP-6",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Bravo Torres Daniel Alberto",
+                  "aula": "TP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Gest. de la Educ. Musical y de la Cultura Ii",
+          "codigo": "1800131",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Sanchez Canedo Gaston Walter",
+                  "aula": "TP-5",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Analisis Literario",
+          "codigo": "1800133",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Orquestal y Coral Ix",
+          "codigo": "1800475",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vorojeikina Elizaveta",
+                  "aula": "TP-4",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas Instrumentales Iii",
+          "codigo": "1800477",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tecnicas de Direccion Iii",
+          "codigo": "1800490",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "H242",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Instrumento Ix",
+          "codigo": "1800500",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "TP-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "TP-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vargas Vasquez Franz Eduardo Marcos",
+                  "aula": "TP-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "J",
+      "nombre": "Decimo",
+      "materias": [
+        {
+          "nombre": "Estilos Interpretativos",
+          "codigo": "1800100",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-4",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Seminario de Orquestas Experimentales",
+          "codigo": "1800136",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-5",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Trabajo de Grado",
+          "codigo": "1800137",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Perez Donoso Pablo",
+                  "aula": "TP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Perez Donoso Pablo",
+                  "aula": "5A",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

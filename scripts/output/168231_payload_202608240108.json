@@ -1,0 +1,1289 @@
+{
+  "carrera_id": 11,
+  "gestion": "2/2026",
+  "niveles": [
+    {
+      "codigo": "A",
+      "nombre": "Primero",
+      "materias": [
+        {
+          "nombre": "Fundamentos Biologicos de la Educacion",
+          "codigo": "1801007",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Camacho Acosta Jose Limberg",
+                  "aula": "TP-7",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camacho Acosta Jose Limberg",
+                  "aula": "AUD.P",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-1",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Camacho Acosta Jose Limberg",
+                  "aula": "AUD.2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camacho Acosta Jose Limberg",
+                  "aula": "PB-3",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PP-2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos de las Ciencias de la Educacion",
+          "codigo": "1801081",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aguilar Moscoso Ruben Richard",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aguilar Moscoso Ruben Richard",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Aguilar Moscoso Ruben Richard",
+                  "aula": "A.MAGNA",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aguilar Moscoso Ruben Richard",
+                  "aula": "MA-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Realidad Sociocultural Boliviana",
+          "codigo": "1801084",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aramayo Perez Marcelo",
+                  "aula": "PB-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aramayo Perez Marcelo",
+                  "aula": "AUD.P",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aramayo Perez Marcelo",
+                  "aula": "SP-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-6",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aramayo Perez Marcelo",
+                  "aula": "MA-8",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicologia de la Educacion",
+          "codigo": "1801092",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "PB-6",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "SP-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "PP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "TP-7",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Fundamentos de Investigacion Educativa",
+          "codigo": "1801137",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "MA-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "PB-3",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "SP-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PB-8",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "MA-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Quechua I",
+          "codigo": "1803003",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-7",
+                  "hora_inicio": "09:00",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Sabado",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "10:30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "B",
+      "nombre": "Segundo",
+      "materias": [
+        {
+          "nombre": "Pedagogia General",
+          "codigo": "1801087",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "SP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "SP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "TP-1",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "PB-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Rioja Montaño Greby Uriel",
+                  "aula": "TP-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-1",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Historia de la Educacion Boliviana",
+          "codigo": "1801088",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Paredes Guzman Jorge Hugo",
+                  "aula": "AUD.2",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                },
+                {
+                  "dia": "Martes",
+                  "docente": "Paredes Guzman Jorge Hugo",
+                  "aula": "SP-3",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Paredes Guzman Jorge Hugo",
+                  "aula": "PB-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "PP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Paredes Guzman Jorge Hugo",
+                  "aula": "PP-2",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Desarrollo Humano de la Infancia y la Ninez",
+          "codigo": "1801091",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Teran Montano Josefa Elina",
+                  "aula": "PB-6",
+                  "hora_inicio": "07:30",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Teran Montano Josefa Elina",
+                  "aula": "PB-6",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Teran Montano Josefa Elina",
+                  "aula": "PB-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Teran Montano Josefa Elina",
+                  "aula": "PB-6",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teorias del Aprendizaje",
+          "codigo": "1801098",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "SP-3",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Encinas Inturias Nelly Sandra",
+                  "aula": "MA-8",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Cossio Coca Eliana Pilar",
+                  "aula": "PB-7",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Cossio Coca Eliana Pilar",
+                  "aula": "TP-2",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Educacion Intra Intercultural y Plurilingue",
+          "codigo": "1801102",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "004",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "AUD.P",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Desarrollo del Pensamiento Matematico",
+          "codigo": "1801401",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Aneiva Torrico Limber",
+                  "aula": "PB-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Aneiva Torrico Limber",
+                  "aula": "MA-1",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "21:00"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "C",
+      "nombre": "Tercero",
+      "materias": [
+        {
+          "nombre": "Educacion No Formal Popular y Comunitaria",
+          "codigo": "1801108",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "De la Zerda Vega Guido Gonzalo",
+                  "aula": "PB-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "09:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "De la Zerda Vega Guido Gonzalo",
+                  "aula": "SP-11",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "De la Zerda Vega Guido Gonzalo",
+                  "aula": "SP-11",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "De la Zerda Vega Guido Gonzalo",
+                  "aula": "SP-8",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Tics e Investigacion Social y Educativa",
+          "codigo": "1801112",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Callisaya Rojas Franz",
+                  "aula": "PROTICS",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Callisaya Rojas Franz",
+                  "aula": "PROTICS",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "TP-7",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Teorias y Enfoques de la Educacion Infantil",
+          "codigo": "1801402",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "TP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Arratia Torrez Vidal Celedonio",
+                  "aula": "SP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Adquisicion y Desarrollo del Lenguaje",
+          "codigo": "1801403",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Psicomotricidad Desarrollo Cognitivo",
+          "codigo": "1801404",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-7",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-7",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Salud y Nutricion Infantil",
+          "codigo": "1801405",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-1",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "D",
+      "nombre": "Cuarto",
+      "materias": [
+        {
+          "nombre": "Func. Basicas del Aprendizaje y Estimul. Opor",
+          "codigo": "1801104",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Arancibia Guzman Marcelo Eduardo",
+                  "aula": "MA-2",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Arancibia Guzman Marcelo Eduardo",
+                  "aula": "PB-8",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Entornos Virtuales de Ensenanza y Aprendizaje",
+          "codigo": "1801106",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Delgado Villca Jimmy",
+                  "aula": "PROTICS",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Delgado Villca Jimmy",
+                  "aula": "PROTICS",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Educacion y Medio Ambiente",
+          "codigo": "1801148",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Nina Calle Roberto",
+                  "aula": "SP-6",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Nina Calle Roberto",
+                  "aula": "SP-1",
+                  "hora_inicio": "17:15",
+                  "hora_fin": "18:45"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Nina Calle Roberto",
+                  "aula": "MA-5",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Nina Calle Roberto",
+                  "aula": "SP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Laboratorio de Practica Socioeducativa I",
+          "codigo": "1801150",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Vidal Moruno Mario",
+                  "aula": "PP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Vidal Moruno Mario",
+                  "aula": "MA-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Didactica de la Educacion Infantil",
+          "codigo": "1801406",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-4",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "004",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Expresion Plastica",
+          "codigo": "1801407",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "004",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Expresion y Creacion Literaria",
+          "codigo": "1801408",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "13:30",
+                  "hora_fin": "15:00"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "E",
+      "nombre": "Quinto",
+      "materias": [
+        {
+          "nombre": "Taller de Planificacion Didactica",
+          "codigo": "1801124",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Requena Quiroga Grover",
+                  "aula": "SP-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Requena Quiroga Grover",
+                  "aula": "SP-4",
+                  "hora_inicio": "09:45",
+                  "hora_fin": "11:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Requena Quiroga Grover",
+                  "aula": "SP-5",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Requena Quiroga Grover",
+                  "aula": "SP-6",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller Estrate. de Apren. Bas. En la Neuroedu",
+          "codigo": "1801127",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Camacho Acosta Jose Limberg",
+                  "aula": "TP-7",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Camacho Acosta Jose Limberg",
+                  "aula": "TP-2",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "18:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Practica Profesional y Laboral",
+          "codigo": "1801136",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Sabado",
+                  "docente": "Jaldin Delgadillo Jhonny",
+                  "aula": "PB-4",
+                  "hora_inicio": "08:15",
+                  "hora_fin": "09:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Economia de la Educacion",
+          "codigo": "1801141",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Viernes",
+                  "docente": "Rojas Calizaya Juan Carlos",
+                  "aula": "PB-6",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Rojas Calizaya Juan Carlos",
+                  "aula": "MA-7",
+                  "hora_inicio": "10:30",
+                  "hora_fin": "12:00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Metod Ludicas En Educacion Infantil",
+          "codigo": "1801409",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "TP-2",
+                  "hora_inicio": "19:30",
+                  "hora_fin": "21:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "20:15",
+                  "hora_fin": "21:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Expresion Musical En Educ. Infantil",
+          "codigo": "1801410",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "004",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "F",
+      "nombre": "Sexto",
+      "materias": [
+        {
+          "nombre": "Taller de Titulacion Tecnico Univ. Superior",
+          "codigo": "1801115",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Jueves",
+                  "docente": "Alcala Cuba Marco Antonio",
+                  "aula": "MA-2",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Alcala Cuba Marco Antonio",
+                  "aula": "SP-3",
+                  "hora_inicio": "11:15",
+                  "hora_fin": "12:45"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Lab. de Produccion de Materiales Educativos",
+          "codigo": "1801140",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Jaldin Delgadillo Jhonny",
+                  "aula": "SP-5",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                },
+                {
+                  "dia": "Jueves",
+                  "docente": "Jaldin Delgadillo Jhonny",
+                  "aula": "PP-2",
+                  "hora_inicio": "18:45",
+                  "hora_fin": "20:15"
+                }
+              ]
+            },
+            {
+              "numero": "2",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Jaldin Delgadillo Jhonny",
+                  "aula": "TP-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Jaldin Delgadillo Jhonny",
+                  "aula": "SP-3",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Eval. y Diagnostico Psicopedagogico",
+          "codigo": "1801142",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Martes",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "MA-8",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                },
+                {
+                  "dia": "Miercoles",
+                  "docente": "Machaca Benito Guido Cornelio",
+                  "aula": "MA-8",
+                  "hora_inicio": "12:45",
+                  "hora_fin": "14:15"
+                },
+                {
+                  "dia": "Sabado",
+                  "docente": "Aux. por Designar Auxiliar",
+                  "aula": "MA-1",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Org. y Admin. de Centros Infantiles",
+          "codigo": "1801411",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Miercoles",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "15:45",
+                  "hora_fin": "17:15"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "MA-2",
+                  "hora_inicio": "18:00",
+                  "hora_fin": "19:30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Expresion Corporal y Danza",
+          "codigo": "1801412",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-1",
+                  "hora_inicio": "16:30",
+                  "hora_fin": "18:00"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PB-4",
+                  "hora_inicio": "06:45",
+                  "hora_fin": "08:15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "nombre": "Taller de Atencion A la Dei Educativa Infant",
+          "codigo": "1801413",
+          "grupos": [
+            {
+              "numero": "1",
+              "clases": [
+                {
+                  "dia": "Lunes",
+                  "docente": "Por Designar Docente",
+                  "aula": "SP-11",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "16:30"
+                },
+                {
+                  "dia": "Viernes",
+                  "docente": "Por Designar Docente",
+                  "aula": "PP-2",
+                  "hora_inicio": "14:15",
+                  "hora_fin": "15:45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
