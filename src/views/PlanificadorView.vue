@@ -17,7 +17,6 @@ import {
   mdiChevronDown,
   mdiChevronRight,
   mdiPlus,
-  mdiDeleteSweep,
   mdiPrinter,
   mdiFilePdfBox,
   mdiFileImageOutline,
@@ -82,7 +81,6 @@ const guardando = ref(false)
 const snackbarGuardado = ref(false)
 const snackbarGuardadoMsg = ref('')
 const authDialog = ref(false)
-const dialogHorarioGuardado = ref(false)
 const gruposGuardadosPendientes = ref<string[]>([])
 const guardarPendiente = ref(false)
 const dialogReemplazarHorario = ref(false)
@@ -111,11 +109,6 @@ const estudianteRegistrado = computed(() => {
   const meta = (u.user_metadata ?? {}) as Record<string, unknown>
   return obtenerNombreRegistrado(meta) ?? 'No registrado'
 })
-
-// Acción: quitar todos los grupos seleccionados
-function quitarTodo() {
-  gruposSeleccionados.value = new Set()
-}
 
 async function cargarHorarioGuardado() {
   if (!user.value) return
@@ -195,41 +188,25 @@ async function precargarClasesParaGrupos(grupos: string[]) {
   )
 }
 
+/** Con el guardado automático, el horario en la nube es siempre la
+ * versión "real" — al iniciar sesión se muestra directamente, sin
+ * preguntar (ya no tiene sentido "mantener el actual" cuando cualquier
+ * selección previa a loguearse era, en los hechos, solo una prueba sin
+ * guardar). */
 async function evaluarHorarioGuardadoEnLogin() {
   if (!user.value) return
   try {
     const gruposGuardados = await cargarHorario(user.value.id, carreraId)
     if (gruposGuardados.length === 0) return
-
-    await precargarClasesParaGrupos(gruposGuardados)
-
-    if (gruposSeleccionados.value.size === 0) {
-      gruposSeleccionados.value = new Set(gruposGuardados)
-      return
-    }
-
     if (sonMismosGrupos(gruposSeleccionados.value, gruposGuardados)) return
 
-    gruposGuardadosPendientes.value = gruposGuardados
-    dialogHorarioGuardado.value = true
+    await precargarClasesParaGrupos(gruposGuardados)
+    gruposSeleccionados.value = new Set(gruposGuardados)
+    snackbarGuardadoMsg.value = 'Se cargó tu horario guardado'
+    snackbarGuardado.value = true
   } catch {
     // el horario guardado es opcional
   }
-}
-
-function usarHorarioGuardado() {
-  gruposSeleccionados.value = new Set(gruposGuardadosPendientes.value)
-  gruposGuardadosPendientes.value = []
-  dialogHorarioGuardado.value = false
-  snackbarGuardadoMsg.value = 'Se cargó tu horario guardado'
-  snackbarGuardado.value = true
-}
-
-function mantenerHorarioActual() {
-  gruposGuardadosPendientes.value = []
-  dialogHorarioGuardado.value = false
-  snackbarGuardadoMsg.value = 'Se mantuvo tu horario actual'
-  snackbarGuardado.value = true
 }
 
 async function evaluarConflictoAntesDeGuardar() {
@@ -434,6 +411,16 @@ function isGrupoSeleccionado(materiaId: number, grupoNumero: string) {
   return gruposSeleccionados.value.has(grupoKey(materiaId, grupoNumero))
 }
 
+/** Aplica la nueva selección y, si ya hay sesión iniciada, guarda
+ * automáticamente — con sesión el horario en la nube siempre debe
+ * reflejar lo que se ve en pantalla, sin depender de un botón aparte. Sin
+ * sesión no se guarda nada acá (no tiene sentido interrumpir con el login
+ * por cada clic); el botón de guardar sigue disponible para ese caso. */
+async function actualizarGruposSeleccionados(next: Set<string>) {
+  gruposSeleccionados.value = next
+  if (user.value) await guardar()
+}
+
 function toggleGrupo(materiaId: number, grupoNumero: string) {
   const key = grupoKey(materiaId, grupoNumero)
   const next = new Set(gruposSeleccionados.value)
@@ -442,19 +429,16 @@ function toggleGrupo(materiaId: number, grupoNumero: string) {
   } else {
     next.add(key)
   }
-  gruposSeleccionados.value = next
+  void actualizarGruposSeleccionados(next)
 }
 
 /** Quitar un grupo puntual desde el botón "Quitar materia" del modal de
  * detalle (SemanaView.vue) — más directo que volver al panel de materias
- * a desmarcar el checkbox. Se guarda solo si ya hay sesión iniciada: a un
- * usuario anónimo no tiene sentido interrumpirlo con el login justo por
- * sacar una materia. */
-async function quitarGrupoDelHorario(key: string) {
+ * a desmarcar el checkbox. */
+function quitarGrupoDelHorario(key: string) {
   const next = new Set(gruposSeleccionados.value)
   next.delete(key)
-  gruposSeleccionados.value = next
-  if (user.value) await guardar()
+  void actualizarGruposSeleccionados(next)
 }
 
 // Datos para la vista principal: todos los grupos seleccionados con su info
@@ -599,24 +583,6 @@ async function toggleMateria(materia: Materia) {
   </v-snackbar>
 
   <auth-dialog v-model="authDialog" />
-
-  <v-dialog v-model="dialogHorarioGuardado" max-width="520" persistent>
-    <v-card rounded="lg">
-      <v-card-item class="dialog-header">
-        <v-card-title class="text-white">Encontramos un horario guardado</v-card-title>
-      </v-card-item>
-      <v-card-text class="pt-4 dialog-text">
-        Ya tienes un horario guardado para esta carrera. ¿Qué deseas hacer?
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer />
-        <v-btn variant="text" @click="mantenerHorarioActual">Mantener horario actual</v-btn>
-        <v-btn color="primary" variant="flat" @click="usarHorarioGuardado"
-          >Mostrar horario guardado</v-btn
-        >
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
 
   <v-dialog v-model="dialogReemplazarHorario" max-width="520" persistent>
     <v-card rounded="lg">
@@ -807,9 +773,6 @@ async function toggleMateria(materia: Materia) {
       <v-container fluid>
         <!-- Barra de acciones desktop -->
         <div v-if="cursosSeleccionados.length > 0" class="d-flex justify-end ga-2 mb-3">
-          <v-btn icon variant="outlined" size="small" @click="quitarTodo" title="Quitar todo">
-            <v-icon :icon="mdiDeleteSweep" />
-          </v-btn>
           <v-btn icon variant="outlined" size="small" @click="imprimir" title="Imprimir">
             <v-icon :icon="mdiPrinter" />
           </v-btn>
@@ -829,6 +792,7 @@ async function toggleMateria(materia: Materia) {
             <v-icon :icon="mdiHelpCircle" />
           </v-btn>
           <v-btn
+            v-if="!user"
             icon
             variant="outlined"
             size="small"
@@ -906,9 +870,6 @@ async function toggleMateria(materia: Materia) {
           {{ nombreCarreraLegible }}
         </v-toolbar-title>
         <div v-if="cursosSeleccionados.length > 0" class="d-flex align-center flex-shrink-0">
-          <v-btn icon variant="text" density="compact" @click="quitarTodo" title="Quitar todo">
-            <v-icon :icon="mdiDeleteSweep" size="18" />
-          </v-btn>
           <v-btn icon variant="text" density="compact" @click="imprimir" title="Imprimir">
             <v-icon :icon="mdiPrinter" size="18" />
           </v-btn>
@@ -925,6 +886,7 @@ async function toggleMateria(materia: Materia) {
             <v-icon :icon="mdiFileImageOutline" size="18" />
           </v-btn>
           <v-btn
+            v-if="!user"
             icon
             variant="text"
             density="compact"
@@ -1187,13 +1149,14 @@ async function toggleMateria(materia: Materia) {
           <span>Descarga el horario como imagen.</span>
         </div>
         <div class="dialog-action-row dialog-action-row--last">
-          <v-btn icon variant="tonal" color="success" size="small" @click="guardar">
+          <v-btn v-if="!user" icon variant="tonal" color="success" size="small" @click="guardar">
             <v-icon :icon="mdiContentSave" />
           </v-btn>
+          <v-icon v-else :icon="mdiContentSave" color="success" />
           <span>
             {{
               user
-                ? 'Guarda tu horario en la nube para acceder desde cualquier dispositivo.'
+                ? 'Tu horario se guarda solo, en la nube, apenas agregás o quitás una materia.'
                 : 'Si no has iniciado sesión, al guardar se abrirá el registro.'
             }}
           </span>
