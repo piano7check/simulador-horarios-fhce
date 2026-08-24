@@ -5,12 +5,20 @@ import type { User } from '@supabase/supabase-js'
 // Singleton: estado compartido entre todos los componentes
 const user = ref<User | null>(null)
 
+// Se incrementa solo en un SIGNED_IN real (login nuevo), a diferencia de
+// `user`, que también cambia de referencia en eventos silenciosos como el
+// refresco periódico del token — quien necesite reaccionar específicamente
+// a "el usuario acaba de iniciar sesión" (y no a cualquier cambio de
+// sesión en segundo plano) debe mirar esto en vez de `user`.
+const signInPulse = ref(0)
+
 supabase.auth.getSession().then(({ data }) => {
   user.value = data.session?.user ?? null
 })
 
-supabase.auth.onAuthStateChange((_event, session) => {
+supabase.auth.onAuthStateChange((event, session) => {
   user.value = session?.user ?? null
+  if (event === 'SIGNED_IN') signInPulse.value++
 })
 
 export function useAuth() {
@@ -49,5 +57,5 @@ export function useAuth() {
     if (error) throw error
   }
 
-  return { user, signIn, signUp, signOut, signInWithGoogle }
+  return { user, signInPulse, signIn, signUp, signOut, signInWithGoogle }
 }

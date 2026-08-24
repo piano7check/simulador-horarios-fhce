@@ -76,7 +76,7 @@ const mostrarMensajeExportacion = ref(false)
 // display helpers
 const { mobile } = useDisplay()
 
-const { user } = useAuth()
+const { user, signInPulse } = useAuth()
 const guardando = ref(false)
 const snackbarGuardado = ref(false)
 const snackbarGuardadoMsg = ref('')
@@ -288,8 +288,13 @@ async function guardar() {
   }
 }
 
-watch(user, async (newUser) => {
-  if (!newUser) return
+// signInPulse (no `user`): `user` también cambia de referencia en eventos
+// silenciosos como el refresco periódico del token, lo que volvía a
+// disparar la pregunta de "¿usás tu horario guardado?" sin que el
+// estudiante hubiera hecho nada — molesto si justo estaba editando su
+// horario. signInPulse solo se mueve en un login nuevo de verdad.
+watch(signInPulse, async () => {
+  if (!user.value) return
   if (guardarPendiente.value) {
     guardarPendiente.value = false
     await evaluarConflictoAntesDeGuardar()
@@ -513,8 +518,9 @@ onMounted(async () => {
         // Ya hay sesión (volvimos de la redirección de Google): completar el guardado.
         await evaluarConflictoAntesDeGuardar()
       } else {
-        // Login por email/password en curso (no recarga la página): el watch(user, …)
-        // ya se encarga de completar el guardado apenas se abra la sesión.
+        // Login por email/password en curso (no recarga la página): el
+        // watch(signInPulse, …) ya se encarga de completar el guardado
+        // apenas se abra la sesión.
         guardarPendiente.value = true
       }
     } else {
