@@ -7,7 +7,7 @@ import { useAuth } from '@/composables/useAuth'
 import { mdiMagnify, mdiSchool, mdiChevronRight } from '@mdi/js'
 
 const router = useRouter()
-const { user, signInPulse } = useAuth()
+const { user, signInPulse, sesionLista } = useAuth()
 const carreras = ref<Carrera[]>([])
 const carreraSeleccionada = ref<Carrera | null>(null)
 const busqueda = ref('')
@@ -42,6 +42,10 @@ onMounted(async () => {
   } finally {
     cargando.value = false
   }
+  // Esperar a que se resuelva si hay sesión o no: en el montaje, `user`
+  // todavía puede estar en null "porque no se sabe todavía", no porque
+  // de verdad no haya sesión — sin esto, el redirect se saltaba seguido.
+  await sesionLista
   await irDirectoSiTieneHorarioGuardado()
 })
 

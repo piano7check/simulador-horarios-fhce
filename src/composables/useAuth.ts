@@ -12,8 +12,19 @@ const user = ref<User | null>(null)
 // sesión en segundo plano) debe mirar esto en vez de `user`.
 const signInPulse = ref(0)
 
+// Se resuelve una sola vez, cuando termina la consulta inicial de sesión.
+// `user` arranca en null tanto "todavía no se sabe" como "de verdad no hay
+// sesión", así que un componente que decide algo en su onMounted (por
+// ejemplo, si redirige a un horario guardado) no puede confiar en el valor
+// sincrónico de `user` ahí — tiene que esperar esto primero.
+let resolverSesionLista: () => void
+export const sesionLista = new Promise<void>((resolve) => {
+  resolverSesionLista = resolve
+})
+
 supabase.auth.getSession().then(({ data }) => {
   user.value = data.session?.user ?? null
+  resolverSesionLista()
 })
 
 supabase.auth.onAuthStateChange((event, session) => {
@@ -57,5 +68,5 @@ export function useAuth() {
     if (error) throw error
   }
 
-  return { user, signInPulse, signIn, signUp, signOut, signInWithGoogle }
+  return { user, signInPulse, sesionLista, signIn, signUp, signOut, signInWithGoogle }
 }

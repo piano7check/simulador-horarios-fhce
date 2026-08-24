@@ -7,10 +7,14 @@ import { supabase } from '@/lib/supabase'
 export async function obtenerCarrerasConHorarioGuardado(userId: string): Promise<number[]> {
   const { data, error } = await supabase
     .from('horarios_guardados')
-    .select('carrera_id')
+    .select('carrera_id, grupos')
     .eq('user_id', userId)
   if (error) throw error
-  return (data ?? []).map((r) => r.carrera_id as number)
+  // Una fila con grupos: [] (quedó así al sacar todas las materias, ver
+  // guardarHorario) no cuenta como un horario guardado de verdad.
+  return (data ?? [])
+    .filter((r) => Array.isArray(r.grupos) && r.grupos.length > 0)
+    .map((r) => r.carrera_id as number)
 }
 
 export async function cargarHorario(userId: string, carreraId: number): Promise<string[]> {
@@ -28,6 +32,20 @@ export async function guardarHorario(
   carreraId: number,
   grupos: string[],
 ): Promise<void> {
+  // Sin materias, no queda nada que guardar — se borra la fila en vez de
+  // dejarla con grupos: [], para no confundir "vació su horario" con
+  // "tiene un horario guardado" en el resto de la app (por ejemplo, al
+  // decidir si saltar la pantalla de elegir carrera).
+  if (grupos.length === 0) {
+    const { error } = await supabase
+      .from('horarios_guardados')
+      .delete()
+      .eq('user_id', userId)
+      .eq('carrera_id', carreraId)
+    if (error) throw error
+    return
+  }
+
   const { error } = await supabase.from('horarios_guardados').upsert(
     {
       user_id: userId,
