@@ -98,6 +98,7 @@ function docenteQueCoincide(materia: Materia): string | null {
 
 const grupos = ref<GrupoAdmin[]>([])
 const cargandoGrupos = ref(false)
+const grupoSeleccionado = ref<GrupoAdmin | null>(null)
 
 // Edición local por grupo, para no pisar lo cargado en el server mientras
 // el admin todavía está escribiendo.
@@ -131,6 +132,7 @@ async function seleccionarCarrera(carrera: Carrera | null) {
   materiaSeleccionada.value = null
   materias.value = []
   grupos.value = []
+  grupoSeleccionado.value = null
   busquedaMateria.value = ''
   docentesPorMateria.value = new Map()
   if (!carrera) return
@@ -160,6 +162,7 @@ async function seleccionarCarrera(carrera: Carrera | null) {
 async function seleccionarMateria(materia: Materia | null) {
   materiaSeleccionada.value = materia
   grupos.value = []
+  grupoSeleccionado.value = null
   if (!materia) return
   cargandoGrupos.value = true
   try {
@@ -174,9 +177,16 @@ async function seleccionarMateria(materia: Materia | null) {
         },
       ]),
     )
+    // Si la materia tiene un solo grupo, se selecciona directo — no hace
+    // falta hacer elegir algo que no tiene otra opción.
+    if (grupos.value.length === 1) grupoSeleccionado.value = grupos.value[0]!
   } finally {
     cargandoGrupos.value = false
   }
+}
+
+function seleccionarGrupo(grupo: GrupoAdmin | null) {
+  grupoSeleccionado.value = grupo
 }
 
 async function guardarGrupo(grupo: GrupoAdmin) {
@@ -293,6 +303,21 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
               />
             </template>
           </v-autocomplete>
+
+          <v-select
+            v-if="materiaSeleccionada && !cargandoGrupos && grupos.length > 0"
+            :model-value="grupoSeleccionado"
+            :items="grupos"
+            :item-title="(g: GrupoAdmin) => `Grupo ${g.numero}`"
+            item-value="id"
+            :return-object="true"
+            label="Grupo"
+            density="comfortable"
+            variant="outlined"
+            class="mt-4"
+            hide-details
+            @update:model-value="seleccionarGrupo"
+          />
         </v-card-text>
       </v-card>
 
@@ -300,55 +325,53 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         <v-progress-circular indeterminate />
       </div>
 
-      <template v-else-if="materiaSeleccionada">
-        <v-alert v-if="grupos.length === 0" type="info" variant="tonal">
-          Esta materia no tiene grupos cargados para la gestión {{ GESTION }}.
-        </v-alert>
+      <v-alert v-else-if="materiaSeleccionada && grupos.length === 0" type="info" variant="tonal">
+        Esta materia no tiene grupos cargados para la gestión {{ GESTION }}.
+      </v-alert>
 
-        <v-card v-for="grupo in grupos" :key="grupo.id" rounded="lg" class="mb-3">
-          <v-card-title class="text-subtitle-1">Grupo {{ grupo.numero }}</v-card-title>
-          <v-card-text v-if="edicion[grupo.id]">
-            <v-text-field
-              v-model="edicion[grupo.id]!.aulaVirtual"
-              label="Aula virtual (link)"
-              placeholder="https://..."
-              variant="outlined"
-              density="comfortable"
-              class="mb-3"
-              hide-details
-            />
-            <v-text-field
-              v-model="edicion[grupo.id]!.whatsappDocente"
-              label="Grupo de WhatsApp - Docente (link)"
-              placeholder="https://chat.whatsapp.com/..."
-              variant="outlined"
-              density="comfortable"
-              class="mb-3"
-              hide-details
-            />
-            <v-text-field
-              v-model="edicion[grupo.id]!.whatsappAuxiliar"
-              label="Grupo de WhatsApp - Auxiliar (link)"
-              placeholder="https://chat.whatsapp.com/..."
-              variant="outlined"
-              density="comfortable"
-              hide-details
-            />
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer />
-            <v-btn
-              color="primary"
-              variant="flat"
-              :prepend-icon="mdiContentSave"
-              :loading="guardando[grupo.id]"
-              @click="guardarGrupo(grupo)"
-            >
-              Guardar
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </template>
+      <v-card v-else-if="grupoSeleccionado" rounded="lg" class="mb-3">
+        <v-card-title class="text-subtitle-1">Grupo {{ grupoSeleccionado.numero }}</v-card-title>
+        <v-card-text v-if="edicion[grupoSeleccionado.id]">
+          <v-text-field
+            v-model="edicion[grupoSeleccionado.id]!.aulaVirtual"
+            label="Aula virtual (link)"
+            placeholder="https://..."
+            variant="outlined"
+            density="comfortable"
+            class="mb-3"
+            hide-details
+          />
+          <v-text-field
+            v-model="edicion[grupoSeleccionado.id]!.whatsappDocente"
+            label="Grupo de WhatsApp - Docente (link)"
+            placeholder="https://chat.whatsapp.com/..."
+            variant="outlined"
+            density="comfortable"
+            class="mb-3"
+            hide-details
+          />
+          <v-text-field
+            v-model="edicion[grupoSeleccionado.id]!.whatsappAuxiliar"
+            label="Grupo de WhatsApp - Auxiliar (link)"
+            placeholder="https://chat.whatsapp.com/..."
+            variant="outlined"
+            density="comfortable"
+            hide-details
+          />
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn
+            color="primary"
+            variant="flat"
+            :prepend-icon="mdiContentSave"
+            :loading="guardando[grupoSeleccionado.id]"
+            @click="guardarGrupo(grupoSeleccionado)"
+          >
+            Guardar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
     </template>
 
     <auth-dialog v-model="authDialog" />
