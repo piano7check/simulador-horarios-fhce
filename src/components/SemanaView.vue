@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { useDisplay } from 'vuetify'
-import { mdiAlertCircleOutline } from '@mdi/js'
+import { mdiAlertCircleOutline, mdiFormatListBulleted } from '@mdi/js'
 import type { Clase } from '@/services/horarios'
 import { descargarHorario, descargarHorarioImagen, imprimirHorario } from '@/utils/exportarHorario'
 
@@ -56,6 +56,7 @@ const DIA_LABEL: Record<string, string> = {
 }
 
 const eventoDetalle = ref<EventoCal | null>(null)
+const leyendaDialog = ref(false)
 
 function abrirDetalle(ev: EventoCal) {
   eventoDetalle.value = ev
@@ -298,7 +299,6 @@ const eventos = computed(() =>
   })),
 )
 
-
 /* -- Leyenda de colores -- */
 const leyenda = computed(() =>
   props.cursos.map((c) => {
@@ -386,7 +386,11 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
     <v-dialog
       :model-value="eventoDetalle !== null"
       max-width="360"
-      @update:model-value="(v: boolean) => { if (!v) eventoDetalle = null }"
+      @update:model-value="
+        (v: boolean) => {
+          if (!v) eventoDetalle = null
+        }
+      "
     >
       <v-card v-if="eventoDetalle" rounded="lg">
         <v-card-item :style="{ background: eventoDetalle.color }">
@@ -395,7 +399,9 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           </v-card-title>
         </v-card-item>
         <v-card-text class="pt-4">
-          <p class="mb-2"><strong>Docente:</strong> {{ eventoDetalle.docente || 'No especificado' }}</p>
+          <p class="mb-2">
+            <strong>Docente:</strong> {{ eventoDetalle.docente || 'No especificado' }}
+          </p>
           <p class="mb-2"><strong>Aula:</strong> {{ eventoDetalle.aula || 'No especificada' }}</p>
           <p class="mb-0">
             <strong>Horario:</strong> {{ DIA_LABEL[eventoDetalle.dia] ?? eventoDetalle.dia }},
@@ -422,7 +428,9 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           <template v-if="estudianteTexto"><strong>Nombre:</strong> {{ estudianteTexto }}</template>
         </p>
         <template v-else>
-          <p v-if="gestionTexto" class="horario-header__meta"><strong>Gestión:</strong> {{ gestionTexto }}</p>
+          <p v-if="gestionTexto" class="horario-header__meta">
+            <strong>Gestión:</strong> {{ gestionTexto }}
+          </p>
           <p v-if="estudianteTexto" class="horario-header__meta">
             <strong>Nombre:</strong> {{ estudianteTexto }}
           </p>
@@ -468,16 +476,41 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           </template>
         </v-calendar>
       </div>
-
-      <!-- Leyenda de colores por materia -->
-      <div v-if="leyenda.length" class="d-flex flex-wrap ga-3 mt-3 px-1">
-        <div v-for="item in leyenda" :key="item.key" class="d-flex align-center ga-1">
-          <span class="semana-dot" :style="{ background: item.color }" />
-          <span class="text-caption">{{ item.texto }}</span>
-        </div>
-      </div>
     </div>
     <!-- /capturaRef -->
+
+    <!-- Resumen de materias tomadas: en modal para no ocupar espacio
+         vertical bajo el horario (no afecta la exportación/impresión, que
+         arma su propio resumen a partir de la grilla). -->
+    <div v-if="leyenda.length" class="mt-3 px-1">
+      <v-btn
+        variant="tonal"
+        color="primary"
+        size="small"
+        :prepend-icon="mdiFormatListBulleted"
+        @click="leyendaDialog = true"
+      >
+        Materias tomadas ({{ leyenda.length }})
+      </v-btn>
+    </div>
+
+    <v-dialog v-model="leyendaDialog" max-width="480">
+      <v-card rounded="lg">
+        <v-card-title>Materias tomadas</v-card-title>
+        <v-card-text class="pt-0">
+          <div class="d-flex flex-wrap ga-3">
+            <div v-for="item in leyenda" :key="item.key" class="d-flex align-center ga-1">
+              <span class="semana-dot" :style="{ background: item.color }" />
+              <span class="text-caption">{{ item.texto }}</span>
+            </div>
+          </div>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn variant="text" @click="leyendaDialog = false">Cerrar</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -550,7 +583,9 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
   cursor: pointer;
 }
 .semana-ev--conflicto {
-  box-shadow: inset 0 0 0 2px #ffffff, inset 0 0 0 4px #d32f2f;
+  box-shadow:
+    inset 0 0 0 2px #ffffff,
+    inset 0 0 0 4px #d32f2f;
 }
 .semana-ev__name {
   display: -webkit-box;
