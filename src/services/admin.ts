@@ -28,6 +28,39 @@ export async function obtenerGruposAdmin(
   return data as GrupoAdmin[]
 }
 
+export interface UsuarioConRol {
+  user_id: string
+  email: string
+  rol: RolUsuario
+}
+
+/** Solo administrador puede llamar esto (lo verifica la función en la
+ * base); si no, tira error. */
+export async function buscarUsuarioPorEmail(
+  email: string,
+): Promise<{ user_id: string; email: string } | null> {
+  const { data, error } = await supabase.rpc('buscar_usuario_por_email', { p_email: email })
+  if (error) throw error
+  const fila = (data as { user_id: string; email: string }[])[0]
+  return fila ?? null
+}
+
+export async function listarRolesUsuario(): Promise<UsuarioConRol[]> {
+  const { data, error } = await supabase.rpc('listar_roles_usuario')
+  if (error) throw error
+  return data as UsuarioConRol[]
+}
+
+export async function asignarRol(userId: string, rol: RolUsuario): Promise<void> {
+  const { error } = await supabase.rpc('asignar_rol', { p_user_id: userId, p_rol: rol })
+  if (error) throw error
+}
+
+export async function quitarRol(userId: string): Promise<void> {
+  const { error } = await supabase.rpc('quitar_rol', { p_user_id: userId })
+  if (error) throw error
+}
+
 export async function actualizarGrupoExtra(
   grupoId: number,
   datos: {
