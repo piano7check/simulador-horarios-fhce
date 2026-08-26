@@ -1130,6 +1130,7 @@ async function toggleMateria(materia: Materia) {
         <ol class="dialog-list mb-4">
           <li>Escoge el semestre con las materias que quieres cursar.</li>
           <li>Selecciona el grupo de cada materia para verlo en el horario.</li>
+          <li>Toca una materia en el horario para ver más información: docente, aula, aula virtual y grupo de WhatsApp.</li>
           <li>¿Tienes un choque? Prueba con otro grupo de alguna materia involucrada.</li>
           <li>Si el choque persiste, quizás debas elegir a qué materia asistir este semestre.</li>
         </ol>
