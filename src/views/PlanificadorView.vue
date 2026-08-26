@@ -754,7 +754,7 @@ async function toggleMateria(materia: Materia) {
             </div>
             <div class="text-caption mt-2">
               <a
-                :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
+                :href="`https://wa.me/59177435817?text=${encodeURIComponent('Hola, encontré un problema en la app y quiero reportarlo para que se pueda corregir.')}`"
                 target="_blank"
                 rel="noopener"
                 style="text-decoration: underline; color: inherit"
@@ -1096,7 +1096,7 @@ async function toggleMateria(materia: Materia) {
         </div>
         <div class="text-caption mt-1">
           <a
-            :href="`https://wa.me/59177435817?text=${encodeURIComponent('Tengo un problema con tu app, si me ayudas te invito un café.')}`"
+            :href="`https://wa.me/59177435817?text=${encodeURIComponent('Hola, encontré un problema en la app y quiero reportarlo para que se pueda corregir.')}`"
             target="_blank"
             rel="noopener"
             style="text-decoration: underline; color: inherit"
