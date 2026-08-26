@@ -37,26 +37,33 @@ const router = useRouter()
         <div class="mb-6">
           <div class="text-subtitle-1 font-weight-medium mb-2">Cómo usarlo</div>
           <ol>
-            <li>Selecciona tu carrera desde la pantalla principal.</li>
-            <li>Abrirá el planificador: expande niveles y selecciona materias una por una.</li>
             <li>
-              Selecciona los grupos que te interesan. El calendario mostrará los choques en rojo.
+              Selecciona tu carrera desde la pantalla principal (si ya iniciaste sesión y tienes
+              un horario guardado, se abre directo, sin pasar por este paso).
             </li>
-            <li>Usa las opciones de exportar o imprimir para obtener tu horario en PDF.</li>
+            <li>
+              Expande el semestre con las materias que quieres cursar, o usa el buscador para
+              encontrar una materia o un docente por nombre.
+            </li>
+            <li>
+              Selecciona el grupo que te interesa de cada materia. El calendario mostrará los
+              choques en rojo.
+            </li>
+            <li>
+              Toca una materia en el horario para ver más información (docente, aula, aula
+              virtual, grupo de WhatsApp) o quitarla con el botón "Quitar materia".
+            </li>
+            <li>¿Tienes un choque? Prueba con otro grupo de alguna materia involucrada.</li>
+            <li>Imprime tu horario, o descárgalo como PDF o como imagen.</li>
           </ol>
-          <p class="mt-2">
-            Consejo: prueba distintas combinaciones para minimizar choques y encontrar el mejor
-            horario.
-          </p>
           <p class="mt-3">
-            Usos habituales: preparar tu horario antes de registrar materias en WEBSIS, compartir tu
-            horario con compañeros o imprimirlo para tenerlo a mano. El PDF generado es apto para
-            impresión y no perder tus horarios de vista.
+            Con sesión iniciada, tu horario se guarda solo, en la nube, apenas agregás o quitás
+            una materia — no hace falta guardarlo a mano. Sin sesión, podés guardarlo
+            manualmente, lo que te pedirá registrarte primero.
           </p>
           <p class="mt-2">
-            La aplicación está pensada para facilitar la planificación y reducir conflictos entre
-            clases; utiliza la vista semanal para identificar choques y probar combinaciones
-            alternativas.
+            Usos habituales: preparar tu horario antes de registrar materias en WEBSIS, compartir
+            tu horario con compañeros o imprimirlo para tenerlo a mano.
           </p>
         </div>
 
@@ -74,22 +81,6 @@ const router = useRouter()
             WhatsApp: <a href="https://wa.me/59177435817" target="_blank" rel="noopener">77435817</a><br />
             Email: <a href="mailto:grv.trainer@gmail.com">grv.trainer@gmail.com</a>
           </p>
-        </div>
-
-        <div class="mb-6">
-          <div class="text-subtitle-1 font-weight-medium mb-2">Instrucciones rápidas</div>
-          <ul>
-            <li>Escoge el semestre con las materias que quieres cursar.</li>
-            <li>Escoge el grupo de la materia al que quieres participar.</li>
-            <li>
-              ¿Tienes un choque? verifica con otro grupo de alguna materia que tenga el choque.
-            </li>
-            <li>
-              Si el choque persiste y no importa tanto intentarlo acomodarlo: lo siento, a veces
-              pasa; quizás debas escoger a qué materia participar este semestre.
-            </li>
-            <li>Puedes imprimir o descargar este horario usando los botones.</li>
-          </ul>
         </div>
 
         <div class="mb-6">
