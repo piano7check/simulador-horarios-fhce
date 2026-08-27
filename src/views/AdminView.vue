@@ -437,7 +437,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         v-if="esAdministrador"
         v-model="tabActiva"
         bg-color="primary"
-        slider-color="white"
+        hide-slider
         class="mb-4 admin-tabs"
       >
         <v-tab value="grupos" :prepend-icon="mdiBookEditOutline">Aula virtual y WhatsApp</v-tab>
@@ -717,16 +717,28 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 }
 
 .admin-tabs {
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .admin-tabs :deep(.v-tab) {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
+  border-radius: 8px;
+  margin: 0 2px;
+  min-width: 0;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.admin-tabs :deep(.v-tab:hover) {
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 .admin-tabs :deep(.v-tab--selected) {
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #1565c0;
+  font-weight: 700;
 }
 </style>
