@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAuth } from '@/composables/useAuth'
+import { registrarVista } from '@/services/admin'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +26,14 @@ const router = createRouter({
       component: () => import('@/views/AcercaDeView.vue'),
     },
   ],
+})
+
+// Cuenta las navegaciones dentro de la app (solo con sesión, ya que las
+// estadísticas se guardan por usuario) para la columna "Vistas" del
+// panel de administración.
+const { user } = useAuth()
+router.afterEach(() => {
+  if (user.value) registrarVista()
 })
 
 // Los archivos de cada vista se cargan bajo demanda con un nombre único

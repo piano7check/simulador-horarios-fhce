@@ -34,6 +34,8 @@ export interface UsuarioConRol {
   nombre: string | null
   rol: RolUsuario
   ultimo_ingreso: string | null
+  ingresos: number
+  vistas: number
 }
 
 export interface UsuarioEncontrado {
@@ -65,6 +67,23 @@ export async function asignarRol(userId: string, rol: RolUsuario): Promise<void>
 export async function quitarRol(userId: string): Promise<void> {
   const { error } = await supabase.rpc('quitar_rol', { p_user_id: userId })
   if (error) throw error
+}
+
+/** Estadísticas para el panel de admin, no algo de lo que dependa el
+ * resto de la app -- nunca deben bloquear ni mostrar error si fallan
+ * (por ejemplo, sin conexión), así que se disparan sin esperar. */
+export function registrarIngreso(): void {
+  supabase.rpc('registrar_ingreso').then(
+    () => {},
+    () => {},
+  )
+}
+
+export function registrarVista(): void {
+  supabase.rpc('registrar_vista').then(
+    () => {},
+    () => {},
+  )
 }
 
 export async function actualizarGrupoExtra(

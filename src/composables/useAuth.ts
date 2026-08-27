@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { supabase } from '@/lib/supabase'
+import { registrarIngreso } from '@/services/admin'
 import type { User } from '@supabase/supabase-js'
 
 // Singleton: estado compartido entre todos los componentes
@@ -29,7 +30,10 @@ supabase.auth.getSession().then(({ data }) => {
 
 supabase.auth.onAuthStateChange((event, session) => {
   user.value = session?.user ?? null
-  if (event === 'SIGNED_IN') signInPulse.value++
+  if (event === 'SIGNED_IN') {
+    signInPulse.value++
+    registrarIngreso()
+  }
 })
 
 export function useAuth() {

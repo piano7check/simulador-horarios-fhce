@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { mdiChevronLeft, mdiContentSave, mdiLogout, mdiAccountCog } from '@mdi/js'
+import {
+  mdiChevronLeft,
+  mdiContentSave,
+  mdiLogout,
+  mdiAccountCog,
+  mdiAccountRemoveOutline,
+} from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from '@/components/AuthDialog.vue'
 import {
@@ -271,6 +277,8 @@ const headersRoles = [
   { title: 'Nombre', key: 'nombre' },
   { title: 'Correo', key: 'email' },
   { title: 'Rol', key: 'rol' },
+  { title: 'Ingresos', key: 'ingresos', align: 'end' as const },
+  { title: 'Vistas', key: 'vistas', align: 'end' as const },
   { title: 'Último ingreso', key: 'ultimo_ingreso' },
   { title: '', key: 'acciones', sortable: false, align: 'end' as const },
 ]
@@ -350,7 +358,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 </script>
 
 <template>
-  <v-container class="py-6" style="max-width: 720px">
+  <v-container class="py-6" :style="{ maxWidth: tabActiva === 'roles' ? '960px' : '720px' }">
     <div class="d-flex align-center mb-4">
       <v-btn :icon="mdiChevronLeft" variant="text" to="/" class="mr-1" />
       <h1 class="text-h6" style="margin: 0">Administración</h1>
@@ -576,33 +584,35 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
               <v-alert v-else-if="usuariosConRol.length === 0" type="info" variant="tonal">
                 Todavía no hay usuarios con roles asignados.
               </v-alert>
-              <div v-else class="roles-table-wrap">
-                <v-data-table
-                  :headers="headersRoles"
-                  :items="usuariosConRol"
-                  item-value="user_id"
-                  density="comfortable"
-                  :items-per-page="10"
-                >
-                  <template #item.nombre="{ item }">
-                    {{ item.nombre ?? '—' }}
-                  </template>
-                  <template #item.ultimo_ingreso="{ item }">
-                    {{ formatUltimoIngreso(item.ultimo_ingreso) }}
-                  </template>
-                  <template #item.acciones="{ item }">
-                    <v-btn
-                      size="small"
-                      variant="text"
-                      color="error"
-                      :loading="quitandoRol[item.user_id]"
-                      @click="quitarRolAUsuario(item)"
-                    >
-                      Quitar
-                    </v-btn>
-                  </template>
-                </v-data-table>
-              </div>
+              <v-data-table
+                :headers="headersRoles"
+                :items="usuariosConRol"
+                item-value="user_id"
+                density="comfortable"
+                :items-per-page="10"
+                mobile-breakpoint="sm"
+                class="roles-table"
+              >
+                <template #item.nombre="{ item }">
+                  {{ item.nombre ?? '—' }}
+                </template>
+                <template #item.ultimo_ingreso="{ item }">
+                  {{ formatUltimoIngreso(item.ultimo_ingreso) }}
+                </template>
+                <template #item.acciones="{ item }">
+                  <v-btn
+                    icon
+                    size="small"
+                    variant="text"
+                    color="error"
+                    :loading="quitandoRol[item.user_id]"
+                    title="Quitar rol"
+                    @click="quitarRolAUsuario(item)"
+                  >
+                    <v-icon :icon="mdiAccountRemoveOutline" size="20" />
+                  </v-btn>
+                </template>
+              </v-data-table>
             </v-card-text>
           </v-card>
         </v-window-item>
@@ -618,12 +628,8 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 </template>
 
 <style scoped>
-.roles-table-wrap {
-  overflow-x: auto;
-}
-
-.roles-table-wrap :deep(td),
-.roles-table-wrap :deep(th) {
+.roles-table :deep(td),
+.roles-table :deep(th) {
   white-space: nowrap;
 }
 </style>
