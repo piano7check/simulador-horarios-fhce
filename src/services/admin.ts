@@ -133,6 +133,22 @@ export async function actualizarDocente(
   if (error) throw error
 }
 
+/** Sube una foto al bucket `docentes-fotos` y devuelve su URL pública
+ * (todavía no queda guardada en `docentes.foto_url` -- eso lo hace
+ * actualizarDocente al guardar el formulario). Un mismo docente siempre
+ * usa la misma ruta (se pisa con upsert), con un parámetro `t` en la URL
+ * para que el navegador no siga mostrando la foto vieja en caché. */
+export async function subirFotoDocente(docenteId: number, archivo: File): Promise<string> {
+  const extension = archivo.name.split('.').pop() ?? 'jpg'
+  const ruta = `${docenteId}.${extension}`
+  const { error } = await supabase.storage
+    .from('docentes-fotos')
+    .upload(ruta, archivo, { upsert: true })
+  if (error) throw error
+  const { data } = supabase.storage.from('docentes-fotos').getPublicUrl(ruta)
+  return `${data.publicUrl}?t=${Date.now()}`
+}
+
 export async function actualizarGrupoExtra(
   grupoId: number,
   datos: {

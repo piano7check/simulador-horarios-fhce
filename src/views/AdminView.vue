@@ -10,6 +10,7 @@ import {
   mdiAccountSchool,
   mdiBookEditOutline,
   mdiAccountTieOutline,
+  mdiCameraOutline,
 } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from '@/components/AuthDialog.vue'
@@ -30,6 +31,7 @@ import {
   buscarUsuarios,
   buscarDocentes,
   actualizarDocente,
+  subirFotoDocente,
   asignarRol,
   quitarRol,
   type GrupoAdmin,
@@ -351,6 +353,8 @@ const buscandoDocentes = ref(false)
 const docenteSeleccionado = ref<Docente | null>(null)
 const edicionDocente = ref({ fotoUrl: '', descripcion: '' })
 const guardandoDocente = ref(false)
+const archivoFoto = ref<File[]>([])
+const subiendoFoto = ref(false)
 
 let timeoutBusquedaDocente: ReturnType<typeof setTimeout> | undefined
 function onBusquedaDocente(termino: string) {
@@ -375,6 +379,24 @@ watch(docenteSeleccionado, (docente) => {
   edicionDocente.value = {
     fotoUrl: docente?.foto_url ?? '',
     descripcion: docente?.descripcion ?? '',
+  }
+  archivoFoto.value = []
+})
+
+watch(archivoFoto, async (archivos) => {
+  const archivo = archivos[0]
+  const docente = docenteSeleccionado.value
+  if (!archivo || !docente) return
+  subiendoFoto.value = true
+  try {
+    edicionDocente.value.fotoUrl = await subirFotoDocente(docente.id, archivo)
+  } catch (e: any) {
+    snackbarMsg.value = e.message ?? 'No se pudo subir la foto'
+    snackbarColor.value = 'error'
+    snackbar.value = true
+  } finally {
+    subiendoFoto.value = false
+    archivoFoto.value = []
   }
 })
 
@@ -661,9 +683,22 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
                   </div>
                 </div>
 
+                <v-file-input
+                  v-model="archivoFoto"
+                  label="Subir una foto"
+                  accept="image/*"
+                  prepend-icon=""
+                  :prepend-inner-icon="mdiCameraOutline"
+                  :loading="subiendoFoto"
+                  :disabled="subiendoFoto"
+                  variant="outlined"
+                  density="comfortable"
+                  class="mb-3"
+                  hide-details
+                />
                 <v-text-field
                   v-model="edicionDocente.fotoUrl"
-                  label="Foto (link a una imagen)"
+                  label="O pegá el link a una imagen ya alojada en otro lado"
                   placeholder="https://..."
                   variant="outlined"
                   density="comfortable"
