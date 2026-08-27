@@ -8,6 +8,7 @@ import {
   mdiAccountCog,
   mdiAccountRemoveOutline,
   mdiAccountSchool,
+  mdiBookEditOutline,
 } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from '@/components/AuthDialog.vue'
@@ -432,8 +433,14 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         </v-btn>
       </div>
 
-      <v-tabs v-if="esAdministrador" v-model="tabActiva" class="mb-4">
-        <v-tab value="grupos">Grupos</v-tab>
+      <v-tabs
+        v-if="esAdministrador"
+        v-model="tabActiva"
+        bg-color="primary"
+        slider-color="white"
+        class="mb-4 admin-tabs"
+      >
+        <v-tab value="grupos" :prepend-icon="mdiBookEditOutline">Aula virtual y WhatsApp</v-tab>
         <v-tab value="roles" :prepend-icon="mdiAccountCog">Roles</v-tab>
         <v-tab value="estudiantes" :prepend-icon="mdiAccountSchool">Estudiantes</v-tab>
       </v-tabs>
@@ -707,5 +714,19 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 .roles-table :deep(td),
 .roles-table :deep(th) {
   white-space: nowrap;
+}
+
+.admin-tabs {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-tabs :deep(.v-tab) {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.admin-tabs :deep(.v-tab--selected) {
+  color: #ffffff;
 }
 </style>
