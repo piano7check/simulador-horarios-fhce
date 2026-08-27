@@ -9,6 +9,7 @@ import {
   mdiAccountRemoveOutline,
   mdiAccountSchool,
   mdiBookEditOutline,
+  mdiAccountTieOutline,
 } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from '@/components/AuthDialog.vue'
@@ -27,6 +28,8 @@ import {
   listarRolesUsuario,
   listarEstudiantes,
   buscarUsuarios,
+  buscarDocentes,
+  actualizarDocente,
   asignarRol,
   quitarRol,
   type GrupoAdmin,
@@ -34,6 +37,7 @@ import {
   type UsuarioConRol,
   type UsuarioEncontrado,
   type Estudiante,
+  type Docente,
 } from '@/services/admin'
 import { normalizarTexto } from '@/utils/texto'
 
@@ -238,7 +242,7 @@ async function guardarGrupo(grupo: GrupoAdmin) {
 }
 
 // -- Pestañas del panel (Roles y Estudiantes solo aparecen para administrador) --
-const tabActiva = ref<'grupos' | 'roles' | 'estudiantes'>('grupos')
+const tabActiva = ref<'grupos' | 'docentes' | 'roles' | 'estudiantes'>('grupos')
 
 // -- Gestión de roles (solo administrador) --
 const ROLES_DISPONIBLES: RolUsuario[] = ['auxiliar', 'docente', 'administrador']
@@ -340,6 +344,61 @@ async function cargarEstudiantes() {
   }
 }
 
+// -- Docentes: foto y descripción (cualquier rol de staff) --
+const busquedaDocente = ref('')
+const resultadosDocentes = ref<Docente[]>([])
+const buscandoDocentes = ref(false)
+const docenteSeleccionado = ref<Docente | null>(null)
+const edicionDocente = ref({ fotoUrl: '', descripcion: '' })
+const guardandoDocente = ref(false)
+
+let timeoutBusquedaDocente: ReturnType<typeof setTimeout> | undefined
+function onBusquedaDocente(termino: string) {
+  clearTimeout(timeoutBusquedaDocente)
+  if (!termino || termino.trim().length < 2) {
+    resultadosDocentes.value = []
+    return
+  }
+  timeoutBusquedaDocente = setTimeout(async () => {
+    buscandoDocentes.value = true
+    try {
+      resultadosDocentes.value = await buscarDocentes(termino.trim())
+    } catch {
+      resultadosDocentes.value = []
+    } finally {
+      buscandoDocentes.value = false
+    }
+  }, 300)
+}
+
+watch(docenteSeleccionado, (docente) => {
+  edicionDocente.value = {
+    fotoUrl: docente?.foto_url ?? '',
+    descripcion: docente?.descripcion ?? '',
+  }
+})
+
+async function guardarDocente() {
+  const docente = docenteSeleccionado.value
+  if (!docente) return
+  guardandoDocente.value = true
+  try {
+    await actualizarDocente(docente.id, {
+      fotoUrl: edicionDocente.value.fotoUrl.trim() || null,
+      descripcion: edicionDocente.value.descripcion.trim() || null,
+    })
+    snackbarMsg.value = `Datos de ${docente.nombre_completo} guardados`
+    snackbarColor.value = 'success'
+    snackbar.value = true
+  } catch (e: any) {
+    snackbarMsg.value = e.message ?? 'No se pudo guardar'
+    snackbarColor.value = 'error'
+    snackbar.value = true
+  } finally {
+    guardandoDocente.value = false
+  }
+}
+
 watch(tabActiva, (tab) => {
   if (tab === 'roles') cargarUsuariosConRol()
   if (tab === 'estudiantes') cargarEstudiantes()
@@ -433,16 +492,13 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         </v-btn>
       </div>
 
-      <v-tabs
-        v-if="esAdministrador"
-        v-model="tabActiva"
-        bg-color="primary"
-        hide-slider
-        class="mb-4 admin-tabs"
-      >
+      <v-tabs v-model="tabActiva" bg-color="primary" hide-slider class="mb-4 admin-tabs">
         <v-tab value="grupos" :prepend-icon="mdiBookEditOutline">Aula virtual y WhatsApp</v-tab>
-        <v-tab value="roles" :prepend-icon="mdiAccountCog">Roles</v-tab>
-        <v-tab value="estudiantes" :prepend-icon="mdiAccountSchool">Estudiantes</v-tab>
+        <v-tab value="docentes" :prepend-icon="mdiAccountTieOutline">Docentes</v-tab>
+        <v-tab v-if="esAdministrador" value="roles" :prepend-icon="mdiAccountCog">Roles</v-tab>
+        <v-tab v-if="esAdministrador" value="estudiantes" :prepend-icon="mdiAccountSchool">
+          Estudiantes
+        </v-tab>
       </v-tabs>
 
       <v-window v-model="tabActiva">
@@ -565,6 +621,77 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
                 :prepend-icon="mdiContentSave"
                 :loading="guardando[grupoSeleccionado.id]"
                 @click="guardarGrupo(grupoSeleccionado)"
+              >
+                Guardar
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-window-item>
+
+        <v-window-item value="docentes">
+          <v-card rounded="lg">
+            <v-card-text>
+              <v-autocomplete
+                v-model="docenteSeleccionado"
+                v-model:search="busquedaDocente"
+                :items="resultadosDocentes"
+                :loading="buscandoDocentes"
+                :item-title="(d: Docente) => d.nombre_completo"
+                item-value="id"
+                return-object
+                no-filter
+                clearable
+                label="Buscar docente"
+                placeholder="Escribe al menos 2 letras..."
+                variant="outlined"
+                density="comfortable"
+                hide-details
+                class="mb-4"
+                @update:search="onBusquedaDocente"
+              />
+
+              <template v-if="docenteSeleccionado">
+                <div class="d-flex align-center ga-4 mb-4">
+                  <v-avatar size="72" color="grey-lighten-2">
+                    <v-img v-if="edicionDocente.fotoUrl" :src="edicionDocente.fotoUrl" cover />
+                    <v-icon v-else :icon="mdiAccountTieOutline" size="36" />
+                  </v-avatar>
+                  <div class="text-subtitle-1 font-weight-medium">
+                    {{ docenteSeleccionado.nombre_completo }}
+                  </div>
+                </div>
+
+                <v-text-field
+                  v-model="edicionDocente.fotoUrl"
+                  label="Foto (link a una imagen)"
+                  placeholder="https://..."
+                  variant="outlined"
+                  density="comfortable"
+                  class="mb-3"
+                  hide-details
+                />
+                <v-textarea
+                  v-model="edicionDocente.descripcion"
+                  label="Descripción"
+                  placeholder="Formación, materias que dicta, etc."
+                  variant="outlined"
+                  density="comfortable"
+                  rows="4"
+                  hide-details
+                />
+              </template>
+              <v-alert v-else type="info" variant="tonal">
+                Buscá un docente para cargarle una foto y una descripción.
+              </v-alert>
+            </v-card-text>
+            <v-card-actions v-if="docenteSeleccionado">
+              <v-spacer />
+              <v-btn
+                color="primary"
+                variant="flat"
+                :prepend-icon="mdiContentSave"
+                :loading="guardandoDocente"
+                @click="guardarDocente"
               >
                 Guardar
               </v-btn>

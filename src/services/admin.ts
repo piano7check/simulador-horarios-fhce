@@ -102,6 +102,37 @@ export function registrarVista(): void {
   )
 }
 
+export interface Docente {
+  id: number
+  nombre_completo: string
+  foto_url: string | null
+  descripcion: string | null
+}
+
+/** Búsqueda parcial por nombre, para elegir a qué docente cargarle foto
+ * y descripción. `docentes` ya es de lectura pública. */
+export async function buscarDocentes(termino: string): Promise<Docente[]> {
+  const { data, error } = await supabase
+    .from('docentes')
+    .select('id, nombre_completo, foto_url, descripcion')
+    .ilike('nombre_completo', `%${termino}%`)
+    .order('nombre_completo')
+    .limit(20)
+  if (error) throw error
+  return data as Docente[]
+}
+
+export async function actualizarDocente(
+  docenteId: number,
+  datos: { fotoUrl: string | null; descripcion: string | null },
+): Promise<void> {
+  const { error } = await supabase
+    .from('docentes')
+    .update({ foto_url: datos.fotoUrl, descripcion: datos.descripcion })
+    .eq('id', docenteId)
+  if (error) throw error
+}
+
 export async function actualizarGrupoExtra(
   grupoId: number,
   datos: {
