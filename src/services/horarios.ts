@@ -39,6 +39,7 @@ export interface Clase {
   grupo_numero: string
   dia: string
   docente: string
+  docente_foto_url: string | null
   aula: string
   hora_inicio: string
   hora_fin: string

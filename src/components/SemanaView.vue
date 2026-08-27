@@ -288,6 +288,7 @@ interface EventoCal {
   dia: string
   aula: string
   docente: string
+  docenteFotoUrl: string | null
   aulaVirtual: string | null
   whatsappDocente: string | null
   whatsappAuxiliar: string | null
@@ -321,6 +322,7 @@ const eventosBase = computed<EventoCal[]>(() => {
         dia: c.dia,
         aula: c.aula,
         docente: c.docente,
+        docenteFotoUrl: c.docente_foto_url,
         aulaVirtual: c.aula_virtual,
         whatsappDocente: c.whatsapp_docente,
         whatsappAuxiliar: c.whatsapp_auxiliar,
@@ -470,9 +472,14 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           </v-card-title>
         </v-card-item>
         <v-card-text class="pt-4">
-          <p class="mb-2">
-            <strong>Docente:</strong> {{ eventoDetalle.docente || 'No especificado' }}
-          </p>
+          <div class="d-flex align-center ga-2 mb-2">
+            <v-avatar v-if="eventoDetalle.docenteFotoUrl" size="28">
+              <v-img :src="eventoDetalle.docenteFotoUrl" cover />
+            </v-avatar>
+            <p class="mb-0">
+              <strong>Docente:</strong> {{ eventoDetalle.docente || 'No especificado' }}
+            </p>
+          </div>
           <p class="mb-2"><strong>Aula:</strong> {{ eventoDetalle.aula || 'No especificada' }}</p>
           <p
             :class="
