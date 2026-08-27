@@ -621,4 +621,9 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 .roles-table-wrap {
   overflow-x: auto;
 }
+
+.roles-table-wrap :deep(td),
+.roles-table-wrap :deep(th) {
+  white-space: nowrap;
+}
 </style>
