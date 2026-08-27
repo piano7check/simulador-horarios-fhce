@@ -17,12 +17,13 @@ import {
   obtenerGruposAdmin,
   actualizarGrupoExtra,
   listarRolesUsuario,
-  buscarUsuarioPorEmail,
+  buscarUsuarios,
   asignarRol,
   quitarRol,
   type GrupoAdmin,
   type RolUsuario,
   type UsuarioConRol,
+  type UsuarioEncontrado,
 } from '@/services/admin'
 import { normalizarTexto } from '@/utils/texto'
 
@@ -233,10 +234,61 @@ const tabActiva = ref<'grupos' | 'roles'>('grupos')
 const ROLES_DISPONIBLES: RolUsuario[] = ['auxiliar', 'docente', 'administrador']
 const usuariosConRol = ref<UsuarioConRol[]>([])
 const cargandoUsuariosConRol = ref(false)
-const emailBusqueda = ref('')
 const rolAAsignar = ref<RolUsuario>('auxiliar')
 const asignandoRol = ref(false)
 const quitandoRol = ref<Record<string, boolean>>({})
+
+// Búsqueda por nombre o correo, para elegir a quién asignar el rol.
+const busquedaUsuario = ref('')
+const resultadosBusqueda = ref<UsuarioEncontrado[]>([])
+const buscandoUsuarios = ref(false)
+const usuarioSeleccionado = ref<UsuarioEncontrado | null>(null)
+
+function etiquetaUsuario(u: UsuarioEncontrado) {
+  return u.nombre ? `${u.nombre} — ${u.email}` : u.email
+}
+
+let timeoutBusquedaUsuario: ReturnType<typeof setTimeout> | undefined
+function onBusquedaUsuario(termino: string) {
+  clearTimeout(timeoutBusquedaUsuario)
+  if (!termino || termino.trim().length < 2) {
+    resultadosBusqueda.value = []
+    return
+  }
+  timeoutBusquedaUsuario = setTimeout(async () => {
+    buscandoUsuarios.value = true
+    try {
+      resultadosBusqueda.value = await buscarUsuarios(termino.trim())
+    } catch {
+      resultadosBusqueda.value = []
+    } finally {
+      buscandoUsuarios.value = false
+    }
+  }, 300)
+}
+
+const headersRoles = [
+  { title: 'Nombre', key: 'nombre' },
+  { title: 'Correo', key: 'email' },
+  { title: 'Rol', key: 'rol' },
+  { title: 'Último ingreso', key: 'ultimo_ingreso' },
+  { title: '', key: 'acciones', sortable: false, align: 'end' as const },
+]
+
+function formatUltimoIngreso(ts: string | null) {
+  if (!ts) return 'Nunca'
+  try {
+    return new Intl.DateTimeFormat('es-ES', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    }).format(new Date(ts))
+  } catch {
+    return 'Desconocido'
+  }
+}
 
 async function cargarUsuariosConRol() {
   cargandoUsuariosConRol.value = true
@@ -255,24 +307,18 @@ watch(tabActiva, (tab) => {
   if (tab === 'roles') cargarUsuariosConRol()
 })
 
-async function asignarRolPorEmail() {
-  const email = emailBusqueda.value.trim()
-  if (!email) return
+async function asignarRolAUsuarioSeleccionado() {
+  const usuario = usuarioSeleccionado.value
+  if (!usuario) return
   asignandoRol.value = true
   try {
-    const usuario = await buscarUsuarioPorEmail(email)
-    if (!usuario) {
-      snackbarMsg.value =
-        'No se encontró ninguna cuenta con ese correo (debe haber iniciado sesión al menos una vez)'
-      snackbarColor.value = 'error'
-      snackbar.value = true
-      return
-    }
     await asignarRol(usuario.user_id, rolAAsignar.value)
-    snackbarMsg.value = `Rol "${rolAAsignar.value}" asignado a ${usuario.email}`
+    snackbarMsg.value = `Rol "${rolAAsignar.value}" asignado a ${etiquetaUsuario(usuario)}`
     snackbarColor.value = 'success'
     snackbar.value = true
-    emailBusqueda.value = ''
+    usuarioSeleccionado.value = null
+    busquedaUsuario.value = ''
+    resultadosBusqueda.value = []
     await cargarUsuariosConRol()
   } catch (e: any) {
     snackbarMsg.value = e.message ?? 'No se pudo asignar el rol'
@@ -480,15 +526,23 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
           <v-card rounded="lg">
             <v-card-text>
               <div class="d-flex flex-wrap ga-2 align-start mb-4">
-                <v-text-field
-                  v-model="emailBusqueda"
-                  label="Correo del usuario"
-                  placeholder="usuario@est.umss.edu"
+                <v-autocomplete
+                  v-model="usuarioSeleccionado"
+                  v-model:search="busquedaUsuario"
+                  :items="resultadosBusqueda"
+                  :loading="buscandoUsuarios"
+                  :item-title="etiquetaUsuario"
+                  item-value="user_id"
+                  return-object
+                  no-filter
+                  clearable
+                  label="Buscar por nombre o correo"
+                  placeholder="Escribe al menos 2 letras..."
                   variant="outlined"
                   density="comfortable"
                   hide-details
-                  style="min-width: 220px; flex: 1 1 220px"
-                  @keyup.enter="asignarRolPorEmail"
+                  style="min-width: 260px; flex: 1 1 260px"
+                  @update:search="onBusquedaUsuario"
                 />
                 <v-select
                   v-model="rolAAsignar"
@@ -502,15 +556,16 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
                 <v-btn
                   color="primary"
                   variant="flat"
+                  :disabled="!usuarioSeleccionado"
                   :loading="asignandoRol"
-                  @click="asignarRolPorEmail"
+                  @click="asignarRolAUsuarioSeleccionado"
                 >
                   Asignar
                 </v-btn>
               </div>
               <p class="text-caption text-medium-emphasis mb-4">
-                La cuenta debe haber iniciado sesión al menos una vez en la app. Si el correo ya
-                tiene un rol, se reemplaza por el nuevo.
+                La cuenta debe haber iniciado sesión al menos una vez en la app. Si ya tiene un
+                rol, se reemplaza por el nuevo.
               </p>
 
               <v-divider class="mb-4" />
@@ -521,23 +576,33 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
               <v-alert v-else-if="usuariosConRol.length === 0" type="info" variant="tonal">
                 Todavía no hay usuarios con roles asignados.
               </v-alert>
-              <v-list v-else density="compact">
-                <v-list-item v-for="u in usuariosConRol" :key="u.user_id">
-                  <v-list-item-title>{{ u.email }}</v-list-item-title>
-                  <v-list-item-subtitle>{{ u.rol }}</v-list-item-subtitle>
-                  <template #append>
+              <div v-else class="roles-table-wrap">
+                <v-data-table
+                  :headers="headersRoles"
+                  :items="usuariosConRol"
+                  item-value="user_id"
+                  density="comfortable"
+                  :items-per-page="10"
+                >
+                  <template #item.nombre="{ item }">
+                    {{ item.nombre ?? '—' }}
+                  </template>
+                  <template #item.ultimo_ingreso="{ item }">
+                    {{ formatUltimoIngreso(item.ultimo_ingreso) }}
+                  </template>
+                  <template #item.acciones="{ item }">
                     <v-btn
                       size="small"
                       variant="text"
                       color="error"
-                      :loading="quitandoRol[u.user_id]"
-                      @click="quitarRolAUsuario(u)"
+                      :loading="quitandoRol[item.user_id]"
+                      @click="quitarRolAUsuario(item)"
                     >
                       Quitar
                     </v-btn>
                   </template>
-                </v-list-item>
-              </v-list>
+                </v-data-table>
+              </div>
             </v-card-text>
           </v-card>
         </v-window-item>
@@ -551,3 +616,9 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
     </v-snackbar>
   </v-container>
 </template>
+
+<style scoped>
+.roles-table-wrap {
+  overflow-x: auto;
+}
+</style>

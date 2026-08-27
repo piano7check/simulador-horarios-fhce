@@ -31,18 +31,24 @@ export async function obtenerGruposAdmin(
 export interface UsuarioConRol {
   user_id: string
   email: string
+  nombre: string | null
   rol: RolUsuario
+  ultimo_ingreso: string | null
 }
 
-/** Solo administrador puede llamar esto (lo verifica la función en la
- * base); si no, tira error. */
-export async function buscarUsuarioPorEmail(
-  email: string,
-): Promise<{ user_id: string; email: string } | null> {
-  const { data, error } = await supabase.rpc('buscar_usuario_por_email', { p_email: email })
+export interface UsuarioEncontrado {
+  user_id: string
+  email: string
+  nombre: string | null
+}
+
+/** Búsqueda parcial por correo o nombre, para elegir a quién asignar un
+ * rol. Solo administrador puede llamar esto (lo verifica la función en
+ * la base); si no, tira error. */
+export async function buscarUsuarios(termino: string): Promise<UsuarioEncontrado[]> {
+  const { data, error } = await supabase.rpc('buscar_usuarios', { p_termino: termino })
   if (error) throw error
-  const fila = (data as { user_id: string; email: string }[])[0]
-  return fila ?? null
+  return data as UsuarioEncontrado[]
 }
 
 export async function listarRolesUsuario(): Promise<UsuarioConRol[]> {
