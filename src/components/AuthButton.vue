@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { mdiAccountCircle, mdiLogout } from '@mdi/js'
+import { mdiAccountCircle, mdiLogout, mdiAccountCog } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
+import { obtenerMiRol } from '@/services/admin'
 import AuthDialog from './AuthDialog.vue'
 
 const { user, signOut } = useAuth()
@@ -16,6 +17,26 @@ async function cerrarSesion() {
   await signOut()
   router.push('/')
 }
+
+// Solo para mostrar u ocultar el enlace "Administrar el sitio" — el
+// control de acceso real a /admin lo dan las políticas RLS y las RPC
+// `SECURITY DEFINER`, igual que ya documenta AdminView.vue.
+const tienePermiso = ref(false)
+watch(
+  user,
+  async () => {
+    if (!user.value) {
+      tienePermiso.value = false
+      return
+    }
+    try {
+      tienePermiso.value = (await obtenerMiRol()) !== null
+    } catch {
+      tienePermiso.value = false
+    }
+  },
+  { immediate: true },
+)
 
 const nombreMostrado = computed(() => {
   if (!user.value) return ''
@@ -52,6 +73,13 @@ const nombreMostrado = computed(() => {
           <v-list-item-subtitle class="text-caption">{{ user.email }}</v-list-item-subtitle>
         </v-list-item>
         <v-divider />
+        <v-list-item
+          v-if="tienePermiso"
+          :prepend-icon="mdiAccountCog"
+          title="Administrar el sitio"
+          @click="router.push('/admin')"
+        />
+        <v-divider v-if="tienePermiso" />
         <v-list-item :prepend-icon="mdiLogout" title="Cerrar sesión" @click="cerrarSesion" />
       </v-list>
     </v-card>
