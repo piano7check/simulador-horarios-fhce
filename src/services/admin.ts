@@ -59,6 +59,22 @@ export async function listarRolesUsuario(): Promise<UsuarioConRol[]> {
   return data as UsuarioConRol[]
 }
 
+export interface Estudiante {
+  user_id: string
+  email: string
+  nombre: string | null
+  ultimo_ingreso: string | null
+  ingresos: number
+  vistas: number
+}
+
+/** Cuentas registradas sin rol de staff, con sus estadísticas de uso. */
+export async function listarEstudiantes(): Promise<Estudiante[]> {
+  const { data, error } = await supabase.rpc('listar_estudiantes')
+  if (error) throw error
+  return data as Estudiante[]
+}
+
 export async function asignarRol(userId: string, rol: RolUsuario): Promise<void> {
   const { error } = await supabase.rpc('asignar_rol', { p_user_id: userId, p_rol: rol })
   if (error) throw error

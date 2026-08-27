@@ -7,6 +7,7 @@ import {
   mdiLogout,
   mdiAccountCog,
   mdiAccountRemoveOutline,
+  mdiAccountSchool,
 } from '@mdi/js'
 import { useAuth } from '@/composables/useAuth'
 import AuthDialog from '@/components/AuthDialog.vue'
@@ -23,6 +24,7 @@ import {
   obtenerGruposAdmin,
   actualizarGrupoExtra,
   listarRolesUsuario,
+  listarEstudiantes,
   buscarUsuarios,
   asignarRol,
   quitarRol,
@@ -30,6 +32,7 @@ import {
   type RolUsuario,
   type UsuarioConRol,
   type UsuarioEncontrado,
+  type Estudiante,
 } from '@/services/admin'
 import { normalizarTexto } from '@/utils/texto'
 
@@ -233,8 +236,8 @@ async function guardarGrupo(grupo: GrupoAdmin) {
   }
 }
 
-// -- Pestañas del panel (Roles solo aparece para administrador) --
-const tabActiva = ref<'grupos' | 'roles'>('grupos')
+// -- Pestañas del panel (Roles y Estudiantes solo aparecen para administrador) --
+const tabActiva = ref<'grupos' | 'roles' | 'estudiantes'>('grupos')
 
 // -- Gestión de roles (solo administrador) --
 const ROLES_DISPONIBLES: RolUsuario[] = ['auxiliar', 'docente', 'administrador']
@@ -311,8 +314,34 @@ async function cargarUsuariosConRol() {
   }
 }
 
+// -- Estudiantes (solo administrador) --
+const headersEstudiantes = [
+  { title: 'Nombre', key: 'nombre' },
+  { title: 'Correo', key: 'email' },
+  { title: 'Ingresos', key: 'ingresos', align: 'end' as const },
+  { title: 'Vistas', key: 'vistas', align: 'end' as const },
+  { title: 'Último ingreso', key: 'ultimo_ingreso' },
+]
+const estudiantes = ref<Estudiante[]>([])
+const cargandoEstudiantes = ref(false)
+const busquedaEstudiante = ref('')
+
+async function cargarEstudiantes() {
+  cargandoEstudiantes.value = true
+  try {
+    estudiantes.value = await listarEstudiantes()
+  } catch (e: any) {
+    snackbarMsg.value = e.message ?? 'No se pudo cargar la lista de estudiantes'
+    snackbarColor.value = 'error'
+    snackbar.value = true
+  } finally {
+    cargandoEstudiantes.value = false
+  }
+}
+
 watch(tabActiva, (tab) => {
   if (tab === 'roles') cargarUsuariosConRol()
+  if (tab === 'estudiantes') cargarEstudiantes()
 })
 
 async function asignarRolAUsuarioSeleccionado() {
@@ -358,7 +387,12 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 </script>
 
 <template>
-  <v-container class="py-6" :style="{ maxWidth: tabActiva === 'roles' ? '960px' : '720px' }">
+  <v-container
+    class="py-6"
+    :style="{
+      maxWidth: tabActiva === 'roles' || tabActiva === 'estudiantes' ? '960px' : '720px',
+    }"
+  >
     <div class="d-flex align-center mb-4">
       <v-btn :icon="mdiChevronLeft" variant="text" to="/" class="mr-1" />
       <h1 class="text-h6" style="margin: 0">Administración</h1>
@@ -401,6 +435,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
       <v-tabs v-if="esAdministrador" v-model="tabActiva" class="mb-4">
         <v-tab value="grupos">Grupos</v-tab>
         <v-tab value="roles" :prepend-icon="mdiAccountCog">Roles</v-tab>
+        <v-tab value="estudiantes" :prepend-icon="mdiAccountSchool">Estudiantes</v-tab>
       </v-tabs>
 
       <v-window v-model="tabActiva">
@@ -611,6 +646,47 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
                   >
                     <v-icon :icon="mdiAccountRemoveOutline" size="20" />
                   </v-btn>
+                </template>
+              </v-data-table>
+            </v-card-text>
+          </v-card>
+        </v-window-item>
+
+        <v-window-item v-if="esAdministrador" value="estudiantes">
+          <v-card rounded="lg">
+            <v-card-text>
+              <v-text-field
+                v-model="busquedaEstudiante"
+                label="Buscar por nombre o correo"
+                variant="outlined"
+                density="comfortable"
+                hide-details
+                clearable
+                class="mb-4"
+              />
+
+              <div v-if="cargandoEstudiantes" class="d-flex justify-center py-4">
+                <v-progress-circular indeterminate />
+              </div>
+              <v-alert v-else-if="estudiantes.length === 0" type="info" variant="tonal">
+                Todavía no hay estudiantes registrados.
+              </v-alert>
+              <v-data-table
+                v-else
+                :headers="headersEstudiantes"
+                :items="estudiantes"
+                :search="busquedaEstudiante"
+                item-value="user_id"
+                density="comfortable"
+                :items-per-page="10"
+                mobile-breakpoint="sm"
+                class="roles-table"
+              >
+                <template #item.nombre="{ item }">
+                  {{ item.nombre ?? '—' }}
+                </template>
+                <template #item.ultimo_ingreso="{ item }">
+                  {{ formatUltimoIngreso(item.ultimo_ingreso) }}
                 </template>
               </v-data-table>
             </v-card-text>
