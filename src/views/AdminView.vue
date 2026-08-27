@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useDisplay } from 'vuetify'
 import {
   mdiChevronLeft,
   mdiContentSave,
@@ -48,6 +49,9 @@ const FACULTAD_ID = 1
 
 const { user, signOut } = useAuth()
 const router = useRouter()
+// Pestañas solo con ícono en pantallas chicas -- con las 4 pestañas y
+// texto completo no entran sin flechas de desplazamiento.
+const { smAndDown } = useDisplay()
 const authDialog = ref(false)
 
 /** Al cerrar sesión, volver a la vista inicial (elegir carrera) en vez de
@@ -469,12 +473,7 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
 </script>
 
 <template>
-  <v-container
-    class="py-6"
-    :style="{
-      maxWidth: tabActiva === 'roles' || tabActiva === 'estudiantes' ? '960px' : '720px',
-    }"
-  >
+  <v-container class="py-6" style="max-width: 1040px">
     <div class="d-flex align-center mb-4">
       <v-btn :icon="mdiChevronLeft" variant="text" to="/" class="mr-1" />
       <h1 class="text-h6" style="margin: 0">Administración</h1>
@@ -514,12 +513,23 @@ const nombreUsuario = computed(() => user.value?.email ?? '')
         </v-btn>
       </div>
 
-      <v-tabs v-model="tabActiva" bg-color="primary" hide-slider class="mb-4 admin-tabs">
-        <v-tab value="grupos" :prepend-icon="mdiBookEditOutline">Aula virtual y WhatsApp</v-tab>
-        <v-tab value="docentes" :prepend-icon="mdiAccountTieOutline">Docentes</v-tab>
-        <v-tab v-if="esAdministrador" value="roles" :prepend-icon="mdiAccountCog">Roles</v-tab>
-        <v-tab v-if="esAdministrador" value="estudiantes" :prepend-icon="mdiAccountSchool">
-          Estudiantes
+      <v-tabs v-model="tabActiva" bg-color="primary" hide-slider grow class="mb-4 admin-tabs">
+        <v-tab value="grupos" :prepend-icon="mdiBookEditOutline" title="Aula virtual y WhatsApp">
+          <span v-if="!smAndDown">Aula virtual y WhatsApp</span>
+        </v-tab>
+        <v-tab value="docentes" :prepend-icon="mdiAccountTieOutline" title="Docentes">
+          <span v-if="!smAndDown">Docentes</span>
+        </v-tab>
+        <v-tab v-if="esAdministrador" value="roles" :prepend-icon="mdiAccountCog" title="Roles">
+          <span v-if="!smAndDown">Roles</span>
+        </v-tab>
+        <v-tab
+          v-if="esAdministrador"
+          value="estudiantes"
+          :prepend-icon="mdiAccountSchool"
+          title="Estudiantes"
+        >
+          <span v-if="!smAndDown">Estudiantes</span>
         </v-tab>
       </v-tabs>
 
