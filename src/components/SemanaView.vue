@@ -472,11 +472,13 @@ defineExpose({ descargarPDF, descargarImagen, imprimir })
           </v-card-title>
         </v-card-item>
         <v-card-text class="pt-4">
-          <div v-if="eventoDetalle.docenteFotoUrl" class="d-flex flex-column align-center mb-2">
-            <v-avatar size="96" class="mb-1">
-              <v-img :src="eventoDetalle.docenteFotoUrl" cover />
-            </v-avatar>
-            <p class="mb-0 text-center">
+          <div v-if="eventoDetalle.docenteFotoUrl" class="mb-2">
+            <div class="d-flex justify-center mb-1">
+              <v-avatar size="96">
+                <v-img :src="eventoDetalle.docenteFotoUrl" cover />
+              </v-avatar>
+            </div>
+            <p class="mb-0">
               <strong>Docente:</strong> {{ eventoDetalle.docente || 'No especificado' }}
             </p>
           </div>
